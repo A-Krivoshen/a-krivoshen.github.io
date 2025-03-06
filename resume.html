@@ -30,7 +30,7 @@
       align-items: center;
       gap: 15px;
     }
-    /* Навигация (десктоп) */
+    /* Навигация (desktop) */
     .site-nav {
       display: flex;
       gap: 15px;
@@ -79,6 +79,7 @@
     }
     .mobile-menu a {
       display: block;
+      margin: 5px 0;
       color: #5282ff;
       text-decoration: none;
       font-size: 16px;
@@ -86,7 +87,7 @@
     .mobile-menu a:hover {
       text-decoration: underline;
     }
-    /* На мобильных: показываем бургер, скрываем десктоп-меню */
+    /* На мобильных: скрываем десктоп-меню, показываем бургер */
     @media (max-width: 600px) {
       .site-nav {
         display: none;
@@ -94,8 +95,14 @@
       .burger-icon {
         display: block;
       }
+      /* Соцсети переходят в статичный блок под шапкой, если требуется */
+      .social-links {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+      }
     }
-    
+
     /* ========== ОСНОВНОЙ КОНТЕНТ ========== */
     .page-content {
       display: flex;
@@ -109,7 +116,6 @@
       padding: 20px;
       border-radius: 5px;
     }
-    
     /* Заголовки */
     h2 {
       font-size: 20px;
@@ -128,7 +134,6 @@
     h1, p, li, .company, .issuer {
       color: #fff;
     }
-    
     /* Контактная информация */
     .contact-info {
       font-size: 14px;
@@ -142,12 +147,11 @@
     .contact-info a:hover {
       text-decoration: underline;
     }
-    
     /* Опыт работы */
     .experience {
       margin-bottom: 15px;
       padding-bottom: 15px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
     }
     .period {
       display: inline-block;
@@ -156,7 +160,7 @@
       margin-bottom: 8px;
       border: 2px solid #5282ff;
       border-radius: 3px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.1);
       color: #5282ff;
     }
     .job-title, .edu-title, .cert-title {
@@ -165,7 +169,6 @@
       color: #fff;
       margin-bottom: 5px;
     }
-    
     /* Блок "О себе" */
     .about-section {
       display: flex;
@@ -176,7 +179,7 @@
     .about-section p {
       font-size: 14px;
       margin: 0;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.1);
       padding: 5px;
       border-radius: 3px;
     }
@@ -185,14 +188,12 @@
       border-radius: 50%;
       height: auto;
     }
-    
-    /* Список навыков, сертификатов */
+    /* Списки навыков, сертификатов */
     ul {
       margin: 8px 0;
       padding-left: 15px;
       font-size: 14px;
     }
-    
     /* ========== ФУТЕР ========== */
     .site-footer {
       text-align: center;
@@ -200,8 +201,7 @@
       color: #ccc;
       font-size: 14px;
     }
-    
-    /* ========== АДАПТИВНОСТЬ (мобильные устройства) ========== */
+    /* ========== АДАПТИВНОСТЬ ========== */
     @media (max-width: 600px) {
       .page-content {
         flex-direction: column;
@@ -350,7 +350,7 @@
         <div class="cert-title">Яндекс Директ</div>
         <div class="issuer">Яндекс</div>
         <div>
-          <a href="https://yandex.ru/adv/expert/certificates?certId=283001&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">
+          <a href="https://yandex.ru/adv/expert/certificates?certId=283001&amp;lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">
             Сертификат
           </a>
         </div>
@@ -360,7 +360,7 @@
         <div class="cert-title">Яндекс Директ</div>
         <div class="issuer">Яндекс</div>
         <div>
-          <a href="https://yandex.ru/adv/expert/certificates?certId=262485&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">
+          <a href="https://yandex.ru/adv/expert/certificates?certId=262485&amp;lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">
             Сертификат
           </a>
         </div>
@@ -440,11 +440,11 @@
       </section>
       <h2>Языки</h2>
       <div style="font-size: 14px; color: #fff;">Русский</div>
-      <div style="background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
+      <div style="background-color: rgba(255,255,255,0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
         <div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 100%;"></div>
       </div>
       <div style="font-size: 14px; color: #fff;">Английский</div>
-      <div style="background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
+      <div style="background-color: rgba(255,255,255,0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
         <div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 60%;"></div>
       </div>
     </div>
@@ -452,20 +452,16 @@
 
   <!-- Футер -->
   <footer class="site-footer">
-    <p>© <span id="year"></span> Алексей Кривошеин. Все права защищены.</p>
+    <p>© <span id="year"></span> Кривошеин Алексей Сергеевич. Все права защищены.</p>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-    <!-- Скрипт для бургер-меню -->
+    <!-- Скрипт бургер-меню -->
     <script>
       const burgerIcon = document.querySelector('.burger-icon');
       const mobileMenu = document.getElementById('mobileMenu');
       burgerIcon.addEventListener('click', () => {
-        if (mobileMenu.style.display === 'block') {
-          mobileMenu.style.display = 'none';
-        } else {
-          mobileMenu.style.display = 'block';
-        }
+        mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
       });
     </script>
   </footer>
