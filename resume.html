@@ -107,7 +107,7 @@
       text-align: center;
     }
 
-    /* Блок резюме */
+    /* Блок резюме (аналог services-wrapper) */
     .resume-wrapper {
       background: rgba(255, 255, 255, 0.1);
       box-sizing: border-box;
@@ -115,7 +115,6 @@
       margin-bottom: 30px;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      text-align: center;
     }
     .resume-header {
       text-align: center;
@@ -141,6 +140,7 @@
       justify-items: center;
       width: 100%;
       box-sizing: border-box;
+      align-items: stretch; /* Выравнивание высоты колонок */
     }
 
     @media (min-width: 601px) {
@@ -185,7 +185,7 @@
       text-align: left;
       transition: box-shadow 0.3s;
       width: 100%;
-      max-width: 600px;
+      max-width: 300px; /* Синхронизация с .service-item */
     }
     .resume-column:hover {
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
