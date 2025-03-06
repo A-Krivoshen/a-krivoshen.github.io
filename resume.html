@@ -17,13 +17,25 @@
       box-sizing: border-box;
     }
 
+    /* Стили тела страницы */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 15px;
+      background: url('https://images.unsplash.com/photo-1507521628349-dee6b6724e18?q=80&w=1470&auto=format&fit=crop') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
+    }
+
     /* Шапка */
     .site-header {
       position: relative;
       text-align: center;
       margin-bottom: 20px;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.7); /* Темный фон для шапки */
+      background: rgba(0, 0, 0, 0.7); /* Темный полупрозрачный фон */
+      border-radius: 5px;
     }
     .site-header h1 {
       margin: 0;
@@ -112,21 +124,12 @@
       margin: 0 auto;
       padding: 20px;
       text-align: center;
-      background: transparent; /* Убираем белый фон от темы */
+      background: transparent; /* Убираем белый фон */
     }
 
     /* Стили для резюме (синхронизированы с index.html) */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 15px;
-      background: url('https://images.unsplash.com/photo-1507521628349-dee6b6724e18?q=80&w=1470&auto=format&fit=crop') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      line-height: 1.6;
-    }
     .services-wrapper {
-      background: rgba(0, 0, 0, 0.7); /* Темный фон, как в index.html */
+      background: rgba(0, 0, 0, 0.7); /* Темный полупрозрачный фон */
       box-sizing: border-box;
       padding: 20px;
       margin-bottom: 30px;
@@ -177,7 +180,7 @@
       }
     }
     .service-item {
-      background: rgba(0, 0, 0, 0.7); /* Темный фон, как в index.html */
+      background: rgba(0, 0, 0, 0.7); /* Темный полупрозрачный фон */
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       padding: 20px;
@@ -299,7 +302,8 @@
       padding: 20px;
       color: #ccc;
       font-size: 14px;
-      background: rgba(0, 0, 0, 0.7); /* Темный фон для футера */
+      background: rgba(0, 0, 0, 0.7); /* Темный полупрозрачный фон */
+      border-radius: 5px;
     }
   </style>
 </head>
