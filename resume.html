@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Резюме - Кривошеин Алексей Сергеевич</title>
+  <title>Услуги - ИП Кривошеин Алексей Сергеевич</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Фавикон -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -19,7 +19,7 @@
       border-bottom: 1px solid #5282ff;
       text-align: center;
     }
-    /* Контейнер шапки: используем flex с wrap для корректного переноса элементов на мобильном */
+    /* Контейнер шапки: используем flex с wrap */
     .header-top {
       display: flex;
       flex-wrap: wrap;
@@ -28,15 +28,20 @@
       gap: 10px;
       position: relative;
     }
+    /* На мобильных заставляем h1 занимать 100% */
+    @media (max-width: 600px) {
+      .header-top h1 {
+        flex-basis: 100%;
+        text-align: center;
+      }
+    }
     .header-top h1 {
       margin: 0;
       color: #5282ff;
       font-size: 24px;
       font-weight: 700;
-      flex: 1 1 100%;  /* На узких экранах заголовок занимает всю ширину */
-      text-align: center;
     }
-    /* Блок справа в шапке: навигация + бургер-иконка */
+    /* Блок справа: навигация и бургер */
     .header-right {
       margin-left: auto;
       display: flex;
@@ -72,7 +77,7 @@
     .burger-icon:hover {
       background: rgba(82, 130, 255, 0.2);
     }
-    /* Мобильное меню (скрыто по умолчанию) */
+    /* Мобильное меню (изначально скрыто) */
     .mobile-menu {
       display: none;
       position: absolute;
@@ -99,7 +104,7 @@
     .mobile-menu a:hover {
       background: rgba(82, 130, 255, 0.2);
     }
-    /* На мобильных: скрываем десктоп-меню, показываем бургер */
+    /* На мобильных: скрываем десктопное меню, показываем бургер */
     @media (max-width: 600px) {
       .site-nav {
         display: none;
@@ -108,7 +113,7 @@
         display: block;
       }
     }
-    /* Соцсети – размещаем под шапкой, чтобы не конфликтовать с бургером */
+    /* Соцсети – размещаем под шапкой, центрируем */
     .social-links {
       display: flex;
       gap: 10px;
@@ -128,8 +133,8 @@
     .social-links a:hover {
       background: rgba(82, 130, 255, 0.2);
     }
-    
-    /* ========== ОСНОВНОЙ КОНТЕНТ (контейнер резюме) ========== */
+
+    /* ========== ОСНОВНОЙ КОНТЕНТ (резюме) ========== */
     .container {
       margin: 0 auto;
       background: rgba(0, 0, 0, 0.7);
@@ -171,12 +176,14 @@
       margin: 20px 0 10px;
       border-bottom: 2px solid #e74c3c;
       padding-bottom: 5px;
+      text-align: center;
     }
     h3 {
       font-size: 18px;
       font-weight: 700;
       color: #3498db;
       margin-bottom: 5px;
+      text-align: left;
     }
     .experience, .certificate, .education {
       margin-bottom: 15px;
@@ -195,12 +202,14 @@
       border-radius: 3px;
       background: rgba(255,255,255,0.1);
       color: #5282ff;
+      text-align: center;
     }
     .job-title, .cert-title, .edu-title {
       font-size: 16px;
       font-weight: 600;
       color: #fff;
       margin-bottom: 5px;
+      text-align: left;
     }
     .company, .issuer {
       font-size: 14px;
@@ -233,13 +242,43 @@
       align-items: center;
       gap: 10px;
       margin-bottom: 20px;
+      padding: 10px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 5px;
     }
     .about-section p {
       font-size: 14px;
       margin: 0;
-      background: rgba(255,255,255,0.1);
-      padding: 5px;
-      border-radius: 3px;
+      flex: 1;
+      text-align: left;
+    }
+    /* ========== ФУТЕР ========== */
+    .site-footer {
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+      font-size: 14px;
+      background: rgba(0, 0, 0, 0.7);
+      border-top: 1px solid #5282ff;
+    }
+    /* ========== Бегущая строка (терминал) ========== */
+    .terminal-marquee {
+      background: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 10px 0;
+      overflow: hidden;
+      position: relative;
+      margin-top: 40px;
+    }
+    .marquee-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 80s linear infinite;
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
     /* ========== АДАПТИВНОСТЬ ========== */
     @media (max-width: 600px) {
@@ -271,7 +310,7 @@
         align-items: flex-start;
       }
       .about-section img {
-        margin: 0 auto;
+        margin: 0 auto 10px auto;
       }
       .experience {
         padding-bottom: 10px;
@@ -284,36 +323,6 @@
         padding-left: 15px;
         font-size: 12px;
       }
-    }
-
-    /* ========== ФУТЕР ========== */
-    .site-footer {
-      text-align: center;
-      padding: 20px;
-      color: #ccc;
-      font-size: 14px;
-      background: rgba(0, 0, 0, 0.7);
-      border-top: 1px solid #5282ff;
-    }
-
-    /* ========== Бегущая строка (терминал) ========== */
-    .terminal-marquee {
-      background: #000;
-      color: #00ff00;
-      font-family: 'Courier New', monospace;
-      padding: 10px 0;
-      overflow: hidden;
-      position: relative;
-      margin-top: 40px;
-    }
-    .marquee-text {
-      display: inline-block;
-      white-space: nowrap;
-      animation: marquee 80s linear infinite;
-    }
-    @keyframes marquee {
-      0%   { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
     }
   </style>
 </head>
@@ -357,7 +366,6 @@
           Город: Москва
         </div>
       </header>
-
       <section>
         <h2>Опыт работы</h2>
         <div class="experience">
@@ -405,7 +413,7 @@
         <div class="experience">
           <div class="period">2004-2005</div>
           <div class="job-title">Специалист отдела управления ИТ</div>
-          <div class="company">ЗАО "ТПГ "ТЕРНА"</div>
+          <div class="company">ЗАО "ТПГ ТЕРНА"</div>
         </div>
         <div class="experience">
           <div class="period">2001-2004</div>
@@ -422,7 +430,6 @@
         </div>
         <img src="https://raw.githubusercontent.com/A-Krivoshen/site/main/logo_me_mini.png" alt="Фото" style="max-width: 100px; width: 100%; border-radius: 50%; height: auto;">
       </div>
-
       <h2>Образование</h2>
       <div class="education">
         <div class="period">2004</div>
@@ -439,7 +446,6 @@
           </a>
         </div>
       </div>
-
       <h2>Сертификаты</h2>
       <div class="certificate">
         <div class="period">2025</div>
@@ -520,7 +526,6 @@
           </a>
         </div>
       </div>
-
       <section class="skills">
         <h2>Ключевые навыки</h2>
         <ul>
@@ -535,7 +540,6 @@
           <li>Английский язык (уровень B1)</li>
         </ul>
       </section>
-
       <h2>Языки</h2>
       <div style="font-size: 14px; color: #fff;">Русский</div>
       <div style="background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
