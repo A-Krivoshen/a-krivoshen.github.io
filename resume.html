@@ -15,11 +15,14 @@
       text-align: center;
       margin-bottom: 20px;
       padding: 20px;
+      background: rgba(0, 0, 0, 0.7); /* Лёгкий фон для выделения шапки */
+      border-bottom: 1px solid #5282ff; /* Тонкая граница для красоты */
     }
     .site-header h1 {
       margin: 0;
       color: #5282ff;
       font-size: 24px;
+      font-weight: 700;
     }
     /* Блок справа в шапке: навигация + бургер + соцсети */
     .header-right {
@@ -39,9 +42,13 @@
       color: #5282ff;
       text-decoration: none;
       font-size: 18px;
+      padding: 5px 10px; /* Лёгкие внутренние отступы */
+      border-radius: 3px;
+      transition: background 0.3s;
     }
     .site-nav a:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      background: rgba(82, 130, 255, 0.2); /* Лёгкий фон при наведении */
     }
     /* Бургер-иконка (мобильная) */
     .burger-icon {
@@ -49,20 +56,32 @@
       font-size: 24px;
       color: #5282ff;
       cursor: pointer;
+      padding: 5px;
+      border-radius: 3px;
+      transition: background 0.3s;
+    }
+    .burger-icon:hover {
+      background: rgba(82, 130, 255, 0.2); /* Лёгкий фон при наведении */
     }
     /* Соцсети */
     .social-links {
       display: flex;
       gap: 10px;
+      flex-wrap: wrap; /* Обёртывание для мобильных */
+      justify-content: center;
     }
     .social-links a {
       color: #5282ff;
       text-decoration: none;
       font-size: 14px;
       white-space: nowrap;
+      padding: 5px 10px; /* Лёгкие внутренние отступы */
+      border-radius: 3px;
+      transition: background 0.3s;
     }
     .social-links a:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      background: rgba(82, 130, 255, 0.2); /* Лёгкий фон при наведении */
     }
     /* Мобильное меню (изначально скрыто) */
     .mobile-menu {
@@ -70,12 +89,13 @@
       position: absolute;
       top: 70px;
       right: 20px;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.9);
       padding: 10px;
       border-radius: 5px;
       text-align: right;
       flex-direction: column;
       gap: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень для красоты */
     }
     .mobile-menu a {
       display: block;
@@ -83,9 +103,13 @@
       color: #5282ff;
       text-decoration: none;
       font-size: 16px;
+      padding: 5px 10px;
+      border-radius: 3px;
+      transition: background 0.3s;
     }
     .mobile-menu a:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      background: rgba(82, 130, 255, 0.2); /* Лёгкий фон при наведении */
     }
     /* На мобильных: скрываем десктоп-меню, показываем бургер */
     @media (max-width: 600px) {
@@ -101,6 +125,9 @@
         margin-top: 10px;
         justify-content: center;
       }
+      .site-header {
+        padding: 15px;
+      }
     }
 
     /* ========== ОСНОВНОЙ КОНТЕНТ ========== */
@@ -115,6 +142,8 @@
       flex: 1;
       padding: 20px;
       border-radius: 5px;
+      background: rgba(0, 0, 0, 0.6); /* Лёгкий фон для выделения колонок */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень для красоты */
     }
     /* Заголовки */
     h2 {
@@ -124,12 +153,14 @@
       margin: 20px 0 10px;
       border-bottom: 2px solid #e74c3c;
       padding-bottom: 5px;
+      text-align: center; /* Центрирование для симметрии */
     }
     h3 {
       font-size: 18px;
       font-weight: 700;
       color: #3498db;
       margin-bottom: 5px;
+      text-align: left; /* Выравнивание для читаемости */
     }
     h1, p, li, .company, .issuer {
       color: #fff;
@@ -139,6 +170,10 @@
       font-size: 14px;
       color: #ecf0f1;
       margin-bottom: 15px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.1); /* Лёгкий фон для выделения */
+      border-radius: 3px;
+      text-align: center; /* Центрирование для мобильной версии */
     }
     .contact-info a {
       color: #5282ff;
@@ -151,7 +186,7 @@
     .experience {
       margin-bottom: 15px;
       padding-bottom: 15px;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
     .period {
       display: inline-block;
@@ -160,14 +195,16 @@
       margin-bottom: 8px;
       border: 2px solid #5282ff;
       border-radius: 3px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       color: #5282ff;
+      text-align: center;
     }
     .job-title, .edu-title, .cert-title {
       font-size: 16px;
       font-weight: 600;
       color: #fff;
       margin-bottom: 5px;
+      text-align: left;
     }
     /* Блок "О себе" */
     .about-section {
@@ -175,32 +212,53 @@
       align-items: center;
       gap: 10px;
       margin-bottom: 20px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.1); /* Лёгкий фон */
+      border-radius: 5px;
     }
     .about-section p {
       font-size: 14px;
       margin: 0;
-      background: rgba(255,255,255,0.1);
-      padding: 5px;
-      border-radius: 3px;
+      flex: 1;
+      text-align: left;
     }
     .about-section img {
       max-width: 100px;
       border-radius: 50%;
       height: auto;
+      border: 2px solid #5282ff; /* Рамка для красоты */
     }
     /* Списки навыков, сертификатов */
     ul {
       margin: 8px 0;
-      padding-left: 15px;
+      padding-left: 20px; /* Увеличен отступ для читаемости */
       font-size: 14px;
+      list-style-type: square; /* Добавлен стиль списка для красоты */
     }
+    /* Языки */
+    .skills .progress-bar {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      height: 8px;
+      margin: 5px 0 10px;
+      overflow: hidden;
+    }
+    .skills .progress {
+      background: #5282ff;
+      height: 100%;
+      border-radius: 5px;
+    }
+
     /* ========== ФУТЕР ========== */
     .site-footer {
       text-align: center;
       padding: 20px;
       color: #ccc;
       font-size: 14px;
+      background: rgba(0, 0, 0, 0.7); /* Фон для выделения */
+      border-top: 1px solid #5282ff; /* Граница для симметрии */
     }
+
     /* ========== АДАПТИВНОСТЬ ========== */
     @media (max-width: 600px) {
       .page-content {
@@ -208,6 +266,8 @@
       }
       .left-column, .right-column {
         padding: 15px;
+        width: 100%; /* Полная ширина на мобильных */
+        margin-bottom: 20px;
       }
       .site-header h1 {
         font-size: 20px;
@@ -217,6 +277,28 @@
       }
       .job-title, .edu-title, .cert-title {
         font-size: 14px;
+      }
+      .contact-info {
+        font-size: 12px;
+        padding: 8px;
+      }
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-section img {
+        margin: 0 auto 10px auto; /* Центрирование изображения */
+      }
+      .experience {
+        padding-bottom: 10px;
+      }
+      .period {
+        font-size: 11px;
+        padding: 2px 5px;
+      }
+      ul {
+        padding-left: 15px;
+        font-size: 12px;
       }
     }
   </style>
@@ -360,7 +442,7 @@
         <div class="cert-title">Яндекс Директ</div>
         <div class="issuer">Яндекс</div>
         <div>
-          <a href="https://yandex.ru/adv/expert/certificates?certId=262485&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">
+          <a href="https://yandex.ru/adv/expert/certificates?certId=262485&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%80%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">
             Сертификат
           </a>
         </div>
@@ -440,12 +522,12 @@
       </section>
       <h2>Языки</h2>
       <div style="font-size: 14px; color: #fff;">Русский</div>
-      <div style="background-color: rgba(255,255,255,0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
-        <div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 100%;"></div>
+      <div class="progress-bar">
+        <div class="progress" style="width: 100%;"></div>
       </div>
       <div style="font-size: 14px; color: #fff;">Английский</div>
-      <div style="background-color: rgba(255,255,255,0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
-        <div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 60%;"></div>
+      <div class="progress-bar">
+        <div class="progress" style="width: 60%;"></div>
       </div>
     </div>
   </div>
