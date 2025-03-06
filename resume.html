@@ -17,13 +17,13 @@
       margin-bottom: 20px;
       padding: 20px;
       background: rgba(0, 0, 0, 0.7); /* Лёгкий фон для шапки */
-      border-bottom: 1px solid #5282ff;
+      border-bottom: 1px solid #5282ff; /* Тонкая граница для акцента */
       text-align: center; /* На случай, если элементы переносятся */
     }
     /* Контейнер в шапке: h1 по центру, справа бургер/навигация */
     .header-top {
       display: flex;
-      flex-wrap: wrap;     /* Перенос на новую строку при узком экране */
+      flex-wrap: wrap; /* Перенос при узком экране */
       align-items: center;
       justify-content: center; /* Заголовок по центру */
       position: relative;
@@ -35,6 +35,7 @@
       font-size: 24px;
       font-weight: 700;
     }
+
     /* Блок справа: навигация (desktop) + бургер (mobile) */
     .header-right {
       margin-left: auto;  /* «прижимает» к правому краю на широком экране */
@@ -72,7 +73,7 @@
       background: rgba(82, 130, 255, 0.2);
     }
 
-    /* Соцсети под шапкой */
+    /* Соцсети (под шапкой) */
     .social-links {
       display: flex;
       gap: 10px;
@@ -120,17 +121,17 @@
     .mobile-menu a:hover {
       background: rgba(82, 130, 255, 0.2);
     }
-    /* На мобильном: скрываем site-nav, показываем бургер */
+    /* На мобильных: скрываем site-nav, показываем бургер */
     @media (max-width: 600px) {
       .site-nav {
         display: none; /* desktop-меню скрыто */
       }
       .burger-icon {
-        display: block;
+        display: block; /* показываем бургер */
       }
     }
 
-    /* ========== ОСНОВНОЙ КОНТЕНТ (ДВЕ КОЛОНКИ) ========== */
+    /* ========== ОСНОВНОЙ КОНТЕНТ (две колонки) ========== */
     .page-content {
       display: flex;
       gap: 20px;
@@ -154,7 +155,7 @@
       margin: 20px 0 10px;
       border-bottom: 2px solid #e74c3c;
       padding-bottom: 5px;
-      text-align: center; 
+      text-align: center;
     }
     h3 {
       font-size: 18px;
@@ -265,7 +266,7 @@
       border-top: 1px solid #5282ff;
     }
 
-    /* ========== АДАПТИВНОСТЬ ========== */
+    /* ========== АДАПТИВНОСТЬ (мобильные устройства) ========== */
     @media (max-width: 600px) {
       .page-content {
         flex-direction: column;
@@ -310,8 +311,10 @@
   </style>
 </head>
 <body>
+
   <!-- Шапка -->
   <header class="site-header">
+    <!-- Верхний контейнер: h1 и блок справа -->
     <div class="header-top">
       <h1>Кривошеин Алексей Сергеевич</h1>
       <div class="header-right">
@@ -320,15 +323,17 @@
           <a href="index.html">Услуги</a>
           <a href="resume.html">Резюме</a>
         </nav>
-        <!-- Иконка бургера (мобильная) -->
+        <!-- Иконка бургер (мобильная) -->
         <i class="fas fa-bars burger-icon"></i>
       </div>
     </div>
+
     <!-- Мобильное меню -->
     <nav class="mobile-menu" id="mobileMenu">
       <a href="index.html">Услуги</a>
       <a href="resume.html">Резюме</a>
     </nav>
+
     <!-- Соцсети (под шапкой) -->
     <div class="social-links">
       <a href="https://t.me/drslon_channel" target="_blank" rel="noopener">Telegram</a>
@@ -340,18 +345,116 @@
     </div>
   </header>
 
-  <!-- Основное содержимое (две колонки) -->
+  <!-- Основной контент (две колонки) -->
   <div class="page-content">
     <!-- Левая колонка -->
     <div class="left-column">
-      <!-- Контактная информация, опыт работы и т.д. -->
-      <!-- ... Скопируйте свой контент ... -->
+      <!-- Контактная информация -->
+      <header>
+        <div class="contact-info">
+          Телефон: <a href="tel:+79636641615">+7 (963) 664-16-15</a> | 
+          Email: <a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a> | 
+          Город: Москва
+        </div>
+      </header>
+
+      <!-- Опыт работы -->
+      <section>
+        <h2>Опыт работы</h2>
+        <div class="experience">
+          <div class="period">2021 - Текущий</div>
+          <div class="job-title">Индивидуальный предприниматель</div>
+          <div class="company">ИП Кривошеин А.С.</div>
+          <ul>
+            <li>Настройка и поддержка серверов Linux</li>
+            <li>Разработка сайтов разных типов</li>
+            <li>Доработка существующих сайтов</li>
+            <li>Продвижение сайтов в поисковых системах</li>
+            <li>SEO-продвижение сайтов</li>
+            <li>Аудит и повышение эффективности сайтов</li>
+          </ul>
+        </div>
+        <div class="experience">
+          <div class="period">2017-2021</div>
+          <div class="job-title">Самозанятый</div>
+          <div>Продвижение сайтов на CMS WordPress, запуск и поддержка проектов.</div>
+        </div>
+        <!-- ... Остальные блоки "experience" ... -->
+      </section>
     </div>
 
     <!-- Правая колонка -->
     <div class="right-column">
-      <!-- О себе, образование, сертификаты, навыки, языки -->
-      <!-- ... Скопируйте свой контент ... -->
+      <!-- О себе -->
+      <div class="about-section">
+        <div style="flex: 1;">
+          <h3>О себе</h3>
+          <p>Профессионал в области веб-разработки, SEO и системного администрирования.</p>
+        </div>
+        <img 
+          src="https://raw.githubusercontent.com/A-Krivoshen/site/main/logo_me_mini.png" 
+          alt="Фото">
+      </div>
+
+      <!-- Образование -->
+      <h2>Образование</h2>
+      <div class="education">
+        <div class="period">2004</div>
+        <div class="edu-title">КГПУ</div>
+        <div class="issuer">Межвузовский инженерно-педагогический факультет</div>
+      </div>
+      <div class="education">
+        <div class="period">2017</div>
+        <div class="edu-title">Нетология</div>
+        <div class="issuer">Москва</div>
+        <div>
+          <a href="https://krivoshein.site/wp-content/uploads/2024/11/povushenia_kvalificacia-scaled.jpg" 
+             target="_blank" rel="noopener">
+            Повышение квалификации: HTML-верстка
+          </a>
+        </div>
+      </div>
+
+      <!-- Сертификаты -->
+      <h2>Сертификаты</h2>
+      <div class="certificate">
+        <div class="period">2025</div>
+        <div class="cert-title">Яндекс Директ</div>
+        <div class="issuer">Яндекс</div>
+        <div>
+          <a href="..." target="_blank" rel="noopener">
+             Сертификат
+          </a>
+        </div>
+      </div>
+      <!-- ... Остальные сертификаты ... -->
+
+      <!-- Навыки -->
+      <section class="skills">
+        <h2>Ключевые навыки</h2>
+        <ul>
+          <li>Настройка серверов Linux</li>
+          <li>Разработка сайтов (HTML, CSS, PHP)</li>
+          <li>SEO-продвижение</li>
+          <li>Анализ и аудит сайтов</li>
+          <li>Работа с CMS (WordPress)</li>
+          <li>Системное администрирование</li>
+          <li>DevOps</li>
+          <li>Интернет-маркетинг (Яндекс Директ)</li>
+          <li>Английский язык (уровень B1)</li>
+        </ul>
+      </section>
+
+      <!-- Языки -->
+      <h2>Языки</h2>
+      <div style="font-size: 14px; color: #fff;">Русский</div>
+      <div class="progress-bar">
+        <div class="progress" style="width: 100%;"></div>
+      </div>
+      <div style="font-size: 14px; color: #fff;">Английский</div>
+      <div class="progress-bar">
+        <div class="progress" style="width: 60%;"></div>
+      </div>
     </div>
   </div>
 
