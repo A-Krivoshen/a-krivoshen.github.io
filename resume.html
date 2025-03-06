@@ -142,6 +142,41 @@
       width: 100%;
       box-sizing: border-box;
     }
+
+    @media (min-width: 601px) {
+      .resume-grid {
+        grid-template-columns: 1fr 1fr; /* Две колонки на десктопе */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .resume-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .resume-column {
+        max-width: 100%;
+      }
+      .resume-column h1 {
+        font-size: 18px;
+      }
+      .period {
+        font-size: 11px;
+        padding: 2px 4px;
+      }
+      ul {
+        font-size: 12px;
+        padding-left: 10px;
+      }
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-section img {
+        margin: 0 auto 10px auto;
+      }
+    }
+
     .resume-column {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
@@ -229,33 +264,6 @@
       border-radius: 50%;
       height: auto;
       border: 2px solid #5282ff;
-    }
-    @media (max-width: 600px) {
-      .resume-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .resume-column {
-        max-width: 100%;
-      }
-      .resume-column h1 {
-        font-size: 18px;
-      }
-      .period {
-        font-size: 11px;
-        padding: 2px 4px;
-      }
-      ul {
-        font-size: 12px;
-        padding-left: 10px;
-      }
-      .about-section {
-        flex-direction: column;
-        text-align: center;
-      }
-      .about-section img {
-        margin: 0 auto 10px auto;
-      }
     }
 
     /* Футер */
