@@ -140,12 +140,15 @@
       justify-items: center;
       width: 100%;
       box-sizing: border-box;
-      align-items: stretch; /* Выравнивание высоты колонок */
+      align-items: stretch;
     }
 
-    @media (min-width: 601px) {
+    @media (max-width: 890px) {
       .resume-grid {
-        grid-template-columns: 1fr 1fr; /* Две колонки на десктопе */
+        grid-template-columns: 1fr;
+      }
+      .resume-column {
+        max-width: 100%;
       }
     }
 
@@ -185,7 +188,7 @@
       text-align: left;
       transition: box-shadow 0.3s;
       width: 100%;
-      max-width: 300px; /* Синхронизация с .service-item */
+      max-width: 300px;
     }
     .resume-column:hover {
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
