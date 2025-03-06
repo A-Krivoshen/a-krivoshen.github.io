@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Фавикон (при необходимости) -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <!-- Тема Midnight (как в index.html) -->
+  <!-- Подключаем тему Midnight (как в index.html) -->
   <link rel="stylesheet" href="https://pages-themes.github.io/midnight/assets/css/style.css">
-  <!-- Font Awesome (для иконок) -->
+  <!-- Подключаем Font Awesome (для иконок) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -16,7 +16,7 @@
     .site-header {
       margin-bottom: 20px;
       padding: 20px;
-      text-align: center; /* Заголовок по центру */
+      text-align: center; /* Заголовок (h1) по центру */
     }
     .header-top {
       display: flex;
@@ -26,14 +26,20 @@
       position: relative;
       gap: 10px;
     }
+    /* На мобильных заставляем h1 занимать 100% */
+    @media (max-width: 600px) {
+      .header-top h1 {
+        flex-basis: 100%;
+        text-align: center;
+      }
+    }
     .header-top h1 {
       margin: 0;
       color: #5282ff;
       font-size: 24px;
       font-weight: 700;
-      flex: 1 1 100%;  /* На мобильном заголовок на всю ширину */
-      text-align: center;
     }
+    /* Блок справа: навигация (desktop) + бургер (mobile) */
     .header-right {
       margin-left: auto;
       display: flex;
@@ -56,7 +62,7 @@
     .site-nav a:hover {
       background: rgba(82, 130, 255, 0.2);
     }
-    /* Бургер (mobile) */
+    /* Бургер-иконка (mobile) */
     .burger-icon {
       display: none;
       font-size: 24px;
@@ -69,7 +75,7 @@
     .burger-icon:hover {
       background: rgba(82, 130, 255, 0.2);
     }
-    /* Мобильное меню */
+    /* Мобильное меню (изначально скрыто) */
     .mobile-menu {
       display: none;
       position: absolute;
@@ -96,15 +102,17 @@
     .mobile-menu a:hover {
       background: rgba(82, 130, 255, 0.2);
     }
+    /* На мобильных: скрываем десктопное меню, показываем бургер */
     @media (max-width: 600px) {
       .site-nav {
-        display: none; /* десктопное меню скрыто */
+        display: none;
       }
       .burger-icon {
         display: block;
       }
     }
-    /* Соцсети под шапкой, центрируем */
+
+    /* Соцсети (под шапкой), центрируем */
     .social-links {
       display: flex;
       gap: 10px;
@@ -235,7 +243,7 @@
       border: 2px solid #5282ff;
     }
 
-    /* Адаптивность для двух колоонок */
+    /* Адаптивность (две колонки) */
     @media (max-width: 600px) {
       .page-content {
         flex-direction: column;
@@ -276,7 +284,7 @@
       margin-top: 30px;
     }
 
-    /* ========== БЕГУЩАЯ СТРОКА (опционально) ========== */
+    /* (Опционально) Бегущая строка (терминал) */
     .terminal-marquee {
       background: #000;
       color: #00ff00;
@@ -313,12 +321,14 @@
         <i class="fas fa-bars burger-icon"></i>
       </div>
     </div>
+
     <!-- Мобильное меню -->
     <nav class="mobile-menu" id="mobileMenu">
       <a href="index.html">Услуги</a>
       <a href="resume.html">Резюме</a>
     </nav>
-    <!-- Соцсети (центрируем) -->
+
+    <!-- Соцсети -->
     <div class="social-links">
       <a href="https://t.me/drslon_channel" target="_blank" rel="noopener">Telegram</a>
       <a href="https://vk.com/drslon_channel" target="_blank" rel="noopener">VK</a>
@@ -329,7 +339,7 @@
     </div>
   </header>
 
-  <!-- Основное содержимое: резюме в двух колонках -->
+  <!-- Основное содержимое (две колонки с резюме) -->
   <main class="page-content">
     <!-- Левая колонка -->
     <div class="left-column">
