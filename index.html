@@ -2,15 +2,19 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Услуги - ИП Кривошеин Алексей Сергеевич</title>
+  <title>Услуги - krivoshein.su</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <!-- Подключаем тему Midnight -->
   <link rel="stylesheet" href="https://pages-themes.github.io/midnight/assets/css/style.css">
+  
   <!-- Подключаем Font Awesome (для иконок) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    /* Шапка сайта */
+    /* =========================
+       ШАПКА, СОЦСЕТИ, НАВИГАЦИЯ
+       ========================= */
     .site-header {
       position: relative;
       text-align: center;
@@ -57,23 +61,27 @@
       }
     }
 
-    /* Основная обёртка для контента */
+    /* =========================
+       ОСНОВНОЙ КОНТЕЙНЕР
+       ========================= */
     .page-content {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
-      text-align: center; /* Центрируем заголовки, при желании */
+      text-align: center; /* По желанию: центрируем блоки */
     }
 
-    /* Секция \"Услуги\" (интегрируем ваш готовый код) */
+    /* =========================
+       БЛОК УСЛУГ (НОВЫЙ)
+       ========================= */
     .services-wrapper {
       max-width: 1200px;
       margin: 0 auto;
-      background: rgba(255, 255, 255, 0.1); /* Немного светлее, чем 0.7 */
+      background: rgba(255, 255, 255, 0.1); /* полупрозрачный фон */
       padding: 20px;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      margin-bottom: 30px; /* Отступ снизу, перед следующим блоком */
+      margin-bottom: 30px;
     }
     .services-header {
       text-align: center;
@@ -107,13 +115,13 @@
       text-align: center;
       transition: box-shadow 0.3s;
       width: 100%;
-      max-width: 300px; /* Опционально ограничиваем ширину карточки */
+      max-width: 300px; /* Можно ограничить ширину карточки */
     }
     .service-item:hover {
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
     }
     .service-item i {
-      font-family: \"Font Awesome 6 Brands\", \"Font Awesome 6 Free\", sans-serif !important;
+      font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free", sans-serif !important;
       font-size: 2rem;
       color: #5282ff;
       margin-bottom: 15px;
@@ -130,7 +138,6 @@
       color: #ecf0f1;
       line-height: 1.5;
     }
-    /* Адаптивность */
     @media (max-width: 890px) {
       .services-grid {
         grid-template-columns: 1fr;
@@ -168,7 +175,9 @@
       }
     }
 
-    /* Блок стоимости услуг (pricing-wrapper) */
+    /* =========================
+       БЛОК \"СТОИМОСТЬ УСЛУГ\"
+       ========================= */
     .pricing-wrapper {
       margin: 0 auto 20px auto;
       background: rgba(255, 255, 255, 0.05);
@@ -219,7 +228,9 @@
       background: #3b6ad1;
     }
 
-    /* Бегущая строка \"терминал\" */
+    /* =========================
+       БЕГУЩАЯ СТРОКА (ТЕРМИНАЛ)
+       ========================= */
     .terminal-marquee {
       background: #000;
       color: #00ff00;
@@ -239,7 +250,9 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* Футер */
+    /* =========================
+       ФУТЕР
+       ========================= */
     .site-footer {
       text-align: center;
       padding: 20px;
@@ -250,90 +263,89 @@
 </head>
 <body>
   <!-- Шапка сайта -->
-  <header class=\"site-header\">
+  <header class="site-header">
     <h1>Кривошеин Алексей Сергеевич</h1>
-    <nav class=\"site-nav\">
-      <a href=\"index.html\">Услуги</a>
-      <a href=\"resume.html\">Резюме</a>
+    <nav class="site-nav">
+      <a href="index.html">Услуги</a>
+      <a href="resume.html">Резюме</a>
     </nav>
     <!-- Соцсети справа -->
-    <div class=\"social-links\">
-      <a href=\"https://t.me/drslon_channel\" target=\"_blank\" rel=\"noopener\">Telegram</a>
-      <a href=\"https://vk.com/drslon_channel\" target=\"_blank\" rel=\"noopener\">VK</a>
-      <a href=\"https://tenchat.ru/krivoshein\" target=\"_blank\" rel=\"noopener\">TenChat</a>
-      <a href=\"https://github.com/A-Krivoshen\" target=\"_blank\" rel=\"noopener\">GitHub</a>
-      <a href=\"https://www.linkedin.com/in/krivosheinaleksey/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>
-      <a href=\"https://krivoshein.site/\" target=\"_blank\" rel=\"noopener\">Сайт</a>
+    <div class="social-links">
+      <a href="https://t.me/drslon_channel" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://vk.com/drslon_channel" target="_blank" rel="noopener">VK</a>
+      <a href="https://tenchat.ru/krivoshein" target="_blank" rel="noopener">TenChat</a>
+      <a href="https://github.com/A-Krivoshen" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/krivosheinaleksey/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://krivoshein.site/" target="_blank" rel="noopener">Сайт</a>
     </div>
   </header>
 
   <!-- Основное содержимое -->
-  <main class=\"page-content\">
-
-    <!-- Блок \"Услуги\" (здесь ваш код с иконками) -->
-    <div class=\"services-wrapper\">
-      <div class=\"services-header\">
+  <main class="page-content">
+    <!-- Блок \"Услуги\" (новый, с иконками) -->
+    <div class="services-wrapper">
+      <div class="services-header">
         <h2>Услуги</h2>
         <p>Индивидуальный подход и профессиональная реализация для вашего бизнеса</p>
       </div>
-      <div class=\"services-grid\">
-        <div class=\"service-item\">
-          <i class=\"fas fa-code\"></i>
+      <div class="services-grid">
+        <div class="service-item">
+          <i class="fas fa-code"></i>
           <h3>Кастомизация HTML/CSS/PHP</h3>
           <p>Индивидуальная настройка и доработка вашего сайта под любые задачи.</p>
         </div>
-        <div class=\"service-item\">
-          <i class=\"fab fa-docker\"></i>
+        <div class="service-item">
+          <i class="fab fa-docker"></i>
           <h3>Интеграция сервисов в Docker</h3>
           <p>Оптимизация инфраструктуры с помощью Docker для стабильной работы приложений.</p>
         </div>
-        <div class=\"service-item\">
-          <i class=\"fas fa-server\"></i>
+        <div class="service-item">
+          <i class="fas fa-server"></i>
           <h3>Настройка VPS</h3>
           <p>Полная настройка виртуального сервера для надежной работы вашего проекта.</p>
         </div>
-        <div class=\"service-item\">
-          <i class=\"fas fa-network-wired\"></i>
+        <div class="service-item">
+          <i class="fas fa-network-wired"></i>
           <h3>Настройка сетевых служб</h3>
           <p>Профессиональная настройка и управление сетевыми сервисами.</p>
         </div>
-        <div class=\"service-item\">
-          <i class=\"fas fa-globe\"></i>
+        <div class="service-item">
+          <i class="fas fa-globe"></i>
           <h3>Услуги по регистрации домена</h3>
           <p>Помощь в подборе и регистрации домена для вашего бизнеса.</p>
         </div>
-        <div class=\"service-item\">
-          <i class=\"fas fa-cloud\"></i>
+        <div class="service-item">
+          <i class="fas fa-cloud"></i>
           <h3>Настройки/Миграция в Облако</h3>
           <p>Перенос вашего бизнеса в облачные сервисы для повышения гибкости.</p>
         </div>
-        <div class=\"service-item\">
-          <i class=\"fas fa-shield-alt\"></i>
+        <div class="service-item">
+          <i class="fas fa-shield-alt"></i>
           <h3>Безопасность сайта</h3>
           <p>Анализ и устранение угроз, включая вредоносный код.</p>
         </div>
-        <div class=\"service-item\">
-          <i class=\"fas fa-tachometer-alt\"></i>
+        <div class="service-item">
+          <i class="fas fa-tachometer-alt"></i>
           <h3>Оптимизация скорости сайта</h3>
           <p>Ускорение загрузки сайта для улучшения пользовательского опыта.</p>
         </div>
-        <div class=\"service-item\">
-          <i class=\"fas fa-project-diagram\"></i>
+        <div class="service-item">
+          <i class="fas fa-project-diagram"></i>
           <h3>Подключение к CDN</h3>
           <p>Настройка и оптимизация CDN для ускорения сайта.</p>
         </div>
-        <div class=\"service-item\">
-          <i class=\"fas fa-ad\"></i>
+        <div class="service-item">
+          <i class="fas fa-ad"></i>
           <h3>Контекстная реклама</h3>
           <p>Управление кампаниями в Яндекс.Директ для привлечения клиентов.</p>
         </div>
-        <div class=\"service-item\">
-          <i class=\"fas fa-tools\"></i>
+        <div class="service-item">
+          <i class="fas fa-tools"></i>
           <h3>Техническая поддержка сайта</h3>
           <p>Профессиональная техподдержка для стабильной работы сайта.</p>
         </div>
-        <div class=\"service-item\">
-          <i class=\"fas fa-search\"></i>
+        <div class="service-item">
+          <i class="fas fa-search"></i>
           <h3>SEO аудит сайта</h3>
           <p>Комплексный анализ сайта для повышения его позиций.</p>
         </div>
@@ -341,7 +353,7 @@
     </div>
 
     <!-- Блок стоимости услуг -->
-    <div class=\"pricing-wrapper\">
+    <div class="pricing-wrapper">
       <h2>Стоимость услуг</h2>
       <p>Индивидуальный подход к каждой задаче.<br>Моя базовая ставка:<br><strong>2000 ₽/час</strong>.</p>
       <ul>
@@ -349,23 +361,23 @@
         <li>🛠️ Финальная стоимость зависит от сложности проекта и ваших ожиданий.</li>
         <li>📞 Первичная консультация — бесплатно.</li>
       </ul>
-      <a href=\"https://krivoshein.su/p/f7dd5d/\" target=\"_blank\" rel=\"noopener\">Обсудить проект</a>
+      <a href="https://krivoshein.su/p/f7dd5d/" target="_blank" rel="noopener">Обсудить проект</a>
     </div>
 
     <!-- Бегущая строка (терминал) -->
-    <div class=\"terminal-marquee\">
-      <span class=\"marquee-text\">
+    <div class="terminal-marquee">
+      <span class="marquee-text">
         >>> Разработка сайтов: создание адаптивных сайтов под ключ, интеграция CMS (WordPress, Joomla), SEO-оптимизация, ускорение загрузки через CDN и кэширование... Настройка серверов: установка Linux/Windows Server, настройка VPS, автоматизация через Ansible, обеспечение безопасности (SSL, фаерволы)... Облачные решения: миграция на Yandex Cloud, Cloud.ru, настройка масштабируемых решений... Контекстная реклама: настройка Яндекс.Директ, Google Ads, ремаркетинг, аналитика через Метрику и GA... Техподдержка: мониторинг, обновления, защита от DDoS... Аудит: проверка скорости, безопасности, SEO-позиций... Свяжитесь со мной для обсуждения вашего проекта! <<< >>> Разработка сайтов: создание адаптивных сайтов под ключ, интеграция CMS (WordPress, Joomla), SEO-оптимизация, ускорение загрузки через CDN и кэширование... Настройка серверов: установка Linux/Windows Server, настройка VPS, автоматизация через Ansible, обеспечение безопасности (SSL, фаерволы)... Облачные решения: миграция на Yandex Cloud, Cloud.ru, настройка масштабируемых решений... Контекстная реклама: настройка Яндекс.Директ, Google Ads, ремаркетинг, аналитика через Метрику и GA... Техподдержка: мониторинг, обновления, защита от DDoS... Аудит: проверка скорости, безопасности, SEO-позиций... Свяжитесь со мной для обсуждения вашего проекта! <<<
       </span>
     </div>
   </main>
 
   <!-- Футер -->
-  <footer class=\"site-footer\">
-    <p>© <span id=\"year\"></span> Кривошеин Алексей Сергеевич. Все права защищены.</p>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Кривошеин Алексей Сергеевич. Все права защищены.</p>
     <script>
       // Динамический год в футере
-      document.getElementById(\"year\").textContent = new Date().getFullYear();
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </footer>
 </body>
