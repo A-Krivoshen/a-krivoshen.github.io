@@ -2,44 +2,61 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Услуги - krivoshein.su</title>
-  <!-- Подключаем CSS темы Midnight -->
-  <link rel="stylesheet" href="https://pages-themes.github.io/midnight/assets/css/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Подключаем тему Midnight -->
+  <link rel="stylesheet" href="https://pages-themes.github.io/midnight/assets/css/style.css">
+  <!-- Подключаем Font Awesome для иконок -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    /* Переопределение темы: белый фон, более светлые блоки */
-    body {
-      background-color: #fff !important;
-      color: #333;
-    }
-    a {
-      color: #5282ff !important;
-    }
-    .site-header, .site-footer {
-      background: #fff;
-      color: #333;
-      border-bottom: 1px solid #ddd;
-      padding: 20px;
+    /* Шапка сайта (добавляем вручную, т.к. тема не создает меню автоматически) */
+    .site-header {
       text-align: center;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    .site-header h1 {
+      margin: 0;
+      color: #5282ff;
     }
     .site-nav a {
-      margin: 0 10px;
+      color: #5282ff;
       text-decoration: none;
+      margin: 0 10px;
       font-size: 18px;
     }
     .site-nav a:hover {
       text-decoration: underline;
     }
-    .content-wrapper {
-      background-color: #fff !important;
-      padding: 20px;
+    
+    /* Основная обёртка для контента */
+    .page-content {
       max-width: 1200px;
-      margin: 20px auto;
+      margin: 0 auto;
+      padding: 20px;
     }
-    h1, h2 {
-      color: #333;
+    
+    /* Заголовки */
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3498db;
+      margin: 20px 0 10px;
+      border-bottom: 2px solid #e74c3c;
+      padding-bottom: 5px;
     }
-    /* Секция услуг */
+    h1, p {
+      color: #fff;
+    }
+    
+    /* Блок услуг */
+    .services-intro {
+      margin-bottom: 20px;
+    }
+    .services-intro p {
+      font-size: 14px;
+      color: #ccc;
+    }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -47,8 +64,8 @@
       margin-top: 20px;
     }
     .service-item {
-      background: #f5f5f5;
-      border: 1px solid #ddd;
+      background: #161b22;
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 8px;
       padding: 20px;
       text-align: center;
@@ -60,12 +77,40 @@
     .service-item h3 {
       font-size: 18px;
       margin-bottom: 10px;
-      color: #333;
+      color: #fff;
     }
     .service-item p {
       font-size: 14px;
-      color: #555;
+      color: #ccc;
       margin-bottom: 15px;
+    }
+    
+    /* Бегущая строка "терминал" */
+    .terminal-marquee {
+      background: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 10px 0;
+      overflow: hidden;
+      position: relative;
+      margin-top: 40px;
+    }
+    .marquee-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    
+    /* Футер */
+    .site-footer {
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -80,10 +125,12 @@
   </header>
 
   <!-- Основное содержимое -->
-  <main class="content-wrapper">
+  <main class="page-content">
     <section id="services">
-      <h2>Наши услуги</h2>
-      <p>Индивидуальный подход и профессиональная реализация для вашего бизнеса</p>
+      <div class="services-intro">
+        <h2>Наши услуги</h2>
+        <p>Индивидуальный подход и профессиональная реализация для вашего бизнеса</p>
+      </div>
       <div class="services-grid">
         <div class="service-item">
           <h3>Разработка сайтов</h3>
@@ -107,11 +154,21 @@
         </div>
       </div>
     </section>
+
+    <!-- Бегущая строка как терминал -->
+    <div class="terminal-marquee">
+      <span class="marquee-text">
+        >>> Разработка сайтов: создание адаптивных сайтов под ключ, интеграция CMS (WordPress, Joomla), SEO-оптимизация, ускорение загрузки через CDN и кэширование... Настройка серверов: установка Linux/FreeBSD, настройка VPS, автоматизация через Ansible, обеспечение безопасности (SSL, фаерволы)... Облачные решения: миграция на Yandex Cloud, Cloud.ru, настройка масштабируемых решений... Контекстная реклама: настройка Яндекс.Директ, Google Ads, ремаркетинг, аналитика через Метрику и GA... Техподдержка: мониторинг, обновления, защита от DDoS... Аудит: проверка скорости, безопасности, SEO-позиций... Свяжитесь со мной для обсуждения вашего проекта! <<< >>> Разработка сайтов: создание адаптивных сайтов под ключ, интеграция CMS (WordPress, Joomla), SEO-оптимизация, ускорение загрузки через CDN и кэширование... Настройка серверов: установка Linux/Windows Server, настройка VPS, автоматизация через Ansible, обеспечение безопасности (SSL, фаерволы)... Облачные решения: миграция на Yandex Cloud, Cloud.ru, настройка масштабируемых решений... Контекстная реклама: настройка Яндекс.Директ, Google Ads, ремаркетинг, аналитика через Метрику и GA... Техподдержка: мониторинг, обновления, защита от DDoS... Аудит: проверка скорости, безопасности, SEO-позиций... Свяжитесь со мной для обсуждения вашего проекта! <<<
+      </span>
+    </div>
   </main>
 
   <!-- Футер -->
   <footer class="site-footer">
-    <p>© 2025 Алексей Кривошеин. Все права защищены.</p>
+    <p>© <span id="year"></span> Алексей Кривошеин. Все права защищены.</p>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </footer>
 </body>
 </html>
