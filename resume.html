@@ -9,7 +9,7 @@
   <!-- (Опционально) Подключаем Font Awesome, если нужны иконки -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    /* Шапка сайта (стандартной темы Midnight не хватает для статичного HTML, поэтому добавим меню вручную) */
+    /* Шапка сайта (добавляем вручную, так как тема не создает меню автоматически) */
     .site-header {
       text-align: center;
       margin-bottom: 20px;
@@ -17,7 +17,7 @@
     }
     .site-header h1 {
       margin: 0;
-      color: #5282ff; /* Заголовок в шапке */
+      color: #5282ff; /* Цвет заголовка */
     }
     .site-nav a {
       color: #5282ff;
@@ -29,7 +29,7 @@
       text-decoration: underline;
     }
 
-    /* Основной контейнер страницы (содержимое) */
+    /* Основной блок контента (две колонки) */
     .page-content {
       display: flex;
       gap: 20px;
@@ -37,13 +37,11 @@
       max-width: 1200px;
       padding: 20px;
     }
-    .left-column,
-    .right-column {
+    .left-column, .right-column {
       flex: 1;
-      background: #0d1117; /* Тёмный фон, чтобы соответствовать теме Midnight */
+      /* Не задаем фон, используем фон темы Midnight */
       padding: 20px;
       border-radius: 5px;
-      box-shadow: 0 1px 3px rgba(255,255,255,0.1);
     }
 
     /* Заголовки */
@@ -62,7 +60,8 @@
       margin-bottom: 5px;
     }
     h1, p, li, .company, .issuer {
-      color: #fff; /* Текст на тёмном фоне */
+      /* Указываем белый/светлый цвет текста, чтобы не сливался с темным фоном */
+      color: #fff;
     }
 
     /* Контактная информация */
@@ -168,7 +167,7 @@
     </nav>
   </header>
 
-  <!-- Основной блок контента (две колонки) -->
+  <!-- Основной блок контента -->
   <div class="page-content">
     <!-- Левая колонка -->
     <div class="left-column">
@@ -215,24 +214,24 @@
         <div class="experience">
           <div class="period">2009</div>
           <div class="job-title">Старший системный администратор</div>
-          <div class="company">ГК \"Независимость\"</div>
+          <div class="company">ГК "Независимость"</div>
           <div>Централизованное администрирование сети</div>
         </div>
         <div class="experience">
           <div class="period">2006-2008</div>
           <div class="job-title">Инженер АСКУЭ</div>
-          <div class="company">ЗАО \"Трансэнерком\"</div>
+          <div class="company">ЗАО "Трансэнерком"</div>
           <div>Развитие систем энергоучета</div>
         </div>
         <div class="experience">
           <div class="period">2004-2005</div>
           <div class="job-title">Специалист отдела управления ИТ</div>
-          <div class="company">ЗАО \"ТПГ ТЕРНА\"</div>
+          <div class="company">ЗАО "ТПГ ТЕРНА"</div>
         </div>
         <div class="experience">
           <div class="period">2001-2004</div>
           <div class="job-title">Старший специалист компьютерного отдела</div>
-          <div class="company">ОАО \"Седьмой Континент\"</div>
+          <div class="company">ОАО "Седьмой Континент"</div>
         </div>
       </section>
     </div>
@@ -246,8 +245,7 @@
         </div>
         <img 
           src="https://raw.githubusercontent.com/A-Krivoshen/site/main/logo_me_mini.png" 
-          alt="Фото" 
-        >
+          alt="Фото">
       </div>
 
       <h2>Образование</h2>
@@ -387,13 +385,12 @@
   </div>
 
   <!-- Футер -->
-<footer class="site-footer">
-  <p>© <span id="year"></span> Алексей Кривошеин. Все права защищены.</p>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</footer>
-
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Алексей Кривошеин. Все права защищены.</p>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
 
 </body>
 </html>
