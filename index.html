@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Услуги - krivoshein.su</title>
+  <style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 15px;
+      background: url('https://images.unsplash.com/photo-1507521628349-dee6b6724e18?q=80&w=1470&auto=format&fit=crop') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
+    }
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: #5282ff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .services-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .services-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3498db;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #e74c3c;
+      padding-bottom: 5px;
+    }
+    .services-header p {
+      font-size: 14px;
+      color: #ecf0f1;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 10px;
+      justify-items: center;
+      width: 100%;
+    }
+    .service-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      text-align: center;
+      transition: box-shadow 0.3s;
+      width: 100%;
+    }
+    .service-item:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+    .service-item i {
+      font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free", sans-serif !important;
+      font-size: 2rem;
+      color: #5282ff;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+    .service-item h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .service-item p {
+      font-size: 14px;
+      color: #ecf0f1;
+      line-height: 1.5;
+    }
+    @media (max-width: 890px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
+      .service-item {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+    }
+    @media (max-width: 480px) {
+      .services-wrapper {
+        padding: 15px;
+      }
+      .services-header {
+        margin-bottom: 15px;
+      }
+      .services-header h2 {
+        font-size: 18px;
+      }
+      .services-header p {
+        font-size: 12px;
+      }
+      .service-item {
+        padding: 10px;
+      }
+      .service-item h3 {
+        font-size: 14px;
+      }
+      .service-item p {
+        font-size: 12px;
+      }
+      .service-item i {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Услуги</a> |
+    <a href="resume.html">Резюме</a>
+  </nav>
+  <div class="services-wrapper">
+    <div class="services-header">
+      <h2>Услуги</h2>
+      <p>Индивидуальный подход и профессиональная реализация для вашего бизнеса</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-item">
+        <i class="fas fa-code"></i>
+        <h3>Кастомизация HTML/CSS/PHP</h3>
+        <p>Индивидуальная настройка и доработка вашего сайта под любые задачи.</p>
+      </div>
+      <div class="service-item">
+        <i class="fab fa-docker"></i>
+        <h3>Интеграция сервисов в Docker</h3>
+        <p>Оптимизация инфраструктуры с помощью Docker для стабильной работы приложений.</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-server"></i>
+        <h3>Настройка VPS</h3>
+        <p>Полная настройка виртуального сервера для надежной работы вашего проекта.</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-network-wired"></i>
+        <h3>Настройка сетевых служб</h3>
+        <p>Профессиональная настройка и управление сетевыми сервисами.</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-globe"></i>
+        <h3>Услуги по регистрации домена</h3>
+        <p>Помощь в подборе и регистрации домена для вашего бизнеса.</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-cloud"></i>
+        <h3>Настройки/Миграция в Облако</h3>
+        <p>Перенос вашего бизнеса в облачные сервисы для повышения гибкости.</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Безопасность сайта</h3>
+        <p>Анализ и устранение угроз, включая вредоносный код.</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-tachometer-alt"></i>
+        <h3>Оптимизация скорости сайта</h3>
+        <p>Ускорение загрузки сайта для улучшения пользовательского опыта.</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-project-diagram"></i>
+        <h3>Подключение к CDN</h3>
+        <p>Настройка и оптимизация CDN для ускорения сайта.</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-ad"></i>
+        <h3>Контекстная реклама</h3>
+        <p>Управление кампаниями в Яндекс.Директ для привлечения клиентов.</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-tools"></i>
+        <h3>Техническая поддержка сайта</h3>
+        <p>Профессиональная техподдержка для стабильной работы сайта.</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-search"></i>
+        <h3>SEO аудит сайта</h3>
+        <p>Комплексный анализ сайта для повышения его позиций.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
