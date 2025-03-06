@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Подключаем тему Midnight -->
   <link rel="stylesheet" href="https://pages-themes.github.io/midnight/assets/css/style.css">
-  <!-- Подключаем Font Awesome для иконок -->
+  <!-- Подключаем Font Awesome (при необходимости) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    /* Шапка сайта (добавляем вручную, т.к. тема не создает меню автоматически) */
+    /* Шапка сайта (добавляем вручную) */
     .site-header {
       text-align: center;
       margin-bottom: 20px;
@@ -28,14 +28,14 @@
     .site-nav a:hover {
       text-decoration: underline;
     }
-    
+
     /* Основная обёртка для контента */
     .page-content {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
-    
+
     /* Заголовки */
     h2 {
       font-size: 20px;
@@ -48,7 +48,7 @@
     h1, p {
       color: #fff;
     }
-    
+
     /* Блок услуг */
     .services-intro {
       margin-bottom: 20px;
@@ -84,7 +84,58 @@
       color: #ccc;
       margin-bottom: 15px;
     }
-    
+
+    /* Блок стоимости услуг (pricing-wrapper) */
+    .pricing-wrapper {
+      margin: 40px auto 20px auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    .pricing-wrapper h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3498db;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #e74c3c;
+      padding-bottom: 5px;
+    }
+    .pricing-wrapper p {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+    .pricing-wrapper p strong {
+      color: #fff;
+      font-weight: 600;
+    }
+    .pricing-wrapper ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    .pricing-wrapper ul li {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+    .pricing-wrapper a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #5282ff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+    .pricing-wrapper a:hover {
+      background: #3b6ad1;
+    }
+
     /* Бегущая строка "терминал" */
     .terminal-marquee {
       background: #000;
@@ -98,19 +149,37 @@
     .marquee-text {
       display: inline-block;
       white-space: nowrap;
-      animation: marquee 20s linear infinite;
+      /* Увеличиваем время анимации для более медленного движения */
+      animation: marquee 40s linear infinite;
     }
     @keyframes marquee {
-      0% { transform: translateX(100%); }
+      0%   { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
-    
+
     /* Футер */
     .site-footer {
       text-align: center;
       padding: 20px;
       color: #ccc;
       font-size: 14px;
+    }
+
+    /* Адаптивность (мобильные устройства) */
+    @media (max-width: 600px) {
+      .page-content {
+        padding: 10px;
+      }
+      .service-item {
+        padding: 15px;
+      }
+      .pricing-wrapper {
+        margin: 20px auto;
+        padding: 15px;
+      }
+      .marquee-text {
+        font-size: 13px;
+      }
     }
   </style>
 </head>
@@ -155,10 +224,30 @@
       </div>
     </section>
 
-    <!-- Бегущая строка как терминал -->
+    <!-- Блок стоимости услуг -->
+    <div class="pricing-wrapper">
+      <h2>Стоимость услуг</h2>
+      <p>Индивидуальный подход к каждой задаче.<br>Моя базовая ставка:<br><strong>2000 ₽/час</strong>.</p>
+      <ul>
+        <li>💡 Чем точнее описана задача, тем быстрее она будет выполнена.</li>
+        <li>🛠️ Финальная стоимость зависит от сложности проекта и ваших ожиданий.</li>
+        <li>📞 Первичная консультация — бесплатно.</li>
+      </ul>
+      <a href="https://krivoshein.su/p/f7dd5d/" target="_blank" rel="noopener">Обсудить проект</a>
+    </div>
+
+    <!-- Бегущая строка (терминал) -->
     <div class="terminal-marquee">
       <span class="marquee-text">
-        >>> Разработка сайтов: создание адаптивных сайтов под ключ, интеграция CMS (WordPress, Joomla), SEO-оптимизация, ускорение загрузки через CDN и кэширование... Настройка серверов: установка Linux/FreeBSD, настройка VPS, автоматизация через Ansible, обеспечение безопасности (SSL, фаерволы)... Облачные решения: миграция на Yandex Cloud, Cloud.ru, настройка масштабируемых решений... Контекстная реклама: настройка Яндекс.Директ, Google Ads, ремаркетинг, аналитика через Метрику и GA... Техподдержка: мониторинг, обновления, защита от DDoS... Аудит: проверка скорости, безопасности, SEO-позиций... Свяжитесь со мной для обсуждения вашего проекта! <<< >>> Разработка сайтов: создание адаптивных сайтов под ключ, интеграция CMS (WordPress, Joomla), SEO-оптимизация, ускорение загрузки через CDN и кэширование... Настройка серверов: установка Linux/Windows Server, настройка VPS, автоматизация через Ansible, обеспечение безопасности (SSL, фаерволы)... Облачные решения: миграция на Yandex Cloud, Cloud.ru, настройка масштабируемых решений... Контекстная реклама: настройка Яндекс.Директ, Google Ads, ремаркетинг, аналитика через Метрику и GA... Техподдержка: мониторинг, обновления, защита от DDoS... Аудит: проверка скорости, безопасности, SEO-позиций... Свяжитесь со мной для обсуждения вашего проекта! <<<
+        >>> Разработка сайтов, настройка серверов, облачные решения, контекстная реклама... Свяжитесь со мной для обсуждения вашего проекта! 
+        <<< Мои соцсети: 
+        <a href="tg://resolve?domain=drslon_channel" style="color:#00ff00;">Telegram</a>, 
+        <a href="https://vk.com/drslon_channel" style="color:#00ff00;">VK</a>, 
+        <a href="https://tenchat.ru/krivoshein" style="color:#00ff00;">TenChat</a>, 
+        <a href="https://github.com/A-Krivoshen" style="color:#00ff00;">GitHub</a>, 
+        <a href="https://www.linkedin.com/in/krivosheinaleksey/" style="color:#00ff00;">LinkedIn</a>, 
+        <a href="https://krivoshein.site/" style="color:#00ff00;">Сайт</a>
+        <<< 
       </span>
     </div>
   </main>
@@ -167,6 +256,7 @@
   <footer class="site-footer">
     <p>© <span id="year"></span> Алексей Кривошеин. Все права защищены.</p>
     <script>
+      // Динамический год в футере
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </footer>
