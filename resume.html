@@ -12,36 +12,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    /* Глобальные стили для корректного box-sizing */
-    * {
-      box-sizing: border-box;
-    }
-
-    /* Стили тела страницы */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 15px;
-      background: url('https://images.unsplash.com/photo-1507521628349-dee6b6724e18?q=80&w=1470&auto=format&fit=crop') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    /* Шапка */
+    /* Шапка, соцсети, навигация */
     .site-header {
       position: relative;
       text-align: center;
       margin-bottom: 20px;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.7); /* Темный полупрозрачный фон */
-      border-radius: 5px;
     }
     .site-header h1 {
       margin: 0;
       color: #5282ff;
       font-size: 24px;
     }
+    /* Блок справа в шапке: навигация + бургер + соцсети */
     .header-right {
       position: absolute;
       top: 20px;
@@ -50,6 +33,7 @@
       align-items: center;
       gap: 15px;
     }
+    /* Навигация (desktop) */
     .site-nav {
       display: flex;
       gap: 15px;
@@ -62,12 +46,14 @@
     .site-nav a:hover {
       text-decoration: underline;
     }
+    /* Бургер-иконка (мобильная) */
     .burger-icon {
       display: none;
       font-size: 24px;
       color: #5282ff;
       cursor: pointer;
     }
+    /* Соцсети */
     .social-links {
       display: flex;
       gap: 10px;
@@ -81,6 +67,7 @@
     .social-links a:hover {
       text-decoration: underline;
     }
+    /* Мобильное меню (изначально скрыто) */
     .mobile-menu {
       display: none;
       position: absolute;
@@ -103,6 +90,7 @@
     .mobile-menu a:hover {
       text-decoration: underline;
     }
+    /* На мобильных: скрываем десктоп-меню, показываем бургер */
     @media (max-width: 600px) {
       .site-nav {
         display: none;
@@ -110,11 +98,23 @@
       .burger-icon {
         display: block;
       }
+      /* Соцсети переходят в статичный блок под шапкой */
       .social-links {
         position: static;
         margin-top: 10px;
         justify-content: center;
       }
+    }
+
+    /* Стили тела страницы */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 15px;
+      background: url('https://images.unsplash.com/photo-1507521628349-dee6b6724e18?q=80&w=1470&auto=format&fit=crop') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
     }
 
     /* Основной контейнер */
@@ -320,10 +320,12 @@
         <i class="fas fa-bars burger-icon"></i>
       </div>
     </div>
+    <!-- Мобильное меню -->
     <nav class="mobile-menu" id="mobileMenu">
       <a href="index.html">Услуги</a>
       <a href="resume.html">Резюме</a>
     </nav>
+    <!-- Соцсети -->
     <div class="social-links">
       <a href="https://t.me/drslon_channel" target="_blank" rel="noopener">Telegram</a>
       <a href="https://vk.com/drslon_channel" target="_blank" rel="noopener">VK</a>
@@ -522,7 +524,7 @@
       const burgerIcon = document.querySelector('.burger-icon');
       const mobileMenu = document.getElementById('mobileMenu');
       burgerIcon.addEventListener('click', () => {
-        mobileMenu.style.display = (mobileMenu.style.display === 'block') ? 'none' : 'block';
+        mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
       });
     </script>
   </footer>
