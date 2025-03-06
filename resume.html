@@ -4,20 +4,28 @@
   <meta charset="UTF-8">
   <title>Резюме - Алексей Кривошеин</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Подключаем базовые стили темы Midnight -->
+  <!-- Подключаем тему Midnight -->
   <link rel="stylesheet" href="https://pages-themes.github.io/midnight/assets/css/style.css">
-  <!-- (Опционально) Подключаем Font Awesome, если нужны иконки -->
+  <!-- Подключаем Font Awesome (для иконки бургер-меню, если нужно) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
-    /* Шапка сайта (добавляем вручную, так как тема не создает меню автоматически) */
+    /* Шапка */
     .site-header {
+      position: relative;
       text-align: center;
       margin-bottom: 20px;
       padding: 20px;
     }
     .site-header h1 {
       margin: 0;
-      color: #5282ff; /* Цвет заголовка */
+      color: #5282ff;
+    }
+
+    /* Навигация (десктоп) */
+    .site-nav {
+      display: inline-block; /* Чтобы меню шло в одну строку */
+      margin-left: 15px;
     }
     .site-nav a {
       color: #5282ff;
@@ -29,7 +37,68 @@
       text-decoration: underline;
     }
 
-    /* Основной блок контента (две колонки) */
+    /* Соцсети справа (добавляем, как раньше) */
+    .social-links {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    .social-links a {
+      color: #5282ff;
+      text-decoration: none;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Бургер-иконка (мобильная) */
+    .burger-icon {
+      display: none;          /* Скрыта на десктопе */
+      position: absolute;
+      top: 25px;
+      right: 20px;
+      font-size: 24px;
+      color: #5282ff;
+      cursor: pointer;
+    }
+
+    /* Скрываем меню на мобильном, если оно не активно */
+    @media (max-width: 600px) {
+      .site-nav {
+        display: none; /* По умолчанию скрыто на мобильном */
+        position: absolute;
+        top: 60px;      /* под шапкой */
+        right: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .site-nav a {
+        display: block;
+        margin: 5px 0;
+        font-size: 16px;
+      }
+
+      .burger-icon {
+        display: block; /* Показываем бургер-иконку */
+      }
+      .social-links {
+        position: static; /* Чтобы не перекрывало бургер */
+        margin-top: 10px;
+        justify-content: center;
+      }
+    }
+
+    /* Меню в мобильном, если активно (через класс .active) */
+    .site-nav.active {
+      display: block; /* Показываем меню */
+    }
+
+    /* Две колонки */
     .page-content {
       display: flex;
       gap: 20px;
@@ -39,7 +108,6 @@
     }
     .left-column, .right-column {
       flex: 1;
-      /* Не задаем фон, используем фон темы Midnight */
       padding: 20px;
       border-radius: 5px;
     }
@@ -60,8 +128,7 @@
       margin-bottom: 5px;
     }
     h1, p, li, .company, .issuer {
-      /* Указываем белый/светлый цвет текста, чтобы не сливался с темным фоном */
-      color: #fff;
+      color: #fff; /* Тёмный фон темы Midnight */
     }
 
     /* Контактная информация */
@@ -78,7 +145,7 @@
       text-decoration: underline;
     }
 
-    /* Опыт работы (experience) */
+    /* Опыт работы */
     .experience {
       margin-bottom: 15px;
       padding-bottom: 15px;
@@ -101,7 +168,7 @@
       margin-bottom: 5px;
     }
 
-    /* Блок 'О себе' */
+    /* О себе */
     .about-section {
       display: flex;
       align-items: center;
@@ -161,10 +228,25 @@
   <!-- Шапка -->
   <header class="site-header">
     <h1>Кривошеин Алексей Сергеевич</h1>
+
+    <!-- Иконка бургер-меню (мобильная) -->
+    <i class="fas fa-bars burger-icon" style="display:none;"></i>
+
+    <!-- Навигация -->
     <nav class="site-nav">
       <a href="index.html">Услуги</a>
       <a href="resume.html">Резюме</a>
     </nav>
+
+    <!-- Соцсети справа (как на index.html) -->
+    <div class="social-links">
+      <a href="https://t.me/drslon_channel" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://vk.com/drslon_channel" target="_blank" rel="noopener">VK</a>
+      <a href="https://tenchat.ru/krivoshein" target="_blank" rel="noopener">TenChat</a>
+      <a href="https://github.com/A-Krivoshen" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/krivosheinaleksey/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://krivoshein.site/" target="_blank" rel="noopener">Сайт</a>
+    </div>
   </header>
 
   <!-- Основной блок контента -->
@@ -214,150 +296,150 @@
         <div class="experience">
           <div class="period">2009</div>
           <div class="job-title">Старший системный администратор</div>
-          <div class="company">ГК "Независимость"</div>
+          <div class="company">ГК \"Независимость\"</div>
           <div>Централизованное администрирование сети</div>
         </div>
         <div class="experience">
           <div class="period">2006-2008</div>
-          <div class="job-title">Инженер АСКУЭ</div>
-          <div class="company">ЗАО "Трансэнерком"</div>
+          <div class="job-title\">Инженер АСКУЭ</div>
+          <div class=\"company\">ЗАО \"Трансэнерком\"</div>
           <div>Развитие систем энергоучета</div>
         </div>
-        <div class="experience">
-          <div class="period">2004-2005</div>
-          <div class="job-title">Специалист отдела управления ИТ</div>
-          <div class="company">ЗАО "ТПГ ТЕРНА"</div>
+        <div class=\"experience\">
+          <div class=\"period\">2004-2005</div>
+          <div class=\"job-title\">Специалист отдела управления ИТ</div>
+          <div class=\"company\">ЗАО \"ТПГ ТЕРНА\"</div>
         </div>
-        <div class="experience">
-          <div class="period">2001-2004</div>
-          <div class="job-title">Старший специалист компьютерного отдела</div>
-          <div class="company">ОАО "Седьмой Континент"</div>
+        <div class=\"experience\">
+          <div class=\"period\">2001-2004</div>
+          <div class=\"job-title\">Старший специалист компьютерного отдела</div>
+          <div class=\"company\">ОАО \"Седьмой Континент\"</div>
         </div>
       </section>
     </div>
 
     <!-- Правая колонка -->
-    <div class="right-column">
-      <div class="about-section">
-        <div style="flex: 1;">
+    <div class=\"right-column\">
+      <div class=\"about-section\">
+        <div style=\"flex: 1;\">
           <h3>О себе</h3>
           <p>Профессионал в области веб-разработки, SEO и системного администрирования.</p>
         </div>
         <img 
-          src="https://raw.githubusercontent.com/A-Krivoshen/site/main/logo_me_mini.png" 
-          alt="Фото">
+          src=\"https://raw.githubusercontent.com/A-Krivoshen/site/main/logo_me_mini.png\" 
+          alt=\"Фото\">
       </div>
 
       <h2>Образование</h2>
-      <div class="education">
-        <div class="period">2004</div>
-        <div class="edu-title">КГПУ</div>
-        <div class="issuer">Межвузовский инженерно-педагогический факультет</div>
+      <div class=\"education\">
+        <div class=\"period\">2004</div>
+        <div class=\"edu-title\">КГПУ</div>
+        <div class=\"issuer\">Межвузовский инженерно-педагогический факультет</div>
       </div>
-      <div class="education">
-        <div class="period">2017</div>
-        <div class="edu-title">Нетология</div>
-        <div class="issuer">Москва</div>
+      <div class=\"education\">
+        <div class=\"period\">2017</div>
+        <div class=\"edu-title\">Нетология</div>
+        <div class=\"issuer\">Москва</div>
         <div>
-          <a href="https://krivoshein.site/wp-content/uploads/2024/11/povushenia_kvalificacia-scaled.jpg" 
-             target="_blank" rel="noopener">
+          <a href=\"https://krivoshein.site/wp-content/uploads/2024/11/povushenia_kvalificacia-scaled.jpg\" 
+             target=\"_blank\" rel=\"noopener\">
             Повышение квалификации: HTML-верстка
           </a>
         </div>
       </div>
 
       <h2>Сертификаты</h2>
-      <div class="certificate">
-        <div class="period">2025</div>
-        <div class="cert-title">Яндекс Директ</div>
-        <div class="issuer">Яндекс</div>
+      <div class=\"certificate\">
+        <div class=\"period\">2025</div>
+        <div class=\"cert-title\">Яндекс Директ</div>
+        <div class=\"issuer\">Яндекс</div>
         <div>
-          <a href="https://yandex.ru/adv/expert/certificates?certId=283001&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" 
-             target="_blank" rel="noopener">
+          <a href=\"https://yandex.ru/adv/expert/certificates?certId=283001&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD\" 
+             target=\"_blank\" rel=\"noopener\">
              Сертификат
           </a>
         </div>
       </div>
-      <div class="certificate">
-        <div class="period">2024</div>
-        <div class="cert-title">Яндекс Директ</div>
-        <div class="issuer">Яндекс</div>
+      <div class=\"certificate\">
+        <div class=\"period\">2024</div>
+        <div class=\"cert-title\">Яндекс Директ</div>
+        <div class=\"issuer\">Яндекс</div>
         <div>
-          <a href="https://yandex.ru/adv/expert/certificates?certId=262485&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" 
-             target="_blank" rel="noopener">
+          <a href=\"https://yandex.ru/adv/expert/certificates?certId=262485&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD\" 
+             target=\"_blank\" rel=\"noopener\">
              Сертификат
           </a>
         </div>
       </div>
-      <div class="certificate">
-        <div class="period">2021</div>
-        <div class="cert-title">Основы интернет-маркетинга</div>
-        <div class="issuer">Google Inc.</div>
+      <div class=\"certificate\">
+        <div class=\"period\">2021</div>
+        <div class=\"cert-title\">Основы интернет-маркетинга</div>
+        <div class=\"issuer\">Google Inc.</div>
         <div>
-          <a href="https://skillshop.exceedlms.com/student/award/KWPAZ1mheXts6XzmUQ3GZTkv" 
-             target="_blank" rel="noopener">
+          <a href=\"https://skillshop.exceedlms.com/student/award/KWPAZ1mheXts6XzmUQ3GZTkv\" 
+             target=\"_blank\" rel=\"noopener\">
              Сертификат
           </a>
         </div>
       </div>
-      <div class="certificate">
-        <div class="period">2018</div>
-        <div class="cert-title">Курс «Веб Мастер»</div>
-        <div class="issuer">GeekBrains</div>
+      <div class=\"certificate\">
+        <div class=\"period\">2018</div>
+        <div class=\"cert-title\">Курс «Веб Мастер»</div>
+        <div class=\"issuer\">GeekBrains</div>
         <div>
-          <a href="https://gb.ru/certificates/444514.en" 
-             target="_blank" rel="noopener">
+          <a href=\"https://gb.ru/certificates/444514.en\" 
+             target=\"_blank\" rel=\"noopener\">
              Website development by CMS
           </a>
         </div>
       </div>
-      <div class="certificate">
-        <div class="period">2018</div>
-        <div class="cert-title">Курсы</div>
-        <div class="issuer">mail.ru</div>
+      <div class=\"certificate\">
+        <div class=\"period\">2018</div>
+        <div class=\"cert-title\">Курсы</div>
+        <div class=\"issuer\">mail.ru</div>
         <div>
-          <a href="https://gb.ru/certificates/426422" 
-             target="_blank" rel="noopener">
+          <a href=\"https://gb.ru/certificates/426422\" 
+             target=\"_blank\" rel=\"noopener\">
              Html+Css
           </a> | 
-          <a href="https://geekbrains.ru/certificates/444951.en" 
-             target="_blank" rel="noopener">
+          <a href=\"https://geekbrains.ru/certificates/444951.en\" 
+             target=\"_blank\" rel=\"noopener\">
              PHP
           </a> | 
-          <a href="https://geekbrains.ru/certificates/453666.en" 
-             target="_blank" rel="noopener">
+          <a href=\"https://geekbrains.ru/certificates/453666.en\" 
+             target=\"_blank\" rel=\"noopener\">
              Linux
           </a> | 
-          <a href="https://geekbrains.ru/certificates/453666.en" 
-             target="_blank" rel="noopener">
+          <a href=\"https://geekbrains.ru/certificates/453666.en\" 
+             target=\"_blank\" rel=\"noopener\">
              English
           </a>
         </div>
       </div>
-      <div class="certificate">
-        <div class="period">2005-2006</div>
-        <div class="cert-title">Microsoft</div>
-        <div class="issuer">Москва</div>
+      <div class=\"certificate\">
+        <div class=\"period\">2005-2006</div>
+        <div class=\"cert-title\">Microsoft</div>
+        <div class=\"issuer\">Москва</div>
         <div>
-          <a href="https://learn.microsoft.com/ru-ru/users/94294613/transcript/v2zelcogoxkm66n" 
-             target="_blank" rel="noopener">
+          <a href=\"https://learn.microsoft.com/ru-ru/users/94294613/transcript/v2zelcogoxkm66n\" 
+             target=\"_blank\" rel=\"noopener\">
              MCSA 2003 Security
           </a>
         </div>
       </div>
-      <div class="certificate">
-        <div class="period">Текущий</div>
-        <div class="cert-title">Cloud.ru</div>
-        <div class="issuer">Cloud Fundamentals</div>
+      <div class=\"certificate\">
+        <div class=\"period\">Текущий</div>
+        <div class=\"cert-title\">Cloud.ru</div>
+        <div class=\"issuer\">Cloud Fundamentals</div>
         <div>
-          <a href="https://awardme.ru/ru/users/aleksei-krivoshein-681f2de0" 
-             target="_blank" rel="noopener">
+          <a href=\"https://awardme.ru/ru/users/aleksei-krivoshein-681f2de0\" 
+             target=\"_blank\" rel=\"noopener\">
              Бейдж
           </a>
         </div>
       </div>
 
-      <section class="skills">
+      <section class=\"skills\">
         <h2>Ключевые навыки</h2>
         <ul>
           <li>Настройка серверов Linux</li>
@@ -373,24 +455,36 @@
       </section>
 
       <h2>Языки</h2>
-      <div style="font-size: 14px; color: #fff;">Русский</div>
-      <div style="background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
-        <div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 100%;"></div>
+      <div style=\"font-size: 14px; color: #fff;\">Русский</div>
+      <div style=\"background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;\">
+        <div style=\"background-color: #5282ff; height: 100%; border-radius: 5px; width: 100%;\"></div>
       </div>
-      <div style="font-size: 14px; color: #fff;">Английский</div>
-      <div style="background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
-        <div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 60%;"></div>
+      <div style=\"font-size: 14px; color: #fff;\">Английский</div>
+      <div style=\"background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;\">
+        <div style=\"background-color: #5282ff; height: 100%; border-radius: 5px; width: 60%;\"></div>
       </div>
     </div>
   </div>
 
   <!-- Футер -->
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Алексей Кривошеин. Все права защищены.</p>
+  <footer class=\"site-footer\">
+    <p>© <span id=\"year\"></span> Алексей Кривошеин. Все права защищены.</p>
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+      document.getElementById(\"year\").textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Скрипт для бургер-меню (переключение) -->
+    <script>
+      const burgerIcon = document.createElement('i');
+      burgerIcon.classList.add('fas', 'fa-bars', 'burger-icon');
+      // Вставляем бургер-иконку в .site-header
+      document.querySelector('.site-header').appendChild(burgerIcon);
+
+      // При клике на бургер переключаем класс .active у .site-nav
+      burgerIcon.addEventListener('click', () => {
+        document.querySelector('.site-nav').classList.toggle('active');
+      });
     </script>
   </footer>
-
 </body>
 </html>
