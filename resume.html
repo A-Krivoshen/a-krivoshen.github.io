@@ -50,6 +50,52 @@
       list-style: disc;
       margin-left: 20px;
     }
+    /* Дополнительные стили для резюме */
+    .contact-info {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .contact-info a {
+      color: #5282ff;
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    .profile-photo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile-photo img {
+      max-width: 150px;
+      border-radius: 50%;
+    }
+    .period {
+      display: inline-block;
+      font-size: 12px;
+      padding: 3px 6px;
+      margin-bottom: 8px;
+      border: 2px solid #5282ff;
+      border-radius: 3px;
+      background: rgba(0, 0, 0, 0.05);
+      color: #5282ff;
+    }
+    .job-title, .cert-title, .edu-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    .company, .issuer {
+      font-size: 14px;
+      color: #555;
+      margin: 3px 0 8px;
+    }
+    .skills ul {
+      margin: 8px 0;
+      padding-left: 15px;
+    }
   </style>
 </head>
 <body>
@@ -65,11 +111,16 @@
   <!-- Основное содержимое -->
   <main class="content-wrapper">
     <section id="personal-info" class="section">
+      <div class="profile-photo">
+        <!-- Используем raw URL для фото с GitHub -->
+        <img src="https://raw.githubusercontent.com/A-Krivoshen/site/main/logo_me_mini.png" alt="Фото Алексея Кривошеина">
+      </div>
       <h2>Алексей Кривошеин</h2>
-      <p>
+      <p class="contact-info">
         <strong>Email:</strong> <a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a><br>
         <strong>Телефон:</strong> +7 (963) 664-16-15<br>
-        <strong>Город:</strong> Москва
+        <strong>Город:</strong> Москва<br>
+        <strong>Telegram:</strong> <a href="https://t.me/DrSlon" target="_blank" rel="noopener">https://t.me/DrSlon</a>
       </p>
     </section>
 
@@ -77,15 +128,29 @@
       <h2>Опыт работы</h2>
       <ul>
         <li>
-          <strong>ИП Кривошеин А.С. (2021 - Текущий)</strong> – Настройка серверов, разработка и поддержка сайтов, SEO-продвижение.
+          <strong>ИП Кривошеин А.С. (2021 - Текущий)</strong> – Настройка и поддержка серверов Linux, разработка сайтов разных типов, доработка существующих проектов, продвижение сайтов в поисковых системах, SEO-продвижение, аудит и повышение эффективности.
         </li>
         <li>
-          <strong>Самозанятый (2017-2021)</strong> – Продвижение сайтов на CMS WordPress, запуск и поддержка проектов.
+          <strong>Самозанятый (2017-2021)</strong> – Продвижение сайтов на CMS WordPress, запуск и поддержка различных проектов.
         </li>
         <li>
-          <strong>Инженер Microsoft (2010-2012)</strong> – Ай-Теко (I-Teco). SCMS, SCOM, ADMT, миграция.
+          <strong>Инженер Microsoft (2010-2012)</strong> – Компания Ай-Теко (I-Teco). Работа с SCMS, SCOM, ADMT, миграция систем.
         </li>
-        <!-- Добавьте остальной опыт по необходимости -->
+        <li>
+          <strong>Инженер технической дирекции (2009-2010)</strong> – INLINE Technologies. Развитие системного каталога и мониторинга.
+        </li>
+        <li>
+          <strong>Старший системный администратор (2009)</strong> – ГК "Независимость". Централизованное администрирование сети.
+        </li>
+        <li>
+          <strong>Инженер АСКУЭ (2006-2008)</strong> – ЗАО "Трансэнерком". Развитие систем энергоучета.
+        </li>
+        <li>
+          <strong>Специалист отдела управления ИТ (2004-2005)</strong> – ЗАО "ТПГ ТЕРНА".
+        </li>
+        <li>
+          <strong>Старший специалист компьютерного отдела (2001-2004)</strong> – ОАО "Седьмой Континент".
+        </li>
       </ul>
     </section>
 
@@ -96,7 +161,7 @@
           <strong>КГПУ (2004)</strong> – Межвузовский инженерно-педагогический факультет.
         </li>
         <li>
-          <strong>Нетология (2017)</strong> – Повышение квалификации: HTML-верстка.
+          <strong>Нетология (2017)</strong> – Повышение квалификации: HTML-верстка (Москва).
         </li>
       </ul>
     </section>
@@ -104,9 +169,42 @@
     <section id="certificates" class="section">
       <h2>Сертификаты</h2>
       <ul>
-        <li>Яндекс Директ (2025)</li>
-        <li>Основы интернет-маркетинга (2021, Google Inc.)</li>
-        <!-- Добавьте остальные сертификаты -->
+        <li>
+          <strong>Яндекс Директ (2025)</strong> – Сертификат от Яндекса.
+        </li>
+        <li>
+          <strong>Яндекс Директ (2024)</strong> – Второй сертификат от Яндекса.
+        </li>
+        <li>
+          <strong>Основы интернет-маркетинга (2021)</strong> – Сертификат от Google Inc.
+        </li>
+        <li>
+          <strong>Курс «Веб Мастер» (2018)</strong> – GeekBrains: Website development by CMS.
+        </li>
+        <li>
+          <strong>Курсы (2018)</strong> – mail.ru: <a href="https://gb.ru/certificates/426422" target="_blank" rel="noopener">Html+Css</a> | <a href="https://geekbrains.ru/certificates/444951.en" target="_blank" rel="noopener">PHP</a> | <a href="https://geekbrains.ru/certificates/453666.en" target="_blank" rel="noopener">Linux</a> | <a href="https://geekbrains.ru/certificates/453666.en" target="_blank" rel="noopener">English</a>
+        </li>
+        <li>
+          <strong>Microsoft (2005-2006)</strong> – MCSA 2003 Security, Москва.
+        </li>
+        <li>
+          <strong>Cloud.ru (Текущий)</strong> – Cloud Fundamentals, бейдж: <a href="https://awardme.ru/ru/users/aleksei-krivoshein-681f2de0" target="_blank" rel="noopener">Бейдж</a>.
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Ключевые навыки</h2>
+      <ul class="skills">
+        <li>Настройка серверов Linux</li>
+        <li>Разработка сайтов (HTML, CSS, PHP)</li>
+        <li>SEO-продвижение</li>
+        <li>Анализ и аудит сайтов</li>
+        <li>Работа с CMS (WordPress)</li>
+        <li>Системное администрирование</li>
+        <li>DevOps</li>
+        <li>Интернет-маркетинг (Яндекс Директ)</li>
+        <li>Английский язык (уровень B1)</li>
       </ul>
     </section>
   </main>
