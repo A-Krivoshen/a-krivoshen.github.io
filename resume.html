@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Резюме - Кривошеин Алексей Сергеевич</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Фавикон (при необходимости) -->
+  <!-- Фавикон -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- Подключаем тему Midnight (как в index.html) -->
   <link rel="stylesheet" href="https://pages-themes.github.io/midnight/assets/css/style.css">
@@ -12,6 +12,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
+    /* Сбрасываем отступы body, чтобы не было лишних полей */
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
     /* ========== ШАПКА ========== */
     .site-header {
       margin-bottom: 20px;
@@ -23,10 +29,10 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      position: relative;
       gap: 10px;
+      position: relative;
     }
-    /* На мобильных заставляем h1 занимать 100% */
+    /* На мобильных h1 растягивается на всю ширину */
     @media (max-width: 600px) {
       .header-top h1 {
         flex-basis: 100%;
@@ -306,8 +312,7 @@
   </style>
 </head>
 <body>
-
-  <!-- Шапка -->
+  <!-- Шапка (идентична index.html) -->
   <header class="site-header">
     <div class="header-top">
       <h1>Кривошеин Алексей Сергеевич</h1>
@@ -317,18 +322,16 @@
           <a href="index.html">Услуги</a>
           <a href="resume.html">Резюме</a>
         </nav>
-        <!-- Бургер (mobile) -->
+        <!-- Иконка бургер (mobile) -->
         <i class="fas fa-bars burger-icon"></i>
       </div>
     </div>
-
     <!-- Мобильное меню -->
     <nav class="mobile-menu" id="mobileMenu">
       <a href="index.html">Услуги</a>
       <a href="resume.html">Резюме</a>
     </nav>
-
-    <!-- Соцсети -->
+    <!-- Соцсети (как в index.html) -->
     <div class="social-links">
       <a href="https://t.me/drslon_channel" target="_blank" rel="noopener">Telegram</a>
       <a href="https://vk.com/drslon_channel" target="_blank" rel="noopener">VK</a>
@@ -339,7 +342,7 @@
     </div>
   </header>
 
-  <!-- Основное содержимое (две колонки с резюме) -->
+  <!-- Основное содержимое (две колонки: резюме) -->
   <main class="page-content">
     <!-- Левая колонка -->
     <div class="left-column">
@@ -564,7 +567,7 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-    <!-- Скрипт для бургер-меню -->
+    <!-- Скрипт бургер-меню -->
     <script>
       const burgerIcon = document.querySelector('.burger-icon');
       const mobileMenu = document.getElementById('mobileMenu');
