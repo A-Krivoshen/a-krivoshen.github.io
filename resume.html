@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Фавикон -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- Тема Midnight (как в index.html) -->
+  <!-- Подключаем тему Midnight (как в index.html) -->
   <link rel="stylesheet" href="https://pages-themes.github.io/midnight/assets/css/style.css">
-  <!-- Font Awesome (иконки) -->
+  <!-- Подключаем Font Awesome (для иконок) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    /* ========== ШАПКА ========== */
+    /* ========== ШАПКА (как в index.html) ========== */
     .site-header {
       position: relative;
       text-align: center;
@@ -27,7 +27,6 @@
       gap: 10px;
       position: relative;
     }
-    /* На мобильных h1 занимает всю ширину */
     @media (max-width: 600px) {
       .header-top h1 {
         flex-basis: 100%;
@@ -40,14 +39,12 @@
       font-size: 24px;
       font-weight: 700;
     }
-    /* Блок справа: навигация (desktop) + бургер (mobile) */
     .header-right {
       margin-left: auto;
       display: flex;
       align-items: center;
       gap: 15px;
     }
-    /* Навигация (desktop) */
     .site-nav {
       display: flex;
       gap: 15px;
@@ -60,14 +57,12 @@
     .site-nav a:hover {
       text-decoration: underline;
     }
-    /* Бургер (mobile) */
     .burger-icon {
       display: none;
       font-size: 24px;
       color: #5282ff;
       cursor: pointer;
     }
-    /* На мобильных скрываем десктоп-меню, показываем бургер */
     @media (max-width: 600px) {
       .site-nav {
         display: none;
@@ -76,7 +71,7 @@
         display: block;
       }
     }
-    /* Соцсети (под шапкой), центрируем */
+    /* Соцсети (как в index.html), центрируем */
     .social-links {
       display: flex;
       gap: 10px;
@@ -117,7 +112,7 @@
       text-decoration: underline;
     }
 
-    /* ========== БЛОК REZUME (аналог services-wrapper) ========== */
+    /* ========== БЛОК РЕЗЮМЕ (как блок услуг) ========== */
     .resume-wrapper {
       background: rgba(255, 255, 255, 0.1);
       box-sizing: border-box;
@@ -125,7 +120,7 @@
       margin-bottom: 30px;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      text-align: center; /* Текст по центру */
+      text-align: center; /* Заголовок по центру */
     }
     .resume-header {
       text-align: center;
@@ -136,7 +131,7 @@
       font-weight: 700;
       color: #3498db;
       margin-bottom: 10px;
-      border-bottom: 2px solid #e74c3c; /* Красная линия, как в Услугах */
+      border-bottom: 2px solid #e74c3c; /* красная линия под заголовком */
       padding-bottom: 5px;
     }
     .resume-header p {
@@ -144,17 +139,15 @@
       color: #ecf0f1;
       margin: 0;
     }
-
-    /* Сетка для двух колонок */
+    /* Сетка (две колонки) для резюме */
     .resume-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      gap: 30px; /* Как в услугах */
       justify-items: center;
       width: 100%;
       box-sizing: border-box;
     }
-    /* Колонка резюме */
     .resume-column {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
@@ -163,7 +156,7 @@
       text-align: left;
       transition: box-shadow 0.3s;
       width: 100%;
-      max-width: 600px;
+      max-width: 600px; /* при желании можно убрать или изменить */
     }
     .resume-column:hover {
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
@@ -188,11 +181,11 @@
       text-decoration: underline;
     }
 
-    /* Опыт, образование, сертификаты, навыки */
+    /* Опыт, образование, сертификаты, навыки, языки */
     .experience, .certificate, .education {
       margin-bottom: 15px;
       padding-bottom: 15px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
     }
     .experience:last-child, .certificate:last-child, .education:last-child {
       border-bottom: none;
@@ -204,7 +197,7 @@
       margin-bottom: 8px;
       border: 2px solid #5282ff;
       border-radius: 3px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.1);
       color: #5282ff;
       text-align: center;
     }
@@ -246,15 +239,7 @@
       border: 2px solid #5282ff;
     }
 
-    /* ========== ФУТЕР ========== */
-    .site-footer {
-      text-align: center;
-      padding: 20px;
-      color: #ccc;
-      font-size: 14px;
-    }
-
-    /* Адаптивность */
+    /* Адаптивность для двух колонок резюме */
     @media (max-width: 600px) {
       .resume-grid {
         grid-template-columns: 1fr;
@@ -282,10 +267,18 @@
         margin: 0 auto 10px auto;
       }
     }
+
+    /* ========== ФУТЕР ========== */
+    .site-footer {
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
-  <!-- Шапка (идентичная index.html) -->
+  <!-- Шапка (точь-в-точь как в index.html) -->
   <header class="site-header">
     <div class="header-top">
       <h1>Кривошеин Алексей Сергеевич</h1>
@@ -302,7 +295,7 @@
       <a href="index.html">Услуги</a>
       <a href="resume.html">Резюме</a>
     </nav>
-    <!-- Соцсети (как в index.html) -->
+    <!-- Соцсети -->
     <div class="social-links">
       <a href="https://t.me/drslon_channel" target="_blank" rel="noopener">Telegram</a>
       <a href="https://vk.com/drslon_channel" target="_blank" rel="noopener">VK</a>
@@ -313,14 +306,14 @@
     </div>
   </header>
 
-  <!-- Аналог services-wrapper, но для резюме -->
+  <!-- Блок "Резюме" (аналог "Услуги") -->
   <section class="resume-wrapper">
     <div class="resume-header">
       <h2>Резюме</h2>
       <p>Подробная информация о моём опыте и навыках</p>
     </div>
 
-    <!-- Сетка для двух колонок -->
+    <!-- Сетка из двух колонок (аналог "services-grid") -->
     <div class="resume-grid">
       <!-- Левая колонка -->
       <div class="resume-column">
@@ -385,6 +378,7 @@
           <div class="company">ОАО "Седьмой Континент"</div>
         </div>
       </div>
+
       <!-- Правая колонка -->
       <div class="resume-column">
         <div class="about-section">
@@ -535,7 +529,7 @@
     </div>
   </section>
 
-  <!-- Футер -->
+  <!-- Футер (как в index.html) -->
   <footer class="site-footer">
     <p>© <span id="year"></span> Кривошеин Алексей Сергеевич. Все права защищены.</p>
     <script>
