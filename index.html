@@ -2,281 +2,116 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Обо мне и услуги — Алексей Кривошеин</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Услуги - krivoshein.su</title>
+  <!-- Подключаем CSS темы Midnight -->
+  <link rel="stylesheet" href="https://pages-themes.github.io/midnight/assets/css/main.css">
   <style>
-    /* Сброс базовых отступов */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* Переопределение темы: белый фон, более светлые блоки */
     body {
-      font-family: Arial, sans-serif;
+      background-color: #fff !important;
       color: #333;
-      line-height: 1.6;
     }
-
-    /* Шапка (необязательно) */
-    header {
-      background-color: #5282ff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
+    a {
+      color: #5282ff !important;
     }
-    header h1 {
-      font-size: 24px;
-    }
-
-    /* Секция ОБО МНЕ */
-    .about-section {
-      background-color: #f8f8f8;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .about-wrapper {
-      max-width: 800px;
-      margin: 0 auto;
+    .site-header, .site-footer {
       background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 30px;
-    }
-    .about-photo {
-      width: 130px;
-      height: 130px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
-    .about-wrapper h2 {
-      font-size: 24px;
       color: #333;
-      margin-bottom: 5px;
-    }
-    .about-wrapper h3 {
-      font-size: 16px;
-      font-weight: normal;
-      color: #888;
-      margin-bottom: 15px;
-    }
-    .about-wrapper p {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 20px;
-      line-height: 1.4;
-    }
-    .social-links {
-      margin-top: 20px;
-    }
-    .social-links a {
-      display: inline-block;
-      margin: 0 10px;
-      color: #5282ff;
-      font-size: 18px;
-      text-decoration: none;
-    }
-    .social-links a:hover {
-      color: #2d6ce0;
-    }
-
-    /* Секция УСЛУГИ */
-    .services-section {
-      background: url('https://images.unsplash.com/photo-1507521628349-dee6b6724e18?q=80&w=1470&auto=format&fit=crop') 
-                  no-repeat center center fixed;
-      background-size: cover;
-      padding: 40px 20px;
-      color: #fff;
-    }
-    .services-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: rgba(0, 0, 0, 0.7);
+      border-bottom: 1px solid #ddd;
       padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-    .services-header {
       text-align: center;
-      margin-bottom: 20px;
     }
-    .services-header h2 {
-      font-size: 24px;
-      font-weight: 700;
-      color: #3498db;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #e74c3c;
-      display: inline-block;
-      padding-bottom: 5px;
+    .site-nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 18px;
     }
-    .services-header p {
-      font-size: 14px;
-      color: #ecf0f1;
+    .site-nav a:hover {
+      text-decoration: underline;
     }
+    .content-wrapper {
+      background-color: #fff !important;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    /* Секция услуг */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 0 10px;
-      justify-items: center;
-      width: 100%;
+      margin-top: 20px;
     }
     .service-item {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      padding: 15px;
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
       text-align: center;
-      transition: box-shadow 0.3s;
-      width: 100%;
+      transition: transform 0.3s ease;
     }
     .service-item:hover {
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-    }
-    .service-item i {
-      font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free", sans-serif !important;
-      font-size: 2rem;
-      color: #5282ff;
-      margin-bottom: 15px;
-      display: inline-block;
+      transform: translateY(-5px);
     }
     .service-item h3 {
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
+      font-size: 18px;
       margin-bottom: 10px;
+      color: #333;
     }
     .service-item p {
       font-size: 14px;
-      color: #ecf0f1;
-      line-height: 1.5;
-    }
-
-    /* Футер (необязательно) */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: #fff;
-    }
-
-    /* Адаптивность */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 20px;
-      }
-      .about-wrapper h2 {
-        font-size: 20px;
-      }
-      .services-header h2 {
-        font-size: 20px;
-      }
+      color: #555;
+      margin-bottom: 15px;
     }
   </style>
 </head>
 <body>
-
-  <!-- Шапка сайта (необязательно) -->
-  <header>
+  <!-- Шапка сайта -->
+  <header class="site-header">
     <h1>Алексей Кривошеин</h1>
+    <nav class="site-nav">
+      <a href="index.html">Услуги</a>
+      <a href="resume.html">Резюме</a>
+    </nav>
   </header>
 
-  <!-- Секция ОБО МНЕ -->
-  <section class="about-section" id="about">
-    <div class="about-wrapper">
-      <img src="logo_me_mini.png" alt="Фото Алексея" class="about-photo">
-      <h2>Алексей Кривошеин</h2>
-      <h3>Специалист по веб-разработке и администрированию</h3>
-      <p>
-        Занимаюсь разработкой и оптимизацией сайтов, настройкой серверов и продвижением в интернете. 
-        Помогаю бизнесам автоматизировать процессы и повышать эффективность онлайн-проектов.
-      </p>
-      <div class="social-links">
-        <a href="https://t.me/DrSlon" target="_blank" rel="noopener">
-          <i class="fab fa-telegram"></i> Telegram
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Секция УСЛУГИ -->
-  <section class="services-section" id="services">
-    <div class="services-wrapper">
-      <div class="services-header">
-        <h2>Услуги</h2>
-        <p>Индивидуальный подход и профессиональная реализация для вашего бизнеса</p>
-      </div>
+  <!-- Основное содержимое -->
+  <main class="content-wrapper">
+    <section id="services">
+      <h2>Наши услуги</h2>
+      <p>Индивидуальный подход и профессиональная реализация для вашего бизнеса</p>
       <div class="services-grid">
         <div class="service-item">
-          <i class="fas fa-code"></i>
-          <h3>Кастомизация HTML/CSS/PHP</h3>
-          <p>Индивидуальная настройка и доработка вашего сайта под любые задачи.</p>
+          <h3>Разработка сайтов</h3>
+          <p>Создание уникальных сайтов под ключ с использованием современных технологий.</p>
         </div>
         <div class="service-item">
-          <i class="fab fa-docker"></i>
-          <h3>Интеграция сервисов в Docker</h3>
-          <p>Оптимизация инфраструктуры с помощью Docker для стабильной работы приложений.</p>
+          <h3>Настройка серверов</h3>
+          <p>Профессиональная настройка и администрирование серверов для стабильной работы вашего бизнеса.</p>
         </div>
         <div class="service-item">
-          <i class="fas fa-server"></i>
-          <h3>Настройка VPS</h3>
-          <p>Полная настройка виртуального сервера для надежной работы вашего проекта.</p>
+          <h3>Облачные решения</h3>
+          <p>Миграция и настройка облачных сервисов для повышения гибкости и масштабируемости.</p>
         </div>
         <div class="service-item">
-          <i class="fas fa-network-wired"></i>
-          <h3>Настройка сетевых служб</h3>
-          <p>Профессиональная настройка и управление сетевыми сервисами.</p>
+          <h3>Реклама в Яндекс.Директ</h3>
+          <p>Профессиональное ведение рекламных кампаний для привлечения новых клиентов.</p>
         </div>
         <div class="service-item">
-          <i class="fas fa-globe"></i>
-          <h3>Регистрация домена</h3>
-          <p>Помощь в подборе и регистрации домена для вашего бизнеса.</p>
-        </div>
-        <div class="service-item">
-          <i class="fas fa-cloud"></i>
-          <h3>Настройки/Миграция в Облако</h3>
-          <p>Перенос вашего бизнеса в облачные сервисы для повышения гибкости.</p>
-        </div>
-        <div class="service-item">
-          <i class="fas fa-shield-alt"></i>
-          <h3>Безопасность сайта</h3>
-          <p>Анализ и устранение угроз, включая вредоносный код.</p>
-        </div>
-        <div class="service-item">
-          <i class="fas fa-tachometer-alt"></i>
-          <h3>Оптимизация скорости</h3>
-          <p>Ускорение загрузки сайта для улучшения пользовательского опыта.</p>
-        </div>
-        <div class="service-item">
-          <i class="fas fa-project-diagram"></i>
-          <h3>Подключение к CDN</h3>
-          <p>Настройка и оптимизация CDN для ускорения сайта.</p>
-        </div>
-        <div class="service-item">
-          <i class="fas fa-ad"></i>
-          <h3>Контекстная реклама</h3>
-          <p>Управление кампаниями в Яндекс.Директ для привлечения клиентов.</p>
-        </div>
-        <div class="service-item">
-          <i class="fas fa-tools"></i>
-          <h3>Техподдержка сайта</h3>
-          <p>Профессиональная техподдержка для стабильной работы сайта.</p>
-        </div>
-        <div class="service-item">
-          <i class="fas fa-search"></i>
-          <h3>SEO аудит</h3>
-          <p>Комплексный анализ сайта для повышения его позиций.</p>
+          <h3>Техническая поддержка</h3>
+          <p>Круглосуточная поддержка и сопровождение ваших IT-решений.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Футер -->
-  <footer>
+  <footer class="site-footer">
     <p>© 2025 Алексей Кривошеин. Все права защищены.</p>
   </footer>
-
 </body>
 </html>
