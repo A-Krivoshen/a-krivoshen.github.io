@@ -107,109 +107,47 @@
     /* Основной контейнер */
     .page-content {
       max-width: 1200px;
-      width: 100%; /* Убедимся, что занимает всю доступную ширину */
+      width: 100%;
       margin: 0 auto;
       padding: 20px;
       text-align: center;
     }
 
-    /* Блок резюме (аналог services-wrapper) */
-    .resume-wrapper {
-      background: rgba(255, 255, 255, 0.1);
-      box-sizing: border-box;
-      padding: 20px;
-      margin-bottom: 30px;
+    /* Стили для резюме (из предоставленной верстки) */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 15px;
+      background: url('https://images.unsplash.com/photo-1507521628349-dee6b6724e18?q=80&w=1470&auto=format&fit=crop') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
+    }
+    .container {
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      display: flex;
+      gap: 20px;
     }
-    .resume-header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .resume-header h2 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #3498db;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #e74c3c;
-      padding-bottom: 5px;
-    }
-    .resume-header p {
-      font-size: 14px;
-      color: #ecf0f1;
-      margin: 0;
-    }
-    .resume-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      justify-items: center;
-      width: 100%;
-      box-sizing: border-box;
-      align-items: stretch;
-    }
-
-    @media (max-width: 890px) {
-      .resume-grid {
-        grid-template-columns: 1fr;
-      }
-      .resume-column {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .resume-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .resume-column {
-        max-width: 100%;
-      }
-      .resume-column h1 {
-        font-size: 18px;
-      }
-      .period {
-        font-size: 11px;
-        padding: 2px 4px;
-      }
-      ul {
-        font-size: 12px;
-        padding-left: 10px;
-      }
-      .about-section {
-        flex-direction: column;
-        text-align: center;
-      }
-      .about-section img {
-        margin: 0 auto 10px auto;
-      }
-    }
-
-    .resume-column {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    .left-column, .right-column {
+      flex: 1;
+      background: rgba(0, 0, 0, 0.7);
       padding: 20px;
-      text-align: left;
-      transition: box-shadow 0.3s;
-      width: 100%;
-      max-width: 300px;
+      border-radius: 5px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
-    .resume-column:hover {
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-    }
-    .resume-column h1 {
-      font-size: 20px;
+    h1 {
+      font-size: 24px;
       color: #5282ff;
       margin-bottom: 10px;
-      text-align: center;
     }
     .contact-info {
       font-size: 14px;
       color: #ecf0f1;
       margin-bottom: 15px;
-      text-align: center;
     }
     .contact-info a {
       color: #5282ff;
@@ -218,10 +156,24 @@
     .contact-info a:hover {
       text-decoration: underline;
     }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3498db;
+      margin: 20px 0 10px;
+      border-bottom: 2px solid #e74c3c;
+      padding-bottom: 5px;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #3498db;
+      margin-bottom: 5px;
+    }
     .experience, .certificate, .education {
       margin-bottom: 15px;
       padding-bottom: 15px;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
     .experience:last-child, .certificate:last-child, .education:last-child {
       border-bottom: none;
@@ -233,9 +185,8 @@
       margin-bottom: 8px;
       border: 2px solid #5282ff;
       border-radius: 3px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       color: #5282ff;
-      text-align: center;
     }
     .job-title, .cert-title, .edu-title {
       font-size: 16px;
@@ -248,31 +199,85 @@
       color: #ecf0f1;
       margin: 3px 0 8px;
     }
+    a {
+      color: #5282ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
     ul {
       margin: 8px 0;
       padding-left: 15px;
       font-size: 14px;
       color: #fff;
     }
+    .skills ul {
+      columns: 1;
+      -webkit-columns: 1;
+      -moz-columns: 1;
+    }
+    .skills ul li {
+      margin-bottom: 5px;
+    }
     .about-section {
       display: flex;
       align-items: center;
       gap: 10px;
       margin-bottom: 20px;
-      background: rgba(255,255,255,0.1);
-      padding: 10px;
-      border-radius: 5px;
     }
     .about-section p {
       font-size: 14px;
       margin: 0;
-      flex: 1;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 5px;
+      border-radius: 3px;
     }
-    .about-section img {
-      max-width: 100px;
-      border-radius: 50%;
-      height: auto;
-      border: 2px solid #5282ff;
+
+    /* Адаптивность */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      .container {
+        flex-direction: column;
+        padding: 10px;
+      }
+      .left-column, .right-column {
+        padding: 15px;
+      }
+      h1 {
+        font-size: 20px;
+        text-align: center;
+      }
+      h2, h3 {
+        font-size: 16px;
+        margin: 15px 0 8px;
+      }
+      .contact-info {
+        font-size: 12px;
+      }
+      .job-title, .cert-title, .edu-title {
+        font-size: 14px;
+      }
+      .company, .issuer {
+        font-size: 12px;
+      }
+      .period {
+        font-size: 10px;
+        padding: 2px 4px;
+      }
+      ul {
+        font-size: 12px;
+        padding-left: 10px;
+      }
+      .about-section {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .about-section img {
+        margin: 0 auto;
+      }
     }
 
     /* Футер */
@@ -311,34 +316,35 @@
     </div>
   </header>
 
-  <!-- Основное содержимое -->
+  <!-- Основное содержимое с новой версткой -->
   <main class="page-content">
-    <section class="resume-wrapper">
-      <div class="resume-header">
-        <h2>Резюме</h2>
-        <p>Подробная информация о моём опыте и навыках</p>
-      </div>
-      <div class="resume-grid">
-        <div class="resume-column">
+    <div class="container">
+      <div class="left-column">
+        <header>
           <h1>Кривошеин Алексей Сергеевич</h1>
           <div class="contact-info">
             Телефон: <a href="tel:+79636641615">+7 (963) 664-16-15</a> | 
             Email: <a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a> | 
             Город: Москва
           </div>
+        </header>
+
+        <section>
           <h2>Опыт работы</h2>
           <div class="experience">
             <div class="period">2021 - Текущий</div>
             <div class="job-title">Индивидуальный предприниматель</div>
             <div class="company">ИП Кривошеин А.С.</div>
-            <ul>
-              <li>Настройка и поддержка серверов Linux</li>
-              <li>Разработка сайтов разных типов</li>
-              <li>Доработка существующих сайтов</li>
-              <li>Продвижение сайтов в поисковых системах</li>
-              <li>SEO-продвижение сайтов</li>
-              <li>Аудит и повышение эффективности сайтов</li>
-            </ul>
+            <div>
+              <ul>
+                <li>Настройка и поддержка серверов Linux</li>
+                <li>Разработка сайтов разных типов</li>
+                <li>Доработка существующих сайтов</li>
+                <li>Продвижение сайтов в поисковых системах</li>
+                <li>SEO-продвижение сайтов</li>
+                <li>Аудит и повышение эффективности сайтов</li>
+              </ul>
+            </div>
           </div>
           <div class="experience">
             <div class="period">2017-2021</div>
@@ -372,122 +378,109 @@
           <div class="experience">
             <div class="period">2004-2005</div>
             <div class="job-title">Специалист отдела управления ИТ</div>
-            <div class="company">ЗАО "ТПГ ТЕРНА"</div>
+            <div class="company">ЗАО "ТПГ 'ТЕРНА'"</div>
           </div>
           <div class="experience">
             <div class="period">2001-2004</div>
             <div class="job-title">Старший специалист компьютерного отдела</div>
             <div class="company">ОАО "Седьмой Континент"</div>
           </div>
-        </div>
-        <div class="resume-column">
-          <div class="about-section">
-            <div style="flex: 1;">
-              <h3>О себе</h3>
-              <p>Профессионал в области веб-разработки, SEO и системного администрирования.</p>
-            </div>
-            <img src="https://raw.githubusercontent.com/A-Krivoshen/site/main/logo_me_mini.png" alt="Фото" style="max-width: 100px; width: 100%; border-radius: 50%; height: auto;">
-          </div>
-          <h2>Образование</h2>
-          <div class="education">
-            <div class="period">2004</div>
-            <div class="edu-title">КГПУ</div>
-            <div class="issuer">Межвузовский инженерно-педагогический факультет</div>
-          </div>
-          <div class="education">
-            <div class="period">2017</div>
-            <div class="edu-title">Нетология</div>
-            <div class="issuer">Москва</div>
-            <div>
-              <a href="https://krivoshein.site/wp-content/uploads/2024/11/povushenia_kvalificacia-scaled.jpg" target="_blank" rel="noopener">Повышение квалификации: HTML-верстка</a>
-            </div>
-          </div>
-          <h2>Сертификаты</h2>
-          <div class="certificate">
-            <div class="period">2025</div>
-            <div class="cert-title">Яндекс Директ</div>
-            <div class="issuer">Яндекс</div>
-            <div>
-              <a href="https://yandex.ru/adv/expert/certificates?certId=283001&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">Сертификат</a>
-            </div>
-          </div>
-          <div class="certificate">
-            <div class="period">2024</div>
-            <div class="cert-title">Яндекс Директ</div>
-            <div class="issuer">Яндекс</div>
-            <div>
-              <a href="https://yandex.ru/adv/expert/certificates?certId=262485&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">Сертификат</a>
-            </div>
-          </div>
-          <div class="certificate">
-            <div class="period">2021</div>
-            <div class="cert-title">Основы интернет-маркетинга</div>
-            <div class="issuer">Google Inc.</div>
-            <div>
-              <a href="https://skillshop.exceedlms.com/student/award/KWPAZ1mheXts6XzmUQ3GZTkv" target="_blank" rel="noopener">Сертификат</a>
-            </div>
-          </div>
-          <div class="certificate">
-            <div class="period">2018</div>
-            <div class="cert-title">Курс «Веб Мастер»</div>
-            <div class="issuer">GeekBrains</div>
-            <div>
-              <a href="https://gb.ru/certificates/444514.en" target="_blank" rel="noopener">Website development by CMS</a>
-            </div>
-          </div>
-          <div class="certificate">
-            <div class="period">2018</div>
-            <div class="cert-title">Курсы</div>
-            <div class="issuer">mail.ru</div>
-            <div>
-              <a href="https://gb.ru/certificates/426422" target="_blank" rel="noopener">Html+Css</a> | 
-              <a href="https://geekbrains.ru/certificates/444951.en" target="_blank" rel="noopener">PHP</a> | 
-              <a href="https://geekbrains.ru/certificates/453666.en" target="_blank" rel="noopener">Linux</a> | 
-              <a href="https://geekbrains.ru/certificates/453666.en" target="_blank" rel="noopener">English</a>
-            </div>
-          </div>
-          <div class="certificate">
-            <div class="period">2005-2006</div>
-            <div class="cert-title">Microsoft</div>
-            <div class="issuer">Москва</div>
-            <div>
-              <a href="https://learn.microsoft.com/ru-ru/users/94294613/transcript/v2zelcogoxkm66n" target="_blank" rel="noopener">MCSA 2003 Security</a>
-            </div>
-          </div>
-          <div class="certificate">
-            <div class="period">Текущий</div>
-            <div class="cert-title">Cloud.ru</div>
-            <div class="issuer">Cloud Fundamentals</div>
-            <div>
-              <a href="https://awardme.ru/ru/users/aleksei-krivoshein-681f2de0" target="_blank" rel="noopener">Бейдж</a>
-            </div>
-          </div>
-          <section class="skills">
-            <h2>Ключевые навыки</h2>
-            <ul>
-              <li>Настройка серверов Linux</li>
-              <li>Разработка сайтов (HTML, CSS, PHP)</li>
-              <li>SEO-продвижение</li>
-              <li>Анализ и аудит сайтов</li>
-              <li>Работа с CMS (WordPress)</li>
-              <li>Системное администрирование</li>
-              <li>DevOps</li>
-              <li>Интернет-маркетинг (Яндекс Директ)</li>
-              <li>Английский язык (уровень B1)</li>
-            </ul>
-          </section>
-          <h2>Языки</h2>
-          <div style="font-size: 14px; color: #fff;">Русский</div>
-          <div style="background-color: rgba(255,255,255,0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
-            <div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 100%;"></div>
-          </div>
-          <div style="font-size: 14px; color: #fff;">Английский</div>
-          <div style="background-color: rgba(255,255,255,0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
-            <div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 60%;"></div>
-          </div>
-        </div>
+        </section>
       </div>
-    </section>
+
+      <div class="right-column">
+        <div class="about-section">
+          <div style="flex: 1;">
+            <h3>О себе</h3>
+            <p>Профессионал в области веб-разработки, SEO и системного администрирования.</p>
+          </div>
+          <img src="https://raw.githubusercontent.com/A-Krivoshen/site/main/logo_me_mini.png" alt="Фото" style="max-width: 100px; width: 100%; border-radius: 50%; height: auto;">
+        </div>
+
+        <h2>Образование</h2>
+        <div class="education">
+          <div class="period">2004</div>
+          <div class="edu-title">КГПУ</div>
+          <div class="issuer">Межвузовский инженерно-педагогический факультет</div>
+        </div>
+        <div class="education">
+          <div class="period">2017</div>
+          <div class="edu-title">Нетология</div>
+          <div class="issuer">Москва</div>
+          <div><a href="https://krivoshein.site/wp-content/uploads/2024/11/povushenia_kvalificacia-scaled.jpg" target="_blank" rel="noopener">Повышение квалификации: HTML-верстка</a></div>
+        </div>
+
+        <h2>Сертификаты</h2>
+        <div class="certificate">
+          <div class="period">2025</div>
+          <div class="cert-title">Яндекс Директ</div>
+          <div class="issuer">Яндекс</div>
+          <div><a href="https://yandex.ru/adv/expert/certificates?certId=283001&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">Сертификат</a></div>
+        </div>
+        <div class="certificate">
+          <div class="period">2024</div>
+          <div class="cert-title">Яндекс Директ</div>
+          <div class="issuer">Яндекс</div>
+          <div><a href="https://yandex.ru/adv/expert/certificates?certId=262485&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">Сертификат</a></div>
+        </div>
+        <div class="certificate">
+          <div class="period">2021</div>
+          <div class="cert-title">Основы интернет-маркетинга</div>
+          <div class="issuer">Google Inc.</div>
+          <div><a href="https://skillshop.exceedlms.com/student/award/KWPAZ1mheXts6XzmUQ3GZTkv" target="_blank" rel="noopener">Сертификат</a></div>
+        </div>
+        <div class="certificate">
+          <div class="period">2018</div>
+          <div class="cert-title">Курс «Веб Мастер»</div>
+          <div class="issuer">GeekBrains</div>
+          <div><a href="https://gb.ru/certificates/444514.en" target="_blank" rel="noopener">Website development by CMS</a></div>
+        </div>
+        <div class="certificate">
+          <div class="period">2018</div>
+          <div class="cert-title">Курсы</div>
+          <div class="issuer">mail.ru</div>
+          <div>
+            <a href="https://gb.ru/certificates/426422" target="_blank" rel="noopener">Html+Css</a> | 
+            <a href="https://geekbrains.ru/certificates/444951.en" target="_blank" rel="noopener">PHP</a> | 
+            <a href="https://geekbrains.ru/certificates/453666.en" target="_blank" rel="noopener">Linux</a> | 
+            <a href="https://geekbrains.ru/certificates/453666.en" target="_blank" rel="noopener">English</a>
+          </div>
+        </div>
+        <div class="certificate">
+          <div class="period">2005-2006</div>
+          <div class="cert-title">Microsoft</div>
+          <div class="issuer">Москва</div>
+          <div><a href="https://learn.microsoft.com/ru-ru/users/94294613/transcript/v2zelcogoxkm66n" target="_blank" rel="noopener">MCSA 2003 Security</a></div>
+        </div>
+        <div class="certificate">
+          <div class="period">Текущий</div>
+          <div class="cert-title">Cloud.ru</div>
+          <div class="issuer">Cloud Fundamentals</div>
+          <div><a href="https://awardme.ru/ru/users/aleksei-krivoshein-681f2de0" target="_blank" rel="noopener">Бейдж</a></div>
+        </div>
+
+        <section class="skills">
+          <h2>Ключевые навыки</h2>
+          <ul>
+            <li>Настройка серверов Linux</li>
+            <li>Разработка сайтов (HTML, CSS, PHP)</li>
+            <li>SEO-продвижение</li>
+            <li>Анализ и аудит сайтов</li>
+            <li>Работа с CMS (WordPress)</li>
+            <li>Системное администрирование</li>
+            <li>DevOps</li>
+            <li>Интернет-маркетинг (Яндекс Директ)</li>
+            <li>Английский язык (уровень B1)</li>
+          </ul>
+        </section>
+
+        <h2>Языки</h2>
+        <div style="font-size: 14px; color: #fff;">Русский</div>
+        <div style="background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;"><div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 100%;"></div></div>
+        <div style="font-size: 14px; color: #fff;">Английский</div>
+        <div style="background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;"><div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 60%;"></div></div>
+      </div>
+    </div>
   </main>
 
   <!-- Футер -->
