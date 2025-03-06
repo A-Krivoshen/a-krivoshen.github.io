@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
+    /* Глобальные стили для корректного box-sizing */
+    * {
+      box-sizing: border-box;
+    }
+
     /* Шапка */
     .site-header {
       position: relative;
@@ -102,6 +107,7 @@
     /* Основной контейнер */
     .page-content {
       max-width: 1200px;
+      width: 100%; /* Убедимся, что занимает всю доступную ширину */
       margin: 0 auto;
       padding: 20px;
       text-align: center;
