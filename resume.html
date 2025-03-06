@@ -4,46 +4,46 @@
   <meta charset="UTF-8">
   <title>Резюме - Кривошеин Алексей Сергеевич</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Фавикон (опционально) -->
+  <!-- Фавикон -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <!-- Подключаем тему Midnight -->
   <link rel="stylesheet" href="https://pages-themes.github.io/midnight/assets/css/style.css">
   <!-- Подключаем Font Awesome (для иконок) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <style>
     /* ========== ШАПКА ========== */
     .site-header {
       margin-bottom: 20px;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.7); /* Лёгкий фон для шапки */
-      border-bottom: 1px solid #5282ff; /* Тонкая граница для акцента */
-      text-align: center; /* На случай, если элементы переносятся */
+      background: rgba(0, 0, 0, 0.7);
+      border-bottom: 1px solid #5282ff;
+      text-align: center;
     }
-    /* Контейнер в шапке: h1 по центру, справа бургер/навигация */
+    /* Контейнер шапки: используем flex с wrap для корректного переноса элементов на мобильном */
     .header-top {
       display: flex;
-      flex-wrap: wrap; /* Перенос при узком экране */
+      flex-wrap: wrap;
       align-items: center;
-      justify-content: center; /* Заголовок по центру */
-      position: relative;
+      justify-content: center;
       gap: 10px;
+      position: relative;
     }
     .header-top h1 {
       margin: 0;
       color: #5282ff;
       font-size: 24px;
       font-weight: 700;
+      flex: 1 1 100%;  /* На узких экранах заголовок занимает всю ширину */
+      text-align: center;
     }
-
-    /* Блок справа: навигация (desktop) + бургер (mobile) */
+    /* Блок справа в шапке: навигация + бургер-иконка */
     .header-right {
-      margin-left: auto;  /* «прижимает» к правому краю на широком экране */
+      margin-left: auto;
       display: flex;
       align-items: center;
       gap: 15px;
     }
-    /* Навигация (десктоп) */
+    /* Навигация (desktop) */
     .site-nav {
       display: flex;
       gap: 15px;
@@ -59,7 +59,7 @@
     .site-nav a:hover {
       background: rgba(82, 130, 255, 0.2);
     }
-    /* Бургер-иконка (мобильная) */
+    /* Бургер-иконка (mobile) */
     .burger-icon {
       display: none;
       font-size: 24px;
@@ -72,12 +72,47 @@
     .burger-icon:hover {
       background: rgba(82, 130, 255, 0.2);
     }
-
-    /* Соцсети (под шапкой) */
+    /* Мобильное меню (скрыто по умолчанию) */
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 10px;
+      border-radius: 5px;
+      text-align: right;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    .mobile-menu a {
+      display: block;
+      margin: 5px 0;
+      color: #5282ff;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 5px 10px;
+      border-radius: 3px;
+      transition: background 0.3s;
+    }
+    .mobile-menu a:hover {
+      background: rgba(82, 130, 255, 0.2);
+    }
+    /* На мобильных: скрываем десктоп-меню, показываем бургер */
+    @media (max-width: 600px) {
+      .site-nav {
+        display: none;
+      }
+      .burger-icon {
+        display: block;
+      }
+    }
+    /* Соцсети – размещаем под шапкой, чтобы не конфликтовать с бургером */
     .social-links {
       display: flex;
       gap: 10px;
-      flex-wrap: wrap; /* На мобильном соцсети будут переноситься */
+      flex-wrap: wrap;
       justify-content: center;
       margin-top: 10px;
     }
@@ -93,90 +128,34 @@
     .social-links a:hover {
       background: rgba(82, 130, 255, 0.2);
     }
-
-    /* Мобильное меню (изначально скрыто) */
-    .mobile-menu {
-      display: none;
-      position: absolute;
-      top: 60px; /* под .header-top */
-      right: 20px;
-      background: rgba(0, 0, 0, 0.9);
-      padding: 10px;
+    
+    /* ========== ОСНОВНОЙ КОНТЕНТ (контейнер резюме) ========== */
+    .container {
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
       border-radius: 5px;
-      text-align: right;
-      flex-direction: column;
-      gap: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-    .mobile-menu a {
-      display: block;
-      margin: 5px 0;
-      color: #5282ff;
-      text-decoration: none;
-      font-size: 16px;
-      padding: 5px 10px;
-      border-radius: 3px;
-      transition: background 0.3s;
-    }
-    .mobile-menu a:hover {
-      background: rgba(82, 130, 255, 0.2);
-    }
-    /* На мобильных: скрываем site-nav, показываем бургер */
-    @media (max-width: 600px) {
-      .site-nav {
-        display: none; /* desktop-меню скрыто */
-      }
-      .burger-icon {
-        display: block; /* показываем бургер */
-      }
-    }
-
-    /* ========== ОСНОВНОЙ КОНТЕНТ (две колонки) ========== */
-    .page-content {
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
       display: flex;
       gap: 20px;
-      margin: 0 auto;
-      max-width: 1200px;
-      padding: 20px;
+      flex-wrap: wrap;
     }
     .left-column, .right-column {
       flex: 1;
+      background: rgba(0, 0, 0, 0.7);
       padding: 20px;
       border-radius: 5px;
-      background: rgba(0, 0, 0, 0.6); /* Лёгкий фон для колонок */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
     }
-
-    /* Заголовки */
-    h2 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #3498db;
-      margin: 20px 0 10px;
-      border-bottom: 2px solid #e74c3c;
-      padding-bottom: 5px;
-      text-align: center;
+    h1 {
+      font-size: 24px;
+      color: #5282ff;
+      margin-bottom: 10px;
     }
-    h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #3498db;
-      margin-bottom: 5px;
-      text-align: left;
-    }
-    h1, p, li, .company, .issuer {
-      color: #fff;
-    }
-
-    /* Контактная информация */
     .contact-info {
       font-size: 14px;
       color: #ecf0f1;
       margin-bottom: 15px;
-      padding: 10px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 3px;
-      text-align: center;
     }
     .contact-info a {
       color: #5282ff;
@@ -185,12 +164,27 @@
     .contact-info a:hover {
       text-decoration: underline;
     }
-
-    /* Опыт работы */
-    .experience {
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3498db;
+      margin: 20px 0 10px;
+      border-bottom: 2px solid #e74c3c;
+      padding-bottom: 5px;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #3498db;
+      margin-bottom: 5px;
+    }
+    .experience, .certificate, .education {
       margin-bottom: 15px;
       padding-bottom: 15px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .experience:last-child, .certificate:last-child, .education:last-child {
+      border-bottom: none;
     }
     .period {
       display: inline-block;
@@ -199,61 +193,97 @@
       margin-bottom: 8px;
       border: 2px solid #5282ff;
       border-radius: 3px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.1);
       color: #5282ff;
-      text-align: center;
     }
-    .job-title, .edu-title, .cert-title {
+    .job-title, .cert-title, .edu-title {
       font-size: 16px;
       font-weight: 600;
       color: #fff;
       margin-bottom: 5px;
-      text-align: left;
     }
-
-    /* Блок "О себе" */
+    .company, .issuer {
+      font-size: 14px;
+      color: #ecf0f1;
+      margin: 3px 0 8px;
+    }
+    a {
+      color: #5282ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      margin: 8px 0;
+      padding-left: 15px;
+      font-size: 14px;
+      color: #fff;
+    }
+    .skills ul {
+      columns: 1;
+      -webkit-columns: 1;
+      -moz-columns: 1;
+    }
+    .skills ul li {
+      margin-bottom: 5px;
+    }
     .about-section {
       display: flex;
       align-items: center;
       gap: 10px;
       margin-bottom: 20px;
-      padding: 10px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 5px;
     }
     .about-section p {
       font-size: 14px;
       margin: 0;
-      flex: 1;
-      text-align: left;
+      background: rgba(255,255,255,0.1);
+      padding: 5px;
+      border-radius: 3px;
     }
-    .about-section img {
-      max-width: 100px;
-      border-radius: 50%;
-      height: auto;
-      border: 2px solid #5282ff;
-    }
-
-    /* Списки навыков, сертификатов */
-    ul {
-      margin: 8px 0;
-      padding-left: 20px;
-      font-size: 14px;
-      list-style-type: square;
-    }
-
-    /* Языки (пример с прогресс-барами) */
-    .skills .progress-bar {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 5px;
-      height: 8px;
-      margin: 5px 0 10px;
-      overflow: hidden;
-    }
-    .skills .progress {
-      background: #5282ff;
-      height: 100%;
-      border-radius: 5px;
+    /* ========== АДАПТИВНОСТЬ ========== */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      .container {
+        flex-direction: column;
+        padding: 10px;
+      }
+      .left-column, .right-column {
+        padding: 15px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .header-top h1 {
+        font-size: 20px;
+      }
+      h2, h3 {
+        font-size: 16px;
+        margin: 15px 0 8px;
+      }
+      .contact-info {
+        font-size: 12px;
+        padding: 8px;
+      }
+      .about-section {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .about-section img {
+        margin: 0 auto;
+      }
+      .experience {
+        padding-bottom: 10px;
+      }
+      .period {
+        font-size: 10px;
+        padding: 2px 4px;
+      }
+      ul {
+        padding-left: 15px;
+        font-size: 12px;
+      }
     }
 
     /* ========== ФУТЕР ========== */
@@ -266,75 +296,46 @@
       border-top: 1px solid #5282ff;
     }
 
-    /* ========== АДАПТИВНОСТЬ (мобильные устройства) ========== */
-    @media (max-width: 600px) {
-      .page-content {
-        flex-direction: column;
-      }
-      .left-column, .right-column {
-        padding: 15px;
-        width: 100%;
-        margin-bottom: 20px;
-      }
-      .header-top h1 {
-        font-size: 20px;
-      }
-      h2, h3 {
-        font-size: 16px;
-      }
-      .job-title, .edu-title, .cert-title {
-        font-size: 14px;
-      }
-      .contact-info {
-        font-size: 12px;
-        padding: 8px;
-      }
-      .about-section {
-        flex-direction: column;
-        text-align: center;
-      }
-      .about-section img {
-        margin: 0 auto 10px auto;
-      }
-      .experience {
-        padding-bottom: 10px;
-      }
-      .period {
-        font-size: 11px;
-        padding: 2px 5px;
-      }
-      ul {
-        padding-left: 15px;
-        font-size: 12px;
-      }
+    /* ========== Бегущая строка (терминал) ========== */
+    .terminal-marquee {
+      background: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 10px 0;
+      overflow: hidden;
+      position: relative;
+      margin-top: 40px;
+    }
+    .marquee-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 80s linear infinite;
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
   </style>
 </head>
 <body>
-
   <!-- Шапка -->
   <header class="site-header">
-    <!-- Верхний контейнер: h1 и блок справа -->
     <div class="header-top">
       <h1>Кривошеин Алексей Сергеевич</h1>
       <div class="header-right">
-        <!-- Навигация (десктоп) -->
         <nav class="site-nav">
           <a href="index.html">Услуги</a>
           <a href="resume.html">Резюме</a>
         </nav>
-        <!-- Иконка бургер (мобильная) -->
         <i class="fas fa-bars burger-icon"></i>
       </div>
     </div>
-
     <!-- Мобильное меню -->
     <nav class="mobile-menu" id="mobileMenu">
       <a href="index.html">Услуги</a>
       <a href="resume.html">Резюме</a>
     </nav>
-
-    <!-- Соцсети (под шапкой) -->
+    <!-- Соцсети -->
     <div class="social-links">
       <a href="https://t.me/drslon_channel" target="_blank" rel="noopener">Telegram</a>
       <a href="https://vk.com/drslon_channel" target="_blank" rel="noopener">VK</a>
@@ -345,12 +346,11 @@
     </div>
   </header>
 
-  <!-- Основной контент (две колонки) -->
-  <div class="page-content">
-    <!-- Левая колонка -->
+  <!-- Основной контент (контейнер резюме) -->
+  <div class="container">
     <div class="left-column">
-      <!-- Контактная информация -->
       <header>
+        <h1>Кривошеин Алексей Сергеевич</h1>
         <div class="contact-info">
           Телефон: <a href="tel:+79636641615">+7 (963) 664-16-15</a> | 
           Email: <a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a> | 
@@ -358,7 +358,6 @@
         </div>
       </header>
 
-      <!-- Опыт работы -->
       <section>
         <h2>Опыт работы</h2>
         <div class="experience">
@@ -379,24 +378,51 @@
           <div class="job-title">Самозанятый</div>
           <div>Продвижение сайтов на CMS WordPress, запуск и поддержка проектов.</div>
         </div>
-        <!-- ... Остальные блоки "experience" ... -->
+        <div class="experience">
+          <div class="period">2010-2012</div>
+          <div class="job-title">Инженер Microsoft</div>
+          <div class="company">Ай-Теко (I-Teco)</div>
+          <div>SCMS, SCOM, ADMT, миграция</div>
+        </div>
+        <div class="experience">
+          <div class="period">2009-2010</div>
+          <div class="job-title">Инженер технической дирекции</div>
+          <div class="company">INLINE Technologies</div>
+          <div>Развитие системного каталога и мониторинга</div>
+        </div>
+        <div class="experience">
+          <div class="period">2009</div>
+          <div class="job-title">Старший системный администратор</div>
+          <div class="company">ГК "Независимость"</div>
+          <div>Централизованное администрирование сети</div>
+        </div>
+        <div class="experience">
+          <div class="period">2006-2008</div>
+          <div class="job-title">Инженер АСКУЭ</div>
+          <div class="company">ЗАО "Трансэнерком"</div>
+          <div>Развитие систем энергоучета</div>
+        </div>
+        <div class="experience">
+          <div class="period">2004-2005</div>
+          <div class="job-title">Специалист отдела управления ИТ</div>
+          <div class="company">ЗАО "ТПГ "ТЕРНА"</div>
+        </div>
+        <div class="experience">
+          <div class="period">2001-2004</div>
+          <div class="job-title">Старший специалист компьютерного отдела</div>
+          <div class="company">ОАО "Седьмой Континент"</div>
+        </div>
       </section>
     </div>
-
-    <!-- Правая колонка -->
     <div class="right-column">
-      <!-- О себе -->
       <div class="about-section">
         <div style="flex: 1;">
           <h3>О себе</h3>
           <p>Профессионал в области веб-разработки, SEO и системного администрирования.</p>
         </div>
-        <img 
-          src="https://raw.githubusercontent.com/A-Krivoshen/site/main/logo_me_mini.png" 
-          alt="Фото">
+        <img src="https://raw.githubusercontent.com/A-Krivoshen/site/main/logo_me_mini.png" alt="Фото" style="max-width: 100px; width: 100%; border-radius: 50%; height: auto;">
       </div>
 
-      <!-- Образование -->
       <h2>Образование</h2>
       <div class="education">
         <div class="period">2004</div>
@@ -408,28 +434,93 @@
         <div class="edu-title">Нетология</div>
         <div class="issuer">Москва</div>
         <div>
-          <a href="https://krivoshein.site/wp-content/uploads/2024/11/povushenia_kvalificacia-scaled.jpg" 
-             target="_blank" rel="noopener">
+          <a href="https://krivoshein.site/wp-content/uploads/2024/11/povushenia_kvalificacia-scaled.jpg" target="_blank" rel="noopener">
             Повышение квалификации: HTML-верстка
           </a>
         </div>
       </div>
 
-      <!-- Сертификаты -->
       <h2>Сертификаты</h2>
       <div class="certificate">
         <div class="period">2025</div>
         <div class="cert-title">Яндекс Директ</div>
         <div class="issuer">Яндекс</div>
         <div>
-          <a href="..." target="_blank" rel="noopener">
-             Сертификат
+          <a href="https://yandex.ru/adv/expert/certificates?certId=283001&amp;lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">
+            Сертификат
           </a>
         </div>
       </div>
-      <!-- ... Остальные сертификаты ... -->
+      <div class="certificate">
+        <div class="period">2024</div>
+        <div class="cert-title">Яндекс Директ</div>
+        <div class="issuer">Яндекс</div>
+        <div>
+          <a href="https://yandex.ru/adv/expert/certificates?certId=262485&amp;lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">
+            Сертификат
+          </a>
+        </div>
+      </div>
+      <div class="certificate">
+        <div class="period">2021</div>
+        <div class="cert-title">Основы интернет-маркетинга</div>
+        <div class="issuer">Google Inc.</div>
+        <div>
+          <a href="https://skillshop.exceedlms.com/student/award/KWPAZ1mheXts6XzmUQ3GZTkv" target="_blank" rel="noopener">
+            Сертификат
+          </a>
+        </div>
+      </div>
+      <div class="certificate">
+        <div class="period">2018</div>
+        <div class="cert-title">Курс «Веб Мастер»</div>
+        <div class="issuer">GeekBrains</div>
+        <div>
+          <a href="https://gb.ru/certificates/444514.en" target="_blank" rel="noopener">
+            Website development by CMS
+          </a>
+        </div>
+      </div>
+      <div class="certificate">
+        <div class="period">2018</div>
+        <div class="cert-title">Курсы</div>
+        <div class="issuer">mail.ru</div>
+        <div>
+          <a href="https://gb.ru/certificates/426422" target="_blank" rel="noopener">
+            Html+Css
+          </a> | 
+          <a href="https://geekbrains.ru/certificates/444951.en" target="_blank" rel="noopener">
+            PHP
+          </a> | 
+          <a href="https://geekbrains.ru/certificates/453666.en" target="_blank" rel="noopener">
+            Linux
+          </a> | 
+          <a href="https://geekbrains.ru/certificates/453666.en" target="_blank" rel="noopener">
+            English
+          </a>
+        </div>
+      </div>
+      <div class="certificate">
+        <div class="period">2005-2006</div>
+        <div class="cert-title">Microsoft</div>
+        <div class="issuer">Москва</div>
+        <div>
+          <a href="https://learn.microsoft.com/ru-ru/users/94294613/transcript/v2zelcogoxkm66n" target="_blank" rel="noopener">
+            MCSA 2003 Security
+          </a>
+        </div>
+      </div>
+      <div class="certificate">
+        <div class="period">Текущий</div>
+        <div class="cert-title">Cloud.ru</div>
+        <div class="issuer">Cloud Fundamentals</div>
+        <div>
+          <a href="https://awardme.ru/ru/users/aleksei-krivoshein-681f2de0" target="_blank" rel="noopener">
+            Бейдж
+          </a>
+        </div>
+      </div>
 
-      <!-- Навыки -->
       <section class="skills">
         <h2>Ключевые навыки</h2>
         <ul>
@@ -445,15 +536,14 @@
         </ul>
       </section>
 
-      <!-- Языки -->
       <h2>Языки</h2>
       <div style="font-size: 14px; color: #fff;">Русский</div>
-      <div class="progress-bar">
-        <div class="progress" style="width: 100%;"></div>
+      <div style="background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
+        <div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 100%;"></div>
       </div>
       <div style="font-size: 14px; color: #fff;">Английский</div>
-      <div class="progress-bar">
-        <div class="progress" style="width: 60%;"></div>
+      <div style="background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;">
+        <div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 60%;"></div>
       </div>
     </div>
   </div>
