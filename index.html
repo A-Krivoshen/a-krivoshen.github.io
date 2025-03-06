@@ -11,7 +11,7 @@
   <style>
     /* Шапка сайта */
     .site-header {
-      position: relative; /* Позволяет позиционировать соцсети */
+      position: relative;
       text-align: center;
       margin-bottom: 20px;
       padding: 20px;
@@ -68,19 +68,23 @@
     /* Блок услуг */
     .services-intro {
       margin-bottom: 20px;
+      text-align: center; /* Заголовок и описание по центру */
     }
     .services-intro p {
       font-size: 14px;
       color: #ccc;
     }
-    /* Сетка: 3 столбца на первом ряду, а 2 карточки на втором */
+    /* Сетка услуг:
+       - 3 карточки в строке по центру (каждая 250px).
+       - 4-я и 5-я карточки ставим в столбцы 2 и 3, чтобы они шли по центру. */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 250px);
       gap: 20px;
+      justify-content: center; /* Выравниваем всю сетку по центру */
       margin-top: 20px;
     }
-    /* Чтобы 4-я и 5-я карточка заняли столбцы 2 и 3 */
+    /* 4-я и 5-я карточка на второй строке, столбцы 2 и 3 */
     .services-grid .service-item:nth-child(4) {
       grid-column: 2;
     }
@@ -108,11 +112,15 @@
       color: #ccc;
       margin-bottom: 15px;
     }
-    /* Адаптивность для услуг */
+
+    /* Адаптивность:
+       при ширине экрана < 900px меняем сетку на auto-fit, чтобы карточки перестраивались. */
     @media (max-width: 900px) {
       .services-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        justify-content: center;
       }
+      /* Сбрасываем позиционирование для 4-й и 5-й карточки */
       .services-grid .service-item:nth-child(4),
       .services-grid .service-item:nth-child(5) {
         grid-column: auto;
