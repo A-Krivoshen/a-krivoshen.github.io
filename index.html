@@ -58,9 +58,10 @@
 
     /* Основная обёртка для контента */
     .page-content {
-      max-width: 1200px;
+      /* Убираем max-width, чтобы карточки могли растянуться по ширине экрана */
       margin: 0 auto;
       padding: 20px;
+      text-align: center; /* Центрируем заголовки и блоки */
     }
 
     /* Заголовки */
@@ -80,7 +81,6 @@
     /* Блок услуг */
     .services-intro {
       margin-bottom: 20px;
-      text-align: center; /* Заголовок и описание по центру */
     }
     .services-intro p {
       font-size: 14px;
@@ -90,15 +90,15 @@
     /* Горизонтальная лента карточек */
     .services-container {
       display: flex;
-      flex-wrap: nowrap;        /* не переносим карточки на новую строку */
+      flex-wrap: nowrap;     /* не переносим карточки на новую строку */
       gap: 20px;
-      overflow-x: auto;         /* горизонтальная прокрутка, если не хватает места */
-      padding: 10px 0;
+      overflow-x: auto;      /* горизонтальная прокрутка, если не хватает места */
       margin: 0 auto;
-      justify-content: flex-start; /* карточки идут слева направо, но всё равно «по горизонтали» */
+      padding: 10px 0;
+      justify-content: center; /* центрируем карточки по горизонтали */
     }
     .service-item {
-      flex: 0 0 250px;          /* фиксированная ширина 250px */
+      flex: 0 0 250px;       /* фиксированная ширина 250px */
       background: #161b22;
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 8px;
