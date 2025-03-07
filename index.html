@@ -141,8 +141,8 @@
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Увеличен минимальный размер с 250px до 300px */
-      gap: 30px; /* Увеличен зазор между карточками с 20px до 30px */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
       justify-items: center;
       width: 100%;
       box-sizing: border-box;
@@ -155,7 +155,7 @@
       text-align: center;
       transition: box-shadow 0.3s;
       width: 100%;
-      max-width: 300px; /* Соответствует минимальной ширине в сетке */
+      max-width: 300px;
     }
     .service-item:hover {
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
@@ -278,7 +278,7 @@
       white-space: nowrap;
       opacity: 0;
       visibility: hidden;
-      animation: marquee 110s linear infinite, showText 0s 0.3s forwards; /* Уменьшена задержка с 0.5s до 0.3s */
+      animation: marquee 110s linear infinite, showText 0s 0.3s forwards;
       animation-delay: 0.3s;
     }
     @keyframes marquee {
@@ -298,6 +298,36 @@
       padding: 20px;
       color: #ccc;
       font-size: 14px;
+    }
+
+    /* Кнопка "Наверх" */
+    .to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #5282ff;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0s linear 0.3s;
+      z-index: 1000;
+    }
+    .to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s;
+    }
+    .to-top:hover {
+      background: #3b6ad1;
+    }
+    .to-top i {
+      line-height: 50px;
     }
   </style>
 </head>
@@ -423,6 +453,11 @@
     </div>
   </main>
 
+  <!-- Кнопка "Наверх" -->
+  <button class="to-top" id="toTopBtn">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <!-- Футер -->
   <footer class="site-footer">
     <p>© <span id="year"></span> Кривошеин Алексей Сергеевич. Все права защищены.</p>
@@ -435,6 +470,20 @@
       const mobileMenu = document.getElementById('mobileMenu');
       burgerIcon.addEventListener('click', () => {
         mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+      });
+    </script>
+    <!-- Скрипт кнопки "Наверх" -->
+    <script>
+      const toTopBtn = document.getElementById('toTopBtn');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Показывать кнопку при прокрутке вниз на 300px
+          toTopBtn.classList.add('show');
+        } else {
+          toTopBtn.classList.remove('show');
+        }
+      });
+      toTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Плавная прокрутка вверх
       });
     </script>
   </footer>
