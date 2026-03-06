@@ -4,8 +4,15 @@
   <meta charset="UTF-8">
   <title>Услуги - ИП Кривошеин Алексей Сергеевич</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1b1b1b">
   <meta name="yandex-verification" content="7de62e41b72e9dde" />
   <meta name="description" content="Профессиональные услуги веб-разработки, настройки серверов, облачных решений и SEO от ИП Кривошеин Алексей Сергеевич. Индивидуальный подход, стоимость от 2000 ₽/час.">
+  <link rel="canonical" href="https://krivoshein.site/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Услуги — Кривошеин Алексей Сергеевич">
+  <meta property="og:description" content="Веб-разработка, DevOps, SEO, реклама и поддержка проектов. Стоимость от 2000 ₽/час.">
+  <meta property="og:url" content="https://krivoshein.site/index.html">
+  <meta property="og:image" content="https://krivoshein.site/logo_me_mini.png">
   <!-- Фавикон (при необходимости) -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- Тема Midnight -->
@@ -47,12 +54,18 @@
     .site-nav a:hover {
       text-decoration: underline;
     }
+    .site-nav a[aria-current="page"] {
+      text-decoration: underline;
+      font-weight: 700;
+    }
     /* Бургер-иконка (мобильная) */
     .burger-icon {
       display: none;
       font-size: 24px;
       color: #5282ff;
       cursor: pointer;
+      background: none;
+      border: none;
     }
     /* Соцсети */
     .social-links {
@@ -265,6 +278,63 @@
       background: #3b6ad1;
     }
 
+    .cta-wrapper {
+      margin: 0 auto 30px auto;
+      max-width: 800px;
+      padding: 20px;
+      border: 1px solid rgba(82, 130, 255, 0.4);
+      border-radius: 8px;
+      background: rgba(82, 130, 255, 0.08);
+      text-align: center;
+    }
+    .cta-wrapper p {
+      margin: 0 0 10px;
+      color: #ecf0f1;
+    }
+    .cta-wrapper .cta-links {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-wrapper .cta-links a {
+      padding: 8px 14px;
+      border: 1px solid #5282ff;
+      border-radius: 6px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .faq-wrapper {
+      margin: 0 auto 30px auto;
+      max-width: 900px;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .faq-wrapper h2 {
+      font-size: 20px;
+      color: #3498db;
+      border-bottom: 2px solid #e74c3c;
+      padding-bottom: 5px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .faq-item + .faq-item {
+      margin-top: 10px;
+    }
+    .faq-item summary {
+      cursor: pointer;
+      color: #fff;
+      font-weight: 600;
+    }
+    .faq-item p {
+      color: #ecf0f1;
+      margin: 8px 0 0;
+      line-height: 1.5;
+    }
+
     /* Бегущая строка (терминал) */
     .terminal-marquee {
       background: #000;
@@ -331,19 +401,34 @@
     .to-top i {
       line-height: 50px;
     }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: #5282ff;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 0 0 4px 4px;
+      z-index: 1001;
+    }
+    .skip-link:focus {
+      left: 10px;
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
   <!-- Шапка -->
   <header class="site-header">
     <div class="header-top">
       <h1>Кривошеин Алексей Сергеевич</h1>
       <div class="header-right">
         <nav class="site-nav">
-          <a href="index.html">Услуги</a>
+          <a href="index.html" aria-current="page">Услуги</a>
           <a href="resume.html">Резюме</a>
         </nav>
-        <i class="fas fa-bars burger-icon"></i>
+        <button class="fas fa-bars burger-icon" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu"></button>
       </div>
     </div>
     <!-- Мобильное меню -->
@@ -363,7 +448,7 @@
   </header>
 
   <!-- Основное содержимое -->
-  <main class="page-content">
+  <main class="page-content" id="main-content">
 
     <!-- Блок "Услуги" -->
     <div class="services-wrapper">
@@ -459,6 +544,31 @@
       <a href="mailto:aleksey@krivoshein.site?subject=Обсуждение проекта">Обсудить проект</a>
     </div>
 
+    <section class="cta-wrapper" aria-label="Быстрый контакт">
+      <p><strong>Нужен расчёт сроков и стоимости?</strong> Напишите удобным способом — отвечаю обычно в течение рабочего дня.</p>
+      <div class="cta-links">
+        <a href="mailto:aleksey@krivoshein.site?subject=Обсуждение проекта">Email</a>
+        <a href="https://t.me/drslon_channel" target="_blank" rel="noopener">Telegram</a>
+        <a href="tel:+79636641615">Позвонить</a>
+      </div>
+    </section>
+
+    <section class="faq-wrapper" aria-labelledby="faqTitle">
+      <h2 id="faqTitle">Частые вопросы</h2>
+      <details class="faq-item">
+        <summary>С какими проектами вы работаете?</summary>
+        <p>С лендингами, корпоративными сайтами, интернет-магазинами и задачами по доработке существующих проектов на популярных CMS и кастомных решениях.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Как строится работа и оплата?</summary>
+        <p>Сначала фиксируем задачу и объём, затем согласуем оценку по времени. Отчёт о работах предоставляю по этапам.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Даете ли техническую поддержку после запуска?</summary>
+        <p>Да, можно подключить регулярное сопровождение: обновления, мониторинг, резервные копии и оперативное устранение проблем.</p>
+      </details>
+    </section>
+
     <!-- Бегущая строка (терминал) -->
     <div class="terminal-marquee">
       <span class="marquee-text">
@@ -483,7 +593,9 @@
       const burgerIcon = document.querySelector('.burger-icon');
       const mobileMenu = document.getElementById('mobileMenu');
       burgerIcon.addEventListener('click', () => {
-        mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        const isOpen = mobileMenu.style.display === 'block';
+        mobileMenu.style.display = isOpen ? 'none' : 'block';
+        burgerIcon.setAttribute('aria-expanded', String(!isOpen));
       });
     </script>
     <!-- Скрипт кнопки "Наверх" -->
@@ -518,5 +630,23 @@
     </noscript>
     <!-- /Yandex.Metrika counter -->
   </footer>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Кривошеин Алексей Сергеевич",
+      "url": "https://krivoshein.site/index.html",
+      "image": "https://krivoshein.site/logo_me_mini.png",
+      "email": "mailto:aleksey@krivoshein.site",
+      "telephone": "+7-963-664-16-15",
+      "areaServed": "RU",
+      "serviceType": [
+        "Веб-разработка",
+        "SEO-аудит",
+        "Техническая поддержка",
+        "Настройка серверов"
+      ]
+    }
+  </script>
 </body>
 </html>

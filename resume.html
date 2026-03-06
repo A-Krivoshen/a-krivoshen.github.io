@@ -4,7 +4,14 @@
   <meta charset="UTF-8">
   <title>Резюме - ИП Кривошеин Алексей Сергеевич</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1b1b1b">
   <meta name="description" content="Резюме Кривошеина Алексея Сергеевича: опыт веб-разработки, настройки серверов и облачных решений. Свяжитесь для сотрудничества!">
+  <link rel="canonical" href="https://krivoshein.site/resume.html">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Резюме — Кривошеин Алексей Сергеевич">
+  <meta property="og:description" content="Опыт в веб-разработке, Linux/DevOps, SEO и интернет-маркетинге.">
+  <meta property="og:url" content="https://krivoshein.site/resume.html">
+  <meta property="og:image" content="https://krivoshein.site/logo_me_mini.png">
   <!-- Фавикон (при необходимости) -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- Тема Midnight -->
@@ -44,11 +51,17 @@
     .site-nav a:hover {
       text-decoration: underline;
     }
+    .site-nav a[aria-current="page"] {
+      text-decoration: underline;
+      font-weight: 700;
+    }
     .burger-icon {
       display: none;
       font-size: 24px;
       color: #5282ff;
       cursor: pointer;
+      background: none;
+      border: none;
     }
     .social-links {
       display: flex;
@@ -144,6 +157,20 @@
     }
     .contact-info a:hover {
       text-decoration: underline;
+    }
+    .resume-actions {
+      margin-bottom: 15px;
+    }
+    .resume-actions button {
+      background: #5282ff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .resume-actions button:hover {
+      background: #3b6ad1;
     }
     h2 {
       font-size: 20px;
@@ -301,9 +328,24 @@
     .to-top i {
       line-height: 50px;
     }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: #5282ff;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 0 0 4px 4px;
+      z-index: 1001;
+    }
+    .skip-link:focus {
+      left: 10px;
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
   <!-- Шапка -->
   <header class="site-header">
     <div class="header-top">
@@ -311,9 +353,9 @@
       <div class="header-right">
         <nav class="site-nav">
           <a href="index.html">Услуги</a>
-          <a href="resume.html">Резюме</a>
+          <a href="resume.html" aria-current="page">Резюме</a>
         </nav>
-        <i class="fas fa-bars burger-icon"></i>
+        <button class="fas fa-bars burger-icon" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu"></button>
       </div>
     </div>
     <!-- Мобильное меню -->
@@ -333,15 +375,18 @@
   </header>
 
   <!-- Основное содержимое -->
-  <main class="page-content">
+  <main class="page-content" id="main-content">
     <div class="container">
       <div class="left-column">
         <header>
-          <h1>Кривошеин Алексей Сергеевич</h1>
+          <h2 style="margin-top:0;">Кривошеин Алексей Сергеевич</h2>
           <div class="contact-info">
             Телефон: <a href="tel:+79636641615">+7 (963) 664-16-15</a> | 
             Email: <a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a> | 
             Город: Москва
+          </div>
+          <div class="resume-actions">
+            <button type="button" onclick="window.print()">Сохранить / распечатать резюме</button>
           </div>
         </header>
 
@@ -410,7 +455,7 @@
             <h3>О себе</h3>
             <p>Профессионал в области веб-разработки, SEO и системного администрирования.</p>
           </div>
-          <img src="https://raw.githubusercontent.com/A-Krivoshen/site/main/logo_me_mini.png" alt="Фото" style="max-width: 100px; width: 100%; border-radius: 50%; height: auto;">
+          <img src="logo_me_mini.png" alt="Фото Алексея Кривошеина" loading="lazy" style="max-width: 100px; width: 100%; border-radius: 50%; height: auto;">
         </div>
 
         <h2>Образование</h2>
@@ -459,7 +504,7 @@
             <a href="https://gb.ru/certificates/426422" target="_blank" rel="noopener">Html+Css</a> | 
             <a href="https://geekbrains.ru/certificates/444951.en" target="_blank" rel="noopener">PHP</a> | 
             <a href="https://geekbrains.ru/certificates/453666.en" target="_blank" rel="noopener">Linux</a> | 
-            <a href="https://geekbrains.ru/certificates/453666.en" target="_blank" rel="noopener">English</a>
+            <a href="https://geekbrains.ru/certificates/453667.en" target="_blank" rel="noopener">English</a>
           </div>
         </div>
         <div class="certificate">
@@ -515,7 +560,9 @@
       const burgerIcon = document.querySelector('.burger-icon');
       const mobileMenu = document.getElementById('mobileMenu');
       burgerIcon.addEventListener('click', () => {
-        mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        const isOpen = mobileMenu.style.display === 'block';
+        mobileMenu.style.display = isOpen ? 'none' : 'block';
+        burgerIcon.setAttribute('aria-expanded', String(!isOpen));
       });
     </script>
     <!-- Скрипт кнопки "Наверх" -->
@@ -549,5 +596,22 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/100254330" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Кривошеин Алексей Сергеевич",
+      "url": "https://krivoshein.site/resume.html",
+      "image": "https://krivoshein.site/logo_me_mini.png",
+      "jobTitle": "Веб-разработчик / Системный администратор",
+      "email": "mailto:aleksey@krivoshein.site",
+      "telephone": "+7-963-664-16-15",
+      "sameAs": [
+        "https://github.com/A-Krivoshen",
+        "https://www.linkedin.com/in/krivosheinaleksey/",
+        "https://t.me/drslon_channel"
+      ]
+    }
+  </script>
 </body>
 </html>
