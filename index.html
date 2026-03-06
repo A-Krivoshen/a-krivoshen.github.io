@@ -4,8 +4,15 @@
   <meta charset="UTF-8">
   <title>Услуги - ИП Кривошеин Алексей Сергеевич</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1b1b1b">
   <meta name="yandex-verification" content="7de62e41b72e9dde" />
   <meta name="description" content="Профессиональные услуги веб-разработки, настройки серверов, облачных решений и SEO от ИП Кривошеин Алексей Сергеевич. Индивидуальный подход, стоимость от 2000 ₽/час.">
+  <link rel="canonical" href="https://krivoshein.site/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Услуги — Кривошеин Алексей Сергеевич">
+  <meta property="og:description" content="Веб-разработка, DevOps, SEO, реклама и поддержка проектов. Стоимость от 2000 ₽/час.">
+  <meta property="og:url" content="https://krivoshein.site/index.html">
+  <meta property="og:image" content="https://krivoshein.site/logo_me_mini.png">
   <!-- Фавикон (при необходимости) -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- Тема Midnight -->
@@ -47,12 +54,18 @@
     .site-nav a:hover {
       text-decoration: underline;
     }
+    .site-nav a[aria-current="page"] {
+      text-decoration: underline;
+      font-weight: 700;
+    }
     /* Бургер-иконка (мобильная) */
     .burger-icon {
       display: none;
       font-size: 24px;
       color: #5282ff;
       cursor: pointer;
+      background: none;
+      border: none;
     }
     /* Соцсети */
     .social-links {
@@ -331,19 +344,34 @@
     .to-top i {
       line-height: 50px;
     }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: #5282ff;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 0 0 4px 4px;
+      z-index: 1001;
+    }
+    .skip-link:focus {
+      left: 10px;
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
   <!-- Шапка -->
   <header class="site-header">
     <div class="header-top">
       <h1>Кривошеин Алексей Сергеевич</h1>
       <div class="header-right">
         <nav class="site-nav">
-          <a href="index.html">Услуги</a>
+          <a href="index.html" aria-current="page">Услуги</a>
           <a href="resume.html">Резюме</a>
         </nav>
-        <i class="fas fa-bars burger-icon"></i>
+        <button class="fas fa-bars burger-icon" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu"></button>
       </div>
     </div>
     <!-- Мобильное меню -->
@@ -363,7 +391,7 @@
   </header>
 
   <!-- Основное содержимое -->
-  <main class="page-content">
+  <main class="page-content" id="main-content">
 
     <!-- Блок "Услуги" -->
     <div class="services-wrapper">
@@ -483,7 +511,9 @@
       const burgerIcon = document.querySelector('.burger-icon');
       const mobileMenu = document.getElementById('mobileMenu');
       burgerIcon.addEventListener('click', () => {
-        mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        const isOpen = mobileMenu.style.display === 'block';
+        mobileMenu.style.display = isOpen ? 'none' : 'block';
+        burgerIcon.setAttribute('aria-expanded', String(!isOpen));
       });
     </script>
     <!-- Скрипт кнопки "Наверх" -->
