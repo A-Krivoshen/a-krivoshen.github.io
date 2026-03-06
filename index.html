@@ -348,19 +348,19 @@
     .marquee-text {
       display: inline-block;
       white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      animation: marquee 110s linear infinite, showText 0s 0.3s forwards;
-      animation-delay: 0.3s;
+      padding-left: 100%;
+      will-change: transform;
+      animation: marquee 45s linear infinite;
     }
     @keyframes marquee {
-      0%   { transform: translateX(100%); }
+      0%   { transform: translateX(0); }
       100% { transform: translateX(-100%); }
     }
-    @keyframes showText {
-      to {
-        opacity: 1;
-        visibility: visible;
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-text {
+        animation: none;
+        padding-left: 0;
+        white-space: normal;
       }
     }
 
