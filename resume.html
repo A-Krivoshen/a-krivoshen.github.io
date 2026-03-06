@@ -158,6 +158,20 @@
     .contact-info a:hover {
       text-decoration: underline;
     }
+    .resume-actions {
+      margin-bottom: 15px;
+    }
+    .resume-actions button {
+      background: #5282ff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .resume-actions button:hover {
+      background: #3b6ad1;
+    }
     h2 {
       font-size: 20px;
       font-weight: 700;
@@ -365,11 +379,14 @@
     <div class="container">
       <div class="left-column">
         <header>
-          <h1>Кривошеин Алексей Сергеевич</h1>
+          <h2 style="margin-top:0;">Кривошеин Алексей Сергеевич</h2>
           <div class="contact-info">
             Телефон: <a href="tel:+79636641615">+7 (963) 664-16-15</a> | 
             Email: <a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a> | 
             Город: Москва
+          </div>
+          <div class="resume-actions">
+            <button type="button" onclick="window.print()">Сохранить / распечатать резюме</button>
           </div>
         </header>
 
@@ -438,7 +455,7 @@
             <h3>О себе</h3>
             <p>Профессионал в области веб-разработки, SEO и системного администрирования.</p>
           </div>
-          <img src="https://raw.githubusercontent.com/A-Krivoshen/site/main/logo_me_mini.png" alt="Фото" style="max-width: 100px; width: 100%; border-radius: 50%; height: auto;">
+          <img src="logo_me_mini.png" alt="Фото Алексея Кривошеина" loading="lazy" style="max-width: 100px; width: 100%; border-radius: 50%; height: auto;">
         </div>
 
         <h2>Образование</h2>
@@ -579,5 +596,22 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/100254330" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Кривошеин Алексей Сергеевич",
+      "url": "https://krivoshein.site/resume.html",
+      "image": "https://krivoshein.site/logo_me_mini.png",
+      "jobTitle": "Веб-разработчик / Системный администратор",
+      "email": "mailto:aleksey@krivoshein.site",
+      "telephone": "+7-963-664-16-15",
+      "sameAs": [
+        "https://github.com/A-Krivoshen",
+        "https://www.linkedin.com/in/krivosheinaleksey/",
+        "https://t.me/drslon_channel"
+      ]
+    }
+  </script>
 </body>
 </html>
