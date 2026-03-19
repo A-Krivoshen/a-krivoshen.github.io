@@ -2,331 +2,323 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Резюме - ИП Кривошеин Алексей Сергеевич</title>
+  <title>Резюме / Resume — Кривошеин Алексей Сергеевич</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#1b1b1b">
-  <meta name="description" content="Резюме Кривошеина Алексея Сергеевича: опыт веб-разработки, настройки серверов и облачных решений. Свяжитесь для сотрудничества!">
+  <meta name="theme-color" content="#101522">
+  <meta name="description" content="Двуязычное резюме: веб-разработка, Linux/DevOps, SEO, инфраструктура и техподдержка.">
   <link rel="canonical" href="https://krivoshein.site/resume.html">
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Резюме — Кривошеин Алексей Сергеевич">
-  <meta property="og:description" content="Опыт в веб-разработке, Linux/DevOps, SEO и интернет-маркетинге.">
+  <meta property="og:title" content="Резюме / Resume — Кривошеин Алексей Сергеевич">
+  <meta property="og:description" content="Web developer, DevOps / system administration, SEO and infrastructure.">
   <meta property="og:url" content="https://krivoshein.site/resume.html">
   <meta property="og:image" content="https://krivoshein.site/logo_me_mini.png">
-  <!-- Фавикон (при необходимости) -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- Тема Midnight -->
-  <link rel="stylesheet" href="https://pages-themes.github.io/midnight/assets/css/style.css">
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    /* Шапка, соцсети, навигация */
-    .site-header {
-      position: relative;
-      text-align: center;
-      margin-bottom: 20px;
-      padding: 20px;
+    :root {
+      --bg: #0b1120;
+      --bg-soft: #111a2e;
+      --card: rgba(17, 26, 46, 0.92);
+      --line: rgba(148, 163, 184, 0.18);
+      --text: #e5eefc;
+      --muted: #a9b8d2;
+      --accent: #60a5fa;
+      --accent-strong: #3b82f6;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      --radius: 18px;
+      --container: 1180px;
     }
-    .site-header h1 {
+    * { box-sizing: border-box; }
+    body {
       margin: 0;
-      color: #5282ff;
-      font-size: 24px;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(59,130,246,0.18), transparent 24%),
+        radial-gradient(circle at top right, rgba(52,211,153,0.14), transparent 22%),
+        linear-gradient(180deg, #08101d 0%, #0b1120 100%);
     }
-    .header-right {
+    .lang-en { display: none; }
+    body[data-current-lang="en"] .lang-ru { display: none; }
+    body[data-current-lang="en"] .lang-en { display: inline; }
+    body[data-current-lang="en"] .lang-block.lang-en { display: block; }
+    body[data-current-lang="en"] .lang-block.lang-ru { display: none; }
+    body[data-current-lang="ru"] .lang-block.lang-en { display: none; }
+    body[data-current-lang="ru"] .lang-block.lang-ru { display: block; }
+    a { color: inherit; }
+    .skip-link {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      left: -9999px;
+      top: 0;
+      background: var(--accent-strong);
+      color: white;
+      padding: 10px 14px;
+      z-index: 1000;
+      border-radius: 0 0 12px 12px;
+    }
+    .skip-link:focus { left: 12px; }
+    .container { width: min(calc(100% - 32px), var(--container)); margin: 0 auto; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 16, 29, 0.82);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
       display: flex;
       align-items: center;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 78px;
     }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid rgba(96,165,250,0.35);
+    }
+    .brand-title { font-weight: 700; line-height: 1.2; }
+    .brand-title small { display: block; color: var(--muted); font-weight: 500; margin-top: 2px; }
+    .nav-wrap { display: flex; align-items: center; gap: 16px; }
     .site-nav {
       display: flex;
-      gap: 15px;
+      align-items: center;
+      gap: 12px;
     }
-    .site-nav a {
-      color: #5282ff;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    .site-nav a:hover {
-      text-decoration: underline;
-    }
-    .site-nav a[aria-current="page"] {
-      text-decoration: underline;
-      font-weight: 700;
-    }
-    .burger-icon {
-      display: none;
-      font-size: 24px;
-      color: #5282ff;
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
-    .social-links {
-      display: flex;
-      gap: 10px;
-    }
-    .social-links a {
-      color: #5282ff;
-      text-decoration: none;
+    .site-nav a,
+    .lang-switch button,
+    .burger,
+    .print-btn {
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
       font-size: 14px;
-      white-space: nowrap;
-    }
-    .social-links a:hover {
-      text-decoration: underline;
-    }
-    .mobile-menu {
-      display: none;
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 10px;
-      border-radius: 5px;
-      text-align: right;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .mobile-menu a {
-      display: block;
-      margin: 5px 0;
-      color: #5282ff;
       text-decoration: none;
-      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s ease;
     }
-    .mobile-menu a:hover {
-      text-decoration: underline;
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"],
+    .lang-switch button:hover,
+    .lang-switch button.active,
+    .burger:hover,
+    .print-btn:hover {
+      background: rgba(96,165,250,0.12);
+      border-color: rgba(96,165,250,0.25);
     }
-    @media (max-width: 600px) {
-      .site-nav {
-        display: none;
-      }
-      .burger-icon {
-        display: block;
-      }
-      .social-links {
-        position: static;
-        margin-top: 10px;
-        justify-content: center;
-      }
+    .lang-switch {
+      display: inline-flex;
+      gap: 8px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+    }
+    .lang-switch button.active {
+      background: var(--accent-strong);
+      border-color: var(--accent-strong);
+      color: #fff;
+    }
+    .burger { display: none; }
+
+    .resume-hero {
+      padding: 70px 0 28px;
+    }
+    .resume-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+      gap: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .profile-card { padding: 28px; }
+    .profile-card img {
+      width: 110px;
+      height: 110px;
+      border-radius: 24px;
+      object-fit: cover;
+      margin-bottom: 18px;
+      border: 2px solid rgba(96,165,250,0.35);
+    }
+    .profile-card h1 {
+      margin: 0 0 10px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.02;
+    }
+    .profile-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0 0 18px;
+    }
+    .contact-grid {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .contact-grid div {
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+    .contact-grid small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 4px;
     }
 
-    /* Основной контейнер */
-    .page-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      color: #fff;
+    .summary-card { padding: 28px; }
+    .summary-card h2,
+    .content-card h2 {
+      margin: 0 0 16px;
+      font-size: 28px;
+    }
+    .summary-list,
+    .skills-list,
+    .language-list {
+      display: grid;
+      gap: 12px;
+    }
+    .summary-item,
+    .skill-item,
+    .language-item {
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+    .summary-item strong,
+    .skill-item strong,
+    .language-item strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .summary-item span,
+    .skill-item span,
+    .language-item span {
+      color: var(--muted);
       line-height: 1.6;
     }
-    body {
-      background: #2d2d2d; /* Оставляем фон как в index.html */
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: 24px;
+      padding-bottom: 64px;
     }
-    .container {
-      margin: 0 auto;
-      background: rgba(0, 0, 0, 0.7); /* Затемнили подложку для читаемости */
-      padding: 15px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      display: flex;
-      gap: 20px;
+    .content-card { padding: 28px; }
+    .timeline {
+      display: grid;
+      gap: 16px;
     }
-    .left-column, .right-column {
-      flex: 1;
-      background: rgba(0, 0, 0, 0.7); /* Затемнили подложку для читаемости */
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    .timeline-item,
+    .cert-item,
+    .edu-item {
+      position: relative;
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
     }
-    h1 {
-      font-size: 24px;
-      color: #5282ff;
+    .timeline-item time,
+    .cert-item time,
+    .edu-item time {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
       margin-bottom: 10px;
-    }
-    .contact-info {
-      font-size: 14px;
-      color: #ecf0f1;
-      margin-bottom: 15px;
-    }
-    .contact-info a {
-      color: #5282ff;
-      text-decoration: none;
-    }
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-    .resume-actions {
-      margin-bottom: 15px;
-    }
-    .resume-actions button {
-      background: #5282ff;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-    .resume-actions button:hover {
-      background: #3b6ad1;
-    }
-    h2 {
-      font-size: 20px;
+      border: 1px solid rgba(96,165,250,0.28);
+      color: var(--accent);
+      font-size: 13px;
       font-weight: 700;
-      color: #3498db;
-      margin: 20px 0 10px;
-      border-bottom: 2px solid #e74c3c;
-      padding-bottom: 5px;
     }
-    h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #3498db;
-      margin-bottom: 5px;
+    .timeline-item h3,
+    .cert-item h3,
+    .edu-item h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
     }
-    .experience, .certificate, .education {
-      margin-bottom: 15px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    .timeline-item p,
+    .timeline-item li,
+    .cert-item p,
+    .edu-item p {
+      color: var(--muted);
+      line-height: 1.65;
     }
-    .experience:last-child, .certificate:last-child, .education:last-child {
-      border-bottom: none;
-    }
-    .period {
-      display: inline-block;
-      font-size: 12px;
-      padding: 3px 6px;
-      margin-bottom: 8px;
-      border: 2px solid #5282ff;
-      border-radius: 3px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #5282ff;
-    }
-    .job-title, .cert-title, .edu-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 5px;
-    }
-    .company, .issuer {
-      font-size: 14px;
-      color: #ecf0f1;
-      margin: 3px 0 8px;
-    }
-    a {
-      color: #5282ff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      margin: 8px 0;
-      padding-left: 15px;
-      font-size: 14px;
-      color: #fff;
-    }
-    .skills ul {
-      columns: 1;
-      -webkit-columns: 1;
-      -moz-columns: 1;
-    }
-    .skills ul li {
-      margin-bottom: 5px;
-    }
-    .about-section {
+    .timeline-item ul { margin: 10px 0 0; padding-left: 18px; }
+    .stack {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 20px;
+      margin-top: 10px;
     }
-    .about-section p {
+    .stack span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(96,165,250,0.12);
+      border: 1px solid rgba(96,165,250,0.22);
+      color: var(--text);
       font-size: 14px;
-      margin: 0;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 5px;
-      border-radius: 3px;
-    }
-    @media (max-width: 600px) {
-      .container {
-        flex-direction: column;
-        padding: 10px;
-      }
-      .left-column, .right-column {
-        padding: 15px;
-      }
-      h1 {
-        font-size: 20px;
-        text-align: center;
-      }
-      h2, h3 {
-        font-size: 16px;
-        margin: 15px 0 8px;
-      }
-      .contact-info {
-        font-size: 12px;
-      }
-      .job-title, .cert-title, .edu-title {
-        font-size: 14px;
-      }
-      .company, .issuer {
-        font-size: 12px;
-      }
-      .period {
-        font-size: 10px;
-        padding: 2px 4px;
-      }
-      ul {
-        font-size: 12px;
-        padding-left: 10px;
-      }
-      .about-section {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .about-section img {
-        margin: 0 auto;
-      }
     }
 
-    /* Футер */
     .site-footer {
-      text-align: center;
-      padding: 20px;
-      color: #ccc;
-      font-size: 14px;
+      padding: 36px 0 52px;
+      color: var(--muted);
+    }
+    .footer-box {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      align-items: center;
+    }
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
-    /* Кнопка "Наверх" */
-    .to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #5282ff;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 20px;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0s linear 0.3s;
-      z-index: 1000;
+    @media (max-width: 980px) {
+      .resume-hero-grid,
+      .content-grid { grid-template-columns: 1fr; }
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 16px;
+        width: min(320px, calc(100vw - 32px));
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(8, 16, 29, 0.98);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .site-nav.open { display: flex; }
+      .burger { display: inline-flex; }
     }
-    .to-top.show {
-      opacity: 1;
-      visibility: visible;
-      transition: opacity 0.3s;
-    }
-    .to-top:hover {
-      background: #3b6ad1;
-    }
-    .to-top i {
-      line-height: 50px;
+    @media (max-width: 640px) {
+      .profile-card,
+      .summary-card,
+      .content-card { padding: 20px; }
+      .footer-box { flex-direction: column; align-items: flex-start; }
+      .header-inner { min-height: 72px; }
     }
 
     .skip-link {
@@ -344,258 +336,220 @@
     }
   </style>
 </head>
-<body>
-  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
-  <!-- Шапка -->
+<body data-current-lang="ru">
+  <a class="skip-link" href="#main-content">
+    <span class="lang-ru">Перейти к содержимому</span>
+    <span class="lang-en">Skip to content</span>
+  </a>
+
   <header class="site-header">
-    <div class="header-top">
-      <h1>Кривошеин Алексей Сергеевич</h1>
-      <div class="header-right">
-        <nav class="site-nav">
-          <a href="index.html">Услуги</a>
-          <a href="resume.html" aria-current="page">Резюме</a>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img src="logo_me_mini.png" alt="Фото Алексея Кривошеина">
+        <div class="brand-title">
+          <span>Кривошеин Алексей Сергеевич</span>
+          <small>
+            <span class="lang-ru">Резюме и опыт</span>
+            <span class="lang-en">Resume and experience</span>
+          </small>
+        </div>
+      </a>
+
+      <div class="nav-wrap">
+        <div class="lang-switch" aria-label="Language switcher">
+          <button type="button" class="lang-btn active" data-lang="ru">RU</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="print-btn" type="button" onclick="window.print()">
+          <span class="lang-ru">Печать</span>
+          <span class="lang-en">Print</span>
+        </button>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav class="site-nav" id="mainNav">
+          <a href="index.html">
+            <span class="lang-ru">Услуги</span>
+            <span class="lang-en">Services</span>
+          </a>
+          <a href="resume.html" aria-current="page">
+            <span class="lang-ru">Резюме</span>
+            <span class="lang-en">Resume</span>
+          </a>
+          <a href="mailto:aleksey@krivoshein.site">
+            <span class="lang-ru">Связаться</span>
+            <span class="lang-en">Contact</span>
+          </a>
         </nav>
-        <button class="fas fa-bars burger-icon" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu"></button>
       </div>
-    </div>
-    <!-- Мобильное меню -->
-    <nav class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Услуги</a>
-      <a href="resume.html">Резюме</a>
-    </nav>
-    <!-- Соцсети -->
-    <div class="social-links">
-      <a href="https://t.me/drslon_channel" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://vk.com/drslon_channel" target="_blank" rel="noopener">VK</a>
-      <a href="https://tenchat.ru/krivoshein" target="_blank" rel="noopener">TenChat</a>
-      <a href="https://github.com/A-Krivoshen" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/krivosheinaleksey/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://krivoshein.site/" target="_blank" rel="noopener">Сайт</a>
     </div>
   </header>
 
-  <!-- Основное содержимое -->
-  <main class="page-content" id="main-content">
-    <div class="container">
-      <div class="left-column">
-        <header>
-          <h2 style="margin-top:0;">Кривошеин Алексей Сергеевич</h2>
-          <div class="contact-info">
-            Телефон: <a href="tel:+79636641615">+7 (963) 664-16-15</a> | 
-            Email: <a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a> | 
-            Город: Москва
+  <main id="main-content">
+    <section class="resume-hero">
+      <div class="container resume-hero-grid">
+        <article class="card profile-card">
+          <img src="logo_me_mini.png" alt="Фото Алексея Кривошеина" loading="lazy">
+          <h1>Алексей Кривошеин / Alexey Krivoshein</h1>
+          <p>
+            <span class="lang-ru">Веб-разработчик, системный администратор и специалист по техническому развитию проектов. Работаю на стыке сайтов, серверов, SEO и поддержки бизнеса.</span>
+            <span class="lang-en">Web developer, system administrator and technical project specialist working across websites, servers, SEO and business support.</span>
+          </p>
+          <div class="contact-grid">
+            <div><small>Email</small><a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a></div>
+            <div><small><span class="lang-ru">Телефон</span><span class="lang-en">Phone</span></small><a href="tel:+79636641615">+7 (963) 664-16-15</a></div>
+            <div><small>Telegram</small><a href="https://t.me/drslon_channel" target="_blank" rel="noopener">@drslon_channel</a></div>
+            <div><small><span class="lang-ru">Локация</span><span class="lang-en">Location</span></small><span><span class="lang-ru">Москва, удалённо / проектно</span><span class="lang-en">Moscow, remote / project based</span></span></div>
           </div>
-          <div class="resume-actions">
-            <button type="button" onclick="window.print()">Сохранить / распечатать резюме</button>
-          </div>
-        </header>
+          <a class="print-btn" href="mailto:aleksey@krivoshein.site">
+            <span class="lang-ru">Написать по проекту</span>
+            <span class="lang-en">Email me about a project</span>
+          </a>
+        </article>
 
-        <section>
-          <h2>Опыт работы</h2>
-          <div class="experience">
-            <div class="period">2021 - Текущий</div>
-            <div class="job-title">Индивидуальный предприниматель</div>
-            <div class="company">ИП Кривошеин А.С.</div>
-            <div>
-              <ul>
-                <li>Настройка и поддержка серверов Linux</li>
-                <li>Разработка сайтов разных типов</li>
-                <li>Доработка существующих сайтов</li>
-                <li>Продвижение сайтов в поисковых системах</li>
-                <li>SEO-продвижение сайтов</li>
-                <li>Аудит и повышение эффективности сайтов</li>
-              </ul>
+        <article class="card summary-card">
+          <h2>
+            <span class="lang-ru">Профиль</span>
+            <span class="lang-en">Profile</span>
+          </h2>
+          <div class="summary-list">
+            <div class="summary-item"><strong><span class="lang-ru">Основная специализация</span><span class="lang-en">Primary specialization</span></strong><span><span class="lang-ru">Разработка и развитие сайтов, Linux/VPS, Docker, SEO-аудит и техническая поддержка.</span><span class="lang-en">Website delivery and improvement, Linux/VPS, Docker, SEO audits and technical support.</span></span></div>
+            <div class="summary-item"><strong><span class="lang-ru">Сильная сторона</span><span class="lang-en">Key strength</span></strong><span><span class="lang-ru">Могу смотреть на проект целиком: интерфейс, инфраструктура, производительность, поддержка и итог для бизнеса.</span><span class="lang-en">I can look at the project as a whole: interface, infrastructure, performance, maintainability and business outcome.</span></span></div>
+            <div class="summary-item"><strong><span class="lang-ru">Формат работы</span><span class="lang-en">Work format</span></strong><span><span class="lang-ru">Проектная занятость, частичная загрузка, сопровождение и точечные улучшения существующих решений.</span><span class="lang-en">Project-based work, part-time engagement, ongoing support and focused improvements for existing solutions.</span></span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container content-grid">
+      <article class="card content-card">
+        <h2>
+          <span class="lang-ru">Опыт работы</span>
+          <span class="lang-en">Work experience</span>
+        </h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <time>2021 — <span class="lang-ru">н.в.</span><span class="lang-en">present</span></time>
+            <h3><span class="lang-ru">Индивидуальный предприниматель</span><span class="lang-en">Independent contractor / sole proprietor</span></h3>
+            <p><span class="lang-ru">Разработка сайтов, Linux/VPS, сопровождение проектов, SEO-аудит, ускорение загрузки, резервное копирование и технические улучшения.</span><span class="lang-en">Website development, Linux/VPS setup, project support, SEO audits, performance optimization, backups and technical improvements.</span></p>
+            <ul>
+              <li><span class="lang-ru">Запуск и доработка сайтов разных типов.</span><span class="lang-en">Launch and improvement of different website types.</span></li>
+              <li><span class="lang-ru">Поддержка серверной инфраструктуры и окружений.</span><span class="lang-en">Support for server infrastructure and environments.</span></li>
+              <li><span class="lang-ru">Техническая часть интернет-маркетинга и SEO.</span><span class="lang-en">Technical side of internet marketing and SEO.</span></li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <time>2017 — 2021</time>
+            <h3><span class="lang-ru">Самозанятый специалист</span><span class="lang-en">Freelance specialist</span></h3>
+            <p><span class="lang-ru">Продвижение и развитие сайтов на WordPress, запуск и поддержка клиентских проектов.</span><span class="lang-en">Promotion and development of WordPress websites, project launches and ongoing client support.</span></p>
+          </div>
+          <div class="timeline-item">
+            <time>2010 — 2012</time>
+            <h3><span class="lang-ru">Инженер Microsoft</span><span class="lang-en">Microsoft systems engineer</span></h3>
+            <p>Ай-Теко (I-Teco). SCMS, SCOM, ADMT, migration.</p>
+          </div>
+          <div class="timeline-item">
+            <time>2009 — 2010</time>
+            <h3><span class="lang-ru">Инженер технической дирекции</span><span class="lang-en">Technical directorate engineer</span></h3>
+            <p>INLINE Technologies. <span class="lang-ru">Развитие системного каталога и мониторинга.</span><span class="lang-en">Development of system catalog and monitoring solutions.</span></p>
+          </div>
+          <div class="timeline-item">
+            <time>2001 — 2009</time>
+            <h3><span class="lang-ru">Системное администрирование и инженерные роли</span><span class="lang-en">System administration and engineering roles</span></h3>
+            <p><span class="lang-ru">Работа в корпоративной инфраструктуре, сетях, системах учёта и централизованном администрировании.</span><span class="lang-en">Experience in corporate infrastructure, networks, metering systems and centralized administration.</span></p>
+          </div>
+        </div>
+      </article>
+
+      <div style="display:grid; gap:24px;">
+        <article class="card content-card">
+          <h2><span class="lang-ru">Навыки</span><span class="lang-en">Skills</span></h2>
+          <div class="skills-list">
+            <div class="skill-item"><strong>Web</strong><span><span class="lang-ru">HTML, CSS, адаптивная вёрстка, структура сайтов, базовые PHP/CMS-задачи.</span><span class="lang-en">HTML, CSS, responsive layouts, website structure, baseline PHP/CMS tasks.</span></span></div>
+            <div class="skill-item"><strong>Infra / DevOps</strong><span><span class="lang-ru">Linux, VPS, Docker, деплой, резервное копирование, мониторинг, безопасность.</span><span class="lang-en">Linux, VPS, Docker, deployment, backups, monitoring and security.</span></span></div>
+            <div class="skill-item"><strong>SEO / Growth</strong><span><span class="lang-ru">Технический SEO-аудит, скорость сайта, аналитика, подготовка к продвижению.</span><span class="lang-en">Technical SEO audits, site speed, analytics and promotion readiness.</span></span></div>
+          </div>
+          <div class="stack">
+            <span>HTML/CSS</span><span>WordPress</span><span>Linux</span><span>Docker</span><span>VPS</span><span>SEO</span><span>CDN</span><span>Backups</span>
+          </div>
+        </article>
+
+        <article class="card content-card">
+          <h2><span class="lang-ru">Образование и сертификаты</span><span class="lang-en">Education and certificates</span></h2>
+          <div style="display:grid; gap:14px;">
+            <div class="edu-item">
+              <time>2004</time>
+              <h3>КГПУ</h3>
+              <p><span class="lang-ru">Межвузовский инженерно-педагогический факультет.</span><span class="lang-en">Interuniversity engineering and pedagogy faculty.</span></p>
+            </div>
+            <div class="cert-item">
+              <time>2017 — 2025</time>
+              <h3><span class="lang-ru">Профильные курсы и сертификаты</span><span class="lang-en">Relevant courses and certificates</span></h3>
+              <p><span class="lang-ru">Нетология, GeekBrains, Яндекс Директ, Google, Microsoft, Cloud.ru.</span><span class="lang-en">Netology, GeekBrains, Yandex Direct, Google, Microsoft, Cloud.ru.</span></p>
             </div>
           </div>
-          <div class="experience">
-            <div class="period">2017-2021</div>
-            <div class="job-title">Самозанятый</div>
-            <div>Продвижение сайтов на CMS WordPress, запуск и поддержка проектов.</div>
+        </article>
+
+        <article class="card content-card">
+          <h2><span class="lang-ru">Языки</span><span class="lang-en">Languages</span></h2>
+          <div class="language-list">
+            <div class="language-item"><strong><span class="lang-ru">Русский</span><span class="lang-en">Russian</span></strong><span><span class="lang-ru">Родной</span><span class="lang-en">Native</span></span></div>
+            <div class="language-item"><strong><span class="lang-ru">Английский</span><span class="lang-en">English</span></strong><span><span class="lang-ru">Рабочий уровень, достаточный для документации и коммуникации по проектам.</span><span class="lang-en">Working proficiency sufficient for documentation and project communication.</span></span></div>
           </div>
-          <div class="experience">
-            <div class="period">2010-2012</div>
-            <div class="job-title">Инженер Microsoft</div>
-            <div class="company">Ай-Теко (I-Teco)</div>
-            <div>SCMS, SCOM, ADMT, миграция</div>
-          </div>
-          <div class="experience">
-            <div class="period">2009-2010</div>
-            <div class="job-title">Инженер технической дирекции</div>
-            <div class="company">INLINE Technologies</div>
-            <div>Развитие системного каталога и мониторинга</div>
-          </div>
-          <div class="experience">
-            <div class="period">2009</div>
-            <div class="job-title">Старший системный администратор</div>
-            <div class="company">ГК "Независимость"</div>
-            <div>Централизованное администрирование сети</div>
-          </div>
-          <div class="experience">
-            <div class="period">2006-2008</div>
-            <div class="job-title">Инженер АСКУЭ</div>
-            <div class="company">ЗАО "Трансэнерком"</div>
-            <div>Развитие систем энергоучета</div>
-          </div>
-          <div class="experience">
-            <div class="period">2004-2005</div>
-            <div class="job-title">Специалист отдела управления ИТ</div>
-            <div class="company">ЗАО "ТПГ "ТЕРНА"</div>
-          </div>
-          <div class="experience">
-            <div class="period">2001-2004</div>
-            <div class="job-title">Старший специалист компьютерного отдела</div>
-            <div class="company">ОАО "Седьмой Континент"</div>
-          </div>
-        </section>
+        </article>
       </div>
-
-      <div class="right-column">
-        <div class="about-section">
-          <div style="flex: 1;">
-            <h3>О себе</h3>
-            <p>Профессионал в области веб-разработки, SEO и системного администрирования.</p>
-          </div>
-          <img src="logo_me_mini.png" alt="Фото Алексея Кривошеина" loading="lazy" style="max-width: 100px; width: 100%; border-radius: 50%; height: auto;">
-        </div>
-
-        <h2>Образование</h2>
-        <div class="education">
-          <div class="period">2004</div>
-          <div class="edu-title">КГПУ</div>
-          <div class="issuer">Межвузовский инженерно-педагогический факультет</div>
-        </div>
-        <div class="education">
-          <div class="period">2017</div>
-          <div class="edu-title">Нетология</div>
-          <div class="issuer">Москва</div>
-          <div><a href="https://krivoshein.site/wp-content/uploads/2024/11/povushenia_kvalificacia-scaled.jpg" target="_blank" rel="noopener">Повышение квалификации: HTML-верстка</a></div>
-        </div>
-
-        <h2>Сертификаты</h2>
-        <div class="certificate">
-          <div class="period">2025</div>
-          <div class="cert-title">Яндекс Директ</div>
-          <div class="issuer">Яндекс</div>
-          <div><a href="https://yandex.ru/adv/expert/certificates?certId=283001&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">Сертификат</a></div>
-        </div>
-        <div class="certificate">
-          <div class="period">2024</div>
-          <div class="cert-title">Яндекс Директ</div>
-          <div class="issuer">Яндекс</div>
-          <div><a href="https://yandex.ru/adv/expert/certificates?certId=262485&lastname=%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD" target="_blank" rel="noopener">Сертификат</a></div>
-        </div>
-        <div class="certificate">
-          <div class="period">2021</div>
-          <div class="cert-title">Основы интернет-маркетинга</div>
-          <div class="issuer">Google Inc.</div>
-          <div><a href="https://skillshop.exceedlms.com/student/award/KWPAZ1mheXts6XzmUQ3GZTkv" target="_blank" rel="noopener">Сертификат</a></div>
-        </div>
-        <div class="certificate">
-          <div class="period">2018</div>
-          <div class="cert-title">Курс «Веб Мастер»</div>
-          <div class="issuer">GeekBrains</div>
-          <div><a href="https://gb.ru/certificates/444514.en" target="_blank" rel="noopener">Website development by CMS</a></div>
-        </div>
-        <div class="certificate">
-          <div class="period">2018</div>
-          <div class="cert-title">Курсы</div>
-          <div class="issuer">mail.ru</div>
-          <div>
-            <a href="https://gb.ru/certificates/426422" target="_blank" rel="noopener">Html+Css</a> | 
-            <a href="https://geekbrains.ru/certificates/444951.en" target="_blank" rel="noopener">PHP</a> | 
-            <a href="https://geekbrains.ru/certificates/453666.en" target="_blank" rel="noopener">Linux</a> | 
-            <a href="https://geekbrains.ru/certificates/453667.en" target="_blank" rel="noopener">English</a>
-          </div>
-        </div>
-        <div class="certificate">
-          <div class="period">2005-2006</div>
-          <div class="cert-title">Microsoft</div>
-          <div class="issuer">Москва</div>
-          <div><a href="https://learn.microsoft.com/ru-ru/users/94294613/transcript/v2zelcogoxkm66n" target="_blank" rel="noopener">MCSA 2003 Security</a></div>
-        </div>
-        <div class="certificate">
-          <div class="period">Текущий</div>
-          <div class="cert-title">Cloud.ru</div>
-          <div class="issuer">Cloud Fundamentals</div>
-          <div><a href="https://awardme.ru/ru/users/aleksei-krivoshein-681f2de0" target="_blank" rel="noopener">Бейдж</a></div>
-        </div>
-
-        <section class="skills">
-          <h2>Ключевые навыки</h2>
-          <ul>
-            <li>Настройка серверов Linux</li>
-            <li>Разработка сайтов (HTML, CSS, PHP)</li>
-            <li>SEO-продвижение</li>
-            <li>Анализ и аудит сайтов</li>
-            <li>Работа с CMS (WordPress)</li>
-            <li>Системное администрирование</li>
-            <li>DevOps</li>
-            <li>Интернет-маркетинг (Яндекс Директ)</li>
-            <li>Английский язык (уровень B1)</li>
-          </ul>
-        </section>
-
-        <h2>Языки</h2>
-        <div style="font-size: 14px; color: #fff;">Русский</div>
-        <div style="background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;"><div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 100%;"></div></div>
-        <div style="font-size: 14px; color: #fff;">Английский</div>
-        <div style="background-color: rgba(255, 255, 255, 0.2); border-radius: 5px; height: 8px; margin: 5px 0 10px;"><div style="background-color: #5282ff; height: 100%; border-radius: 5px; width: 60%;"></div></div>
-      </div>
-    </div>
+    </section>
   </main>
 
-  <!-- Кнопка "Наверх" -->
-  <button class="to-top" id="toTopBtn">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <!-- Футер -->
   <footer class="site-footer">
-    <p>© <span id="year"></span> Кривошеин Алексей Сергеевич. Все права защищены.</p>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-    <!-- Скрипт бургер-меню -->
-    <script>
-      const burgerIcon = document.querySelector('.burger-icon');
-      const mobileMenu = document.getElementById('mobileMenu');
-      burgerIcon.addEventListener('click', () => {
-        const isOpen = mobileMenu.style.display === 'block';
-        mobileMenu.style.display = isOpen ? 'none' : 'block';
-        burgerIcon.setAttribute('aria-expanded', String(!isOpen));
-      });
-    </script>
-    <!-- Скрипт кнопки "Наверх" -->
-    <script>
-      const toTopBtn = document.getElementById('toTopBtn');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) { // Показывать кнопку при прокрутке вниз на 300px
-          toTopBtn.classList.add('show');
-        } else {
-          toTopBtn.classList.remove('show');
-        }
-      });
-      toTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Плавная прокрутка вверх
-      });
-    </script>
+    <div class="container footer-box">
+      <div>
+        © <span id="year"></span> Кривошеин Алексей Сергеевич.
+        <span class="lang-ru">Все права защищены.</span>
+        <span class="lang-en">All rights reserved.</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/A-Krivoshen" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/krivosheinaleksey/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://t.me/drslon_channel" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
   </footer>
-  <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(100254330, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/100254330" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+  <script>
+    const body = document.body;
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const burger = document.querySelector('.burger');
+    const nav = document.getElementById('mainNav');
+    const savedLang = localStorage.getItem('site-language');
+
+    function applyLanguage(lang) {
+      body.setAttribute('data-current-lang', lang);
+      document.documentElement.lang = lang;
+      langButtons.forEach((button) => {
+        button.classList.toggle('active', button.dataset.lang === lang);
+        button.setAttribute('aria-pressed', String(button.dataset.lang === lang));
+      });
+      localStorage.setItem('site-language', lang);
+    }
+
+    langButtons.forEach((button) => {
+      button.addEventListener('click', () => applyLanguage(button.dataset.lang));
+    });
+
+    if (savedLang === 'en' || savedLang === 'ru') {
+      applyLanguage(savedLang);
+    } else {
+      applyLanguage('ru');
+    }
+
+    burger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -603,9 +557,10 @@
       "name": "Кривошеин Алексей Сергеевич",
       "url": "https://krivoshein.site/resume.html",
       "image": "https://krivoshein.site/logo_me_mini.png",
-      "jobTitle": "Веб-разработчик / Системный администратор",
+      "jobTitle": "Web developer / System administrator",
       "email": "mailto:aleksey@krivoshein.site",
       "telephone": "+7-963-664-16-15",
+      "availableLanguage": ["Russian", "English"],
       "sameAs": [
         "https://github.com/A-Krivoshen",
         "https://www.linkedin.com/in/krivosheinaleksey/",
@@ -613,5 +568,14 @@
       ]
     }
   </script>
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(100254330, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/100254330" style="position:absolute; left:-9999px;" alt=""></div></noscript>
 </body>
 </html>
