@@ -15,532 +15,10 @@
   <meta name="yandex-verification" content="7de62e41b72e9dde">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    :root {
-      --bg: #0b1120;
-      --bg-soft: #111a2e;
-      --card: rgba(17, 26, 46, 0.92);
-      --line: rgba(148, 163, 184, 0.18);
-      --text: #e5eefc;
-      --muted: #a9b8d2;
-      --accent: #60a5fa;
-      --accent-strong: #3b82f6;
-      --success: #34d399;
-      --danger: #f97316;
-      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-      --radius: 18px;
-      --container: 1180px;
-    }
+    <link rel="stylesheet" href="assets/site.css">
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(59,130,246,0.18), transparent 24%),
-        radial-gradient(circle at top right, rgba(52,211,153,0.14), transparent 22%),
-        linear-gradient(180deg, #08101d 0%, #0b1120 100%);
-    }
-
-    a { color: inherit; }
-    img { max-width: 100%; display: block; }
-    .lang-en { display: none; }
-    body[data-current-lang="en"] .lang-ru { display: none; }
-    body[data-current-lang="en"] .lang-en { display: inline; }
-    body[data-current-lang="en"] .lang-block.lang-en { display: block; }
-    body[data-current-lang="en"] .lang-block.lang-ru { display: none; }
-    body[data-current-lang="ru"] .lang-block.lang-en { display: none; }
-    body[data-current-lang="ru"] .lang-block.lang-ru { display: block; }
-
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 0;
-      background: var(--accent-strong);
-      color: white;
-      padding: 10px 14px;
-      z-index: 1000;
-      border-radius: 0 0 12px 12px;
-    }
-    .skip-link:focus { left: 12px; }
-
-    .container {
-      width: min(calc(100% - 32px), var(--container));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(18px);
-      background: rgba(8, 16, 29, 0.82);
-      border-bottom: 1px solid var(--line);
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      min-height: 78px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-    }
-    .brand img {
-      width: 56px;
-      height: 56px;
-      min-width: 56px;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 50%;
-      border: 2px solid rgba(96,165,250,0.35);
-      background: #0f172a;
-    }
-    .brand-title {
-      font-weight: 700;
-      line-height: 1.2;
-    }
-    .brand-title small {
-      display: block;
-      color: var(--muted);
-      font-weight: 500;
-      margin-top: 2px;
-    }
-
-    .nav-wrap {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .site-nav {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .site-nav a,
-    .lang-switch button,
-    .burger {
-      border: 1px solid transparent;
-      background: transparent;
-      color: var(--text);
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-size: 14px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-    .site-nav a:hover,
-    .lang-switch button:hover,
-    .burger:hover,
-    .site-nav a[aria-current="page"] {
-      background: rgba(96,165,250,0.12);
-      border-color: rgba(96,165,250,0.25);
-    }
-    .lang-switch {
-      display: inline-flex;
-      gap: 8px;
-      padding: 4px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      border-radius: 999px;
-    }
-    .lang-switch button.active {
-      background: var(--accent-strong);
-      border-color: var(--accent-strong);
-      color: #fff;
-    }
-    .burger { display: none; }
-
-    .hero {
-      padding: 72px 0 40px;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-      gap: 28px;
-      align-items: stretch;
-    }
-    .hero-card,
-    .info-card,
-    .section-card,
-    .service-card,
-    .faq-card,
-    .marquee-box {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .hero-card {
-      padding: 34px;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--success);
-      border: 1px solid rgba(52,211,153,0.25);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
-    .hero h1 {
-      font-size: clamp(34px, 5vw, 60px);
-      line-height: 1.02;
-      margin: 0 0 16px;
-    }
-    .hero p.lead {
-      margin: 0 0 24px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.65;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .btn,
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 18px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid transparent;
-    }
-    .btn {
-      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-      color: white;
-    }
-    .btn-secondary {
-      border-color: rgba(96,165,250,0.28);
-      background: rgba(96,165,250,0.08);
-      color: var(--text);
-    }
-    .hero-points {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .hero-points div {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 14px;
-      background: rgba(255,255,255,0.03);
-    }
-    .hero-points strong {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-    .hero-points span {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.4;
-    }
-
-    .info-card {
-      padding: 28px;
-    }
-    .krv-contact-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0;
-    }
-    .krv-contact-title {
-      margin: 0 0 12px;
-      font-size: 1.95rem;
-      line-height: 1.2;
-      text-align: center;
-    }
-    .krv-contact-lead {
-      margin: 0 0 24px;
-      color: var(--muted);
-      text-align: center;
-      line-height: 1.7;
-    }
-    .krv-contact-list {
-      display: grid;
-      gap: 12px;
-    }
-    .krv-contact-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      min-height: 58px;
-      padding: 12px 16px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(96,165,250,0.18);
-      border-radius: 14px;
-      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-    }
-    .krv-contact-item:hover {
-      background: rgba(96,165,250,0.1);
-      border-color: rgba(96,165,250,0.3);
-      transform: translateY(-1px);
-    }
-    .krv-contact-icon {
-      width: 22px;
-      height: 22px;
-      color: var(--accent);
-      flex: 0 0 22px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .krv-contact-icon svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-      fill: currentColor;
-    }
-    .krv-contact-item a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      line-height: 1.35;
-      word-break: break-word;
-    }
-    .krv-contact-item a:hover {
-      color: var(--accent);
-    }
-
-    .main-sections {
-      padding-bottom: 64px;
-    }
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: end;
-      margin-bottom: 22px;
-    }
-    .section-head h2 {
-      margin: 0;
-      font-size: clamp(28px, 3vw, 38px);
-    }
-    .section-head p {
-      margin: 10px 0 0;
-      color: var(--muted);
-      max-width: 720px;
-      line-height: 1.7;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-bottom: 46px;
-    }
-    .service-card {
-      padding: 22px;
-    }
-    .service-card i {
-      display: inline-flex;
-      width: 46px;
-      height: 46px;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      background: rgba(96,165,250,0.12);
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    .service-card h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-    }
-    .service-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    .two-column {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-bottom: 46px;
-    }
-    .section-card {
-      padding: 26px;
-    }
-    .section-card h3 {
-      margin-top: 0;
-      margin-bottom: 14px;
-      font-size: 22px;
-    }
-    .section-card p,
-    .section-card li {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    .section-card ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .pricing-list {
-      display: grid;
-      gap: 12px;
-      margin: 20px 0;
-    }
-    .pricing-pill {
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-    }
-    .price-highlight {
-      font-size: 32px;
-      font-weight: 800;
-      color: white;
-      margin: 4px 0 12px;
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-bottom: 42px;
-    }
-    .faq-card {
-      padding: 22px;
-    }
-    .faq-card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-    .faq-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .terminal-marquee {
-      overflow: hidden;
-      border-radius: 16px;
-      background: #020617;
-      border: 1px solid rgba(52, 211, 153, 0.18);
-      color: #34d399;
-      font-family: "Courier New", monospace;
-      padding: 16px 0;
-    }
-    .marquee-text {
-      display: inline-block;
-      white-space: nowrap;
-      padding-left: 100%;
-      will-change: transform;
-      animation: marquee 45s linear infinite;
-    }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-100%); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .marquee-text {
-        animation: none;
-        padding-left: 0;
-        white-space: normal;
-      }
-    }
-
-    .site-footer {
-      padding: 36px 0 52px;
-      color: var(--muted);
-    }
-    .footer-box {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      border-top: 1px solid var(--line);
-      padding-top: 22px;
-      align-items: center;
-    }
-    .footer-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .services-grid,
-      .two-column,
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-points {
-        grid-template-columns: 1fr;
-      }
-      .site-nav {
-        display: none;
-        position: absolute;
-        top: calc(100% + 10px);
-        right: 16px;
-        width: min(320px, calc(100vw - 32px));
-        padding: 12px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: rgba(8, 16, 29, 0.98);
-        box-shadow: var(--shadow);
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .site-nav.open { display: flex; }
-      .burger { display: inline-flex; }
-      .nav-wrap { gap: 10px; }
-      .lang-switch { order: -1; }
-    }
-
-    @media (max-width: 640px) {
-      .hero { padding-top: 40px; }
-      .hero-card,
-      .info-card,
-      .section-card,
-      .service-card,
-      .faq-card { padding: 20px; }
-      .krv-contact-title { font-size: 1.55rem; }
-      .krv-contact-lead { margin-bottom: 18px; }
-      .krv-contact-item {
-        min-height: 52px;
-        padding: 10px 12px;
-        gap: 10px;
-      }
-      .krv-contact-icon {
-        width: 20px;
-        height: 20px;
-        flex-basis: 20px;
-      }
-      .header-inner { min-height: 72px; }
-      .brand-title small { font-size: 12px; }
-      .footer-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
 </head>
-<body data-current-lang="ru">
+<body class="page-home" data-current-lang="ru">
   <a class="skip-link" href="#main-content">
     <span class="lang-ru">Перейти к содержимому</span>
     <span class="lang-en">Skip to content</span>
@@ -596,17 +74,17 @@
           </div>
           <h1>
             <span class="lang-ru">Делаю сайты, инфраструктуру и техподдержку без лишней сложности.</span>
-            <span class="lang-en">I build websites, infrastructure and support systems without unnecessary complexity.</span>
+            <span class="lang-en">I build websites, infrastructure and support systems that are clear, stable and ready for business growth.</span>
           </h1>
           <p class="lead">
             <span class="lang-ru">Помогаю запустить новый проект, ускорить существующий сайт, перевести инфраструктуру в облако и закрыть технические задачи бизнеса — от фронтенда до серверов.</span>
-            <span class="lang-en">I help launch new projects, improve existing websites, migrate infrastructure to the cloud and solve technical business tasks — from frontend to servers.</span>
+            <span class="lang-en">I help companies launch new digital products, improve existing websites, move infrastructure to the cloud and solve technical business challenges — from frontend to servers.</span>
           </p>
           <div class="hero-actions">
             <a class="btn" href="mailto:aleksey@krivoshein.site?subject=Обсуждение%20проекта">
               <i class="fas fa-paper-plane"></i>
               <span class="lang-ru">Обсудить проект</span>
-              <span class="lang-en">Discuss a project</span>
+              <span class="lang-en">Discuss your project</span>
             </a>
             <a class="btn-secondary" href="resume.html">
               <i class="fas fa-file-lines"></i>
@@ -626,14 +104,14 @@
               <strong>2000 ₽/h</strong>
               <span>
                 <span class="lang-ru">базовая ставка, прозрачная оценка</span>
-                <span class="lang-en">base rate with transparent estimation</span>
+                <span class="lang-en">clear pricing and transparent scoping</span>
               </span>
             </div>
             <div>
               <strong>RU / EN</strong>
               <span>
                 <span class="lang-ru">сайт сразу готов к двум языкам</span>
-                <span class="lang-en">site is ready for bilingual presentation</span>
+                <span class="lang-en">ready for both Russian and English audiences</span>
               </span>
             </div>
           </div>
@@ -646,7 +124,7 @@
           </h2>
           <p class="krv-contact-lead">
             <span class="lang-ru">Если у вас есть вопрос по сайту, серверу, рекламе или проекту — напишите удобным способом.</span>
-            <span class="lang-en">If you have a question about a website, server, advertising or a project, contact me in any convenient way.</span>
+            <span class="lang-en">If you need help with a website, infrastructure, advertising or a technical project, choose the most convenient contact channel.</span>
           </p>
           <div class="krv-contact-list">
             <div class="krv-contact-item">
@@ -687,7 +165,7 @@
           </h2>
           <p>
             <span class="lang-ru">Страница полностью перевёрстана под две языковые версии: тексты, кнопки, навигация и структура готовы для русскоязычной и англоязычной аудитории.</span>
-            <span class="lang-en">This page was rebuilt for bilingual usage: copy, buttons, navigation and structure are ready for both Russian and English audiences.</span>
+            <span class="lang-en">The page structure is designed for a professional bilingual presentation, with clear service descriptions, contact paths and decision-making blocks for clients.</span>
           </p>
         </div>
       </div>
@@ -778,40 +256,7 @@
     </div>
   </footer>
 
-  <script>
-    const body = document.body;
-    const langButtons = document.querySelectorAll('.lang-btn');
-    const burger = document.querySelector('.burger');
-    const nav = document.getElementById('mainNav');
-    const savedLang = localStorage.getItem('site-language');
-
-    function applyLanguage(lang) {
-      body.setAttribute('data-current-lang', lang);
-      document.documentElement.lang = lang;
-      langButtons.forEach((button) => {
-        button.classList.toggle('active', button.dataset.lang === lang);
-        button.setAttribute('aria-pressed', String(button.dataset.lang === lang));
-      });
-      localStorage.setItem('site-language', lang);
-    }
-
-    langButtons.forEach((button) => {
-      button.addEventListener('click', () => applyLanguage(button.dataset.lang));
-    });
-
-    if (savedLang === 'en' || savedLang === 'ru') {
-      applyLanguage(savedLang);
-    } else {
-      applyLanguage('ru');
-    }
-
-    burger.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      burger.setAttribute('aria-expanded', String(isOpen));
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="assets/site.js"></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
