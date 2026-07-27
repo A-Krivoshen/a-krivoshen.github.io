@@ -1,0 +1,6 @@
+Contact: mailto:aleksey@krivoshein.site
+Contact: https://drslon.ru/contact.html
+Expires: 2027-07-27T00:00:00.000Z
+Preferred-Languages: ru, en
+Canonical: https://drslon.ru/.well-known/security.txt
+Policy: https://drslon.ru/privacy.html
