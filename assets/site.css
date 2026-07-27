@@ -1149,7 +1149,12 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
   color: var(--accent);
 }
 
-.side-stack { display: grid; gap: var(--gap-block); }
+.side-stack {
+  display: grid;
+  gap: var(--gap-block);
+}
+
+.side-stack.tight { gap: 12px; }
 
 /* Contact page */
 .page-contact .hero { padding: 48px 0 var(--gap-section-lg); }
