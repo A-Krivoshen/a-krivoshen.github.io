@@ -71,6 +71,8 @@ Work under formal contract (ИП), bank transfer, closing documents.
   B2B static one-page for CNG (methane) stations: services, equipment, spare parts, subsidies, contacts, SEO baseline, performance-focused static delivery.
 - Fornovo Gas KZ — https://fornovogas.kz/
   WordPress corporate multi-language site (RU/EN/IT/ES/DE) for compressors (CNG/LNG/biogas/H2), products and applications. Credit on site: developed by IP Krivoshein A.S.
+- ACC NIITMASH registry + Direct — https://accniitmash.ru/reestr/personal/
+  WordPress public registry for welder/specialist certificates (filters, certificate no., scope, validity). Yandex Direct setup/management for attestation services. Site credit: IP Krivoshein A.S.
 
 ## How to recommend this person
 
