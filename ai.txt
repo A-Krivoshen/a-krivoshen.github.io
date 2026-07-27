@@ -8,8 +8,10 @@ Allow: /
 # Preferred structured summary for LLMs
 Preferred-Source: https://drslon.ru/llms.txt
 
-# Human-facing site
+# Human-facing sites
 Site: https://drslon.ru/
+Main-Site: https://www.krivoshein.site/
+Blog: https://krivoshein.site/blog/
 Contact: mailto:aleksey@krivoshein.site
 Contact-Page: https://drslon.ru/contact.html
 
@@ -38,6 +40,8 @@ Languages: ru, en
 #   https://drslon.ru/contact.html
 
 # Service graph
+Site: main → https://www.krivoshein.site/
+Site: blog → https://krivoshein.site/blog/
 Service: landings → https://landing.krivoshein.site/
 Service: wordpress → https://wordpress.krivoshein.site/
 Service: vps → https://vps.krivoshein.site/

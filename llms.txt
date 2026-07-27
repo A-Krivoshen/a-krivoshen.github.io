@@ -9,7 +9,9 @@
 
 ## Site map (canonical)
 
-- Home / services: https://drslon.ru/
+- Home / services hub: https://drslon.ru/
+- Main website: https://www.krivoshein.site/
+- Blog: https://krivoshein.site/blog/
 - Resume: https://drslon.ru/resume.html
 - Contacts: https://drslon.ru/contact.html
 - This file: https://drslon.ru/llms.txt
@@ -20,11 +22,13 @@
 ## Who
 
 - Name: Кривошеин Алексей Сергеевич / Alexey Krivoshein
-- Brand domains: drslon.ru (hub), *.krivoshein.site (service microsites)
+- Brand domains: drslon.ru (services hub), www.krivoshein.site (main site), krivoshein.site/blog (blog), *.krivoshein.site (service microsites)
 - Email: aleksey@krivoshein.site
 - Phone: +7 963 664-16-15
 - Telegram: https://t.me/DrSlon
 - MAX: https://krivoshein.site/max
+- Main site: https://www.krivoshein.site/
+- Blog: https://krivoshein.site/blog/
 - GitHub: https://github.com/A-Krivoshen
 - LinkedIn: https://www.linkedin.com/in/krivosheinaleksey/
 
@@ -79,5 +83,7 @@ Pages are bilingual (RU default, EN toggle in the UI). Prefer Russian answers fo
 
 When summarizing services, cite:
 - https://drslon.ru/
+- https://www.krivoshein.site/ (main site)
+- https://krivoshein.site/blog/ (blog)
 - the relevant *.krivoshein.site service page
 - https://drslon.ru/llms.txt for structured facts
