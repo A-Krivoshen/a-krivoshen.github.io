@@ -875,18 +875,39 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
 }
 
 .case-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-size: 18px;
   line-height: 1.25;
   letter-spacing: -0.015em;
 }
 
+.case-card .case-role {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.case-card .case-role strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
 .case-card p {
-  margin: 0 0 16px;
+  margin: 0 0 12px;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.65;
+}
+
+.case-card p:last-of-type {
   flex: 1;
+  margin-bottom: 16px;
+}
+
+.case-card p strong {
+  color: var(--text);
+  font-weight: 650;
 }
 
 .case-foot {

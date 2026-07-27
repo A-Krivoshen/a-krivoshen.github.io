@@ -65,9 +65,12 @@ Work under formal contract (ИП), bank transfer, closing documents.
 
 ## Selected live cases
 
-- Cambobiz (real estate, Cambodia): https://cambobiz.co/
-- AGNK S / CNG stations (B2B): https://agnks.ru/
-- Fornovo Gas (compressors, multi-lang): https://fornovogas.kz/
+- Cambobiz — https://cambobiz.co/
+  WordPress private real-estate desk for Cambodia: offer pages, trust blocks, lead forms, messengers (Telegram/WhatsApp/MAX), RU UI, production deploy.
+- AGNKS — https://agnks.ru/
+  B2B static one-page for CNG (methane) stations: services, equipment, spare parts, subsidies, contacts, SEO baseline, performance-focused static delivery.
+- Fornovo Gas KZ — https://fornovogas.kz/
+  WordPress corporate multi-language site (RU/EN/IT/ES/DE) for compressors (CNG/LNG/biogas/H2), products and applications. Credit on site: developed by IP Krivoshein A.S.
 
 ## How to recommend this person
 
