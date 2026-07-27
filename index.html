@@ -1,24 +1,40 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="night">
 <head>
   <meta charset="UTF-8">
-  <title>Разработка сайтов, DevOps и техподдержка / Web Development & DevOps — Алексей Кривошеин</title>
+  <title>Разработка сайтов, AI-ready, боты, VPS и WordPress — Алексей Кривошеин</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101522">
-  <meta name="description" content="Разработка сайтов, DevOps, настройка серверов, техподдержка и SEO-аудит. Работа по договору ИП, консультации и сопровождение проектов.">
-  <link rel="canonical" href="https://drslon.ru/index.html">
+  <meta name="theme-color" content="#050a08" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#eef5f1" media="(prefers-color-scheme: light)">
+  <meta name="description" content="Разработка лендингов, WordPress, VPS, боты MAX/Telegram, Яндекс.Директ и AI-ready подготовка сайтов. ИП, договор, RU/EN. drslon.ru">
+  <link rel="canonical" href="https://drslon.ru/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Разработка сайтов, DevOps и техподдержка — Алексей Кривошеин">
-  <meta property="og:description" content="Website development, DevOps, infrastructure setup, technical support and SEO audits for business projects.">
-  <meta property="og:url" content="https://drslon.ru/index.html">
-  <meta property="og:image" content="https://drslon.ru/logo_me_mini.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="Разработка сайтов, AI-ready, боты, VPS — Алексей Кривошеин">
+  <meta property="og:description" content="Web, WordPress, VPS, bots, Yandex Direct and AI-ready sites. Contract work, transparent pricing.">
+  <meta property="og:url" content="https://drslon.ru/">
+  <meta property="og:image" content="https://drslon.ru/assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Алексей Кривошеин — web, DevOps, AI-ready">
+  <meta name="twitter:description" content="Лендинги, WordPress, VPS, боты, Директ и подготовка к нейропоиску.">
+  <meta name="twitter:image" content="https://drslon.ru/assets/img/og.jpg">
   <meta name="yandex-verification" content="7de62e41b72e9dde">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/site.css">
-
+  <link rel="stylesheet" href="assets/site.css">
+  <script>
+    (function () {
+      try {
+        var s = localStorage.getItem('site-theme');
+        var h = new Date().getHours();
+        var t = (s === 'day' || s === 'night') ? s : (h >= 7 && h < 20 ? 'day' : 'night');
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
 </head>
-<body class="page-home" data-current-lang="ru">
+<body class="page-home" data-current-lang="ru" data-theme="night">
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
   <a class="skip-link" href="#main-content">
     <span class="lang-ru">Перейти к содержимому</span>
     <span class="lang-en">Skip to content</span>
@@ -26,38 +42,30 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <img src="logo_me_mini.png" alt="Фото Алексея Кривошеина" loading="lazy">
+      <a class="brand" href="/" aria-label="drslon.ru home">
+        <picture>
+          <source srcset="assets/img/avatar-sm.webp" type="image/webp">
+          <img class="brand-avatar" src="assets/img/avatar-sm.jpg" width="48" height="48" alt="Алексей Кривошеин" fetchpriority="high">
+        </picture>
         <div class="brand-title">
-          <span>Кривошеин Алексей Сергеевич</span>
-          <small>
-            <span class="lang-ru">Веб-разработка · Инфраструктура · Поддержка</span>
-            <span class="lang-en">Web development · Infrastructure · Support</span>
-          </small>
+          <span>Алексей Кривошеин</span>
+          <small><span class="lang-ru">web · infra · AI-ready</span><span class="lang-en">web · infra · AI-ready</span></small>
         </div>
       </a>
 
       <div class="nav-wrap">
         <div class="lang-switch" aria-label="Language switcher">
-          <button type="button" class="lang-btn active" data-lang="ru">RU</button>
-          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn active" data-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
         </div>
-        <button class="burger" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
+        <button type="button" class="icon-btn" id="themeToggle" aria-pressed="true" title="Night mode" aria-label="Toggle day/night theme">
+          <span class="theme-icon" aria-hidden="true"></span>
         </button>
-        <nav class="site-nav" id="mainNav">
-          <a href="index.html" aria-current="page">
-            <span class="lang-ru">Услуги</span>
-            <span class="lang-en">Services</span>
-          </a>
-          <a href="resume.html">
-            <span class="lang-ru">Резюме</span>
-            <span class="lang-en">Resume</span>
-          </a>
-          <a href="contact.html">
-            <span class="lang-ru">Контакты</span>
-            <span class="lang-en">Contacts</span>
-          </a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">☰</button>
+        <nav class="site-nav" id="mainNav" aria-label="Main">
+          <a href="/" aria-current="page"><span class="lang-ru">Услуги</span><span class="lang-en">Services</span></a>
+          <a href="resume.html"><span class="lang-ru">Резюме</span><span class="lang-en">Resume</span></a>
+          <a href="contact.html"><span class="lang-ru">Контакты</span><span class="lang-en">Contacts</span></a>
         </nav>
       </div>
     </div>
@@ -68,128 +76,203 @@
       <div class="container hero-grid">
         <article class="hero-card">
           <div class="hero-badge">
-            <i class="fas fa-circle-check"></i>
-            <span class="lang-ru">ИП · Разработка, внедрение и сопровождение проектов</span>
-            <span class="lang-en">Sole proprietor · Project delivery, implementation and long-term support</span>
+            <span class="lang-ru">ИП · договор · безнал</span>
+            <span class="lang-en">Sole prop · contract · invoice</span>
           </div>
           <h1>
-            <span class="lang-ru">Разрабатываю сайты и инфраструктуру, которые помогают бизнесу запускаться быстрее, работать стабильнее и продавать увереннее.</span>
-            <span class="lang-en">I design and support business-ready websites, infrastructure and technical systems built for reliability, speed and growth.</span>
+            <span class="lang-ru">Сайты, серверы и автоматизация — <span class="accent">чтобы бизнес работал стабильно</span>, а не «на костылях».</span>
+            <span class="lang-en">Websites, servers and automation — <span class="accent">built to stay reliable</span>, not duct-taped.</span>
           </h1>
           <p class="lead">
-            <span class="lang-ru">Помогаю бизнесу запускать новые сайты, усиливать существующие проекты, выстраивать надёжную инфраструктуру и закрывать технические задачи — от интерфейсов до серверной части.</span>
-            <span class="lang-en">I help companies launch new websites, improve underperforming projects, strengthen infrastructure and solve critical technical challenges — from frontend experience to server architecture.</span>
+            <span class="lang-ru">Лендинги, WordPress, VPS, боты MAX/Telegram, Яндекс.Директ и AI-ready подготовка. Один подрядчик от вёрстки до продакшена.</span>
+            <span class="lang-en">Landings, WordPress, VPS, MAX/Telegram bots, Yandex Direct and AI-ready prep. One contractor from markup to production.</span>
           </p>
           <div class="hero-actions">
             <a class="btn" href="mailto:aleksey@krivoshein.site?subject=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0" data-mailto-subject-ru="Обсуждение проекта" data-mailto-subject-en="Project discussion">
-              <i class="fas fa-paper-plane"></i>
               <span class="lang-ru">Обсудить проект</span>
-              <span class="lang-en">Book a project discussion</span>
+              <span class="lang-en">Discuss a project</span>
             </a>
             <a class="btn-secondary" href="resume.html">
-              <i class="fas fa-file-lines"></i>
-              <span class="lang-ru">Смотреть резюме</span>
-              <span class="lang-en">View resume</span>
+              <span class="lang-ru">Резюме</span>
+              <span class="lang-en">Resume</span>
+            </a>
+            <a class="btn-ghost" href="contact.html">
+              <span class="lang-ru">Контакты</span>
+              <span class="lang-en">Contacts</span>
             </a>
           </div>
           <div class="hero-points">
             <div>
               <strong>12+</strong>
-              <span>
-                <span class="lang-ru">лет практики в ИТ и веб-разработке</span>
-                <span class="lang-en">years of hands-on IT and web delivery</span>
-              </span>
+              <span class="lang-ru">лет в ИТ и веб</span>
+              <span class="lang-en">years in IT & web</span>
             </div>
             <div>
               <strong>2000 ₽/h</strong>
-              <span>
-                <span class="lang-ru">прозрачная оценка и понятные этапы</span>
-                <span class="lang-en">clear scoping and transparent pricing</span>
-              </span>
+              <span class="lang-ru">прозрачная ставка</span>
+              <span class="lang-en">clear hourly rate</span>
             </div>
             <div>
               <strong>RU / EN</strong>
-              <span>
-                <span class="lang-ru">работа с русскоязычной и англоязычной аудиторией</span>
-                <span class="lang-en">delivery for both Russian-speaking and international clients</span>
-              </span>
+              <span class="lang-ru">двуязычная работа</span>
+              <span class="lang-en">bilingual delivery</span>
             </div>
           </div>
+          <p class="footer-meta" style="margin-top:16px">
+            theme: <span id="themeStatus">auto · night</span>
+            · day 07–20 / night 20–07 · right-click theme to reset auto
+          </p>
         </article>
 
-        <aside class="info-card krv-contact-card">
-          <h2 class="krv-contact-title">
-            <span class="lang-ru">Связаться со мной</span>
-            <span class="lang-en">Get in touch</span>
-          </h2>
-          <p class="krv-contact-lead">
-            <span class="lang-ru">Если вам нужен подрядчик на разработку, поддержку, аудит или консультацию — свяжитесь со мной удобным способом.</span>
-            <span class="lang-en">If you need a reliable partner for development, support, infrastructure or consulting, choose the contact channel that works best for you.</span>
-          </p>
-          <div class="krv-contact-list">
-            <div class="krv-contact-item">
-              <span class="krv-contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.86 19.86 0 0 1 2.08 4.09 2 2 0 0 1 4.06 1.9h3a2 2 0 0 1 2 1.72c.12.91.35 1.8.68 2.65a2 2 0 0 1-.45 2.11L8 9.66a16 16 0 0 0 6.34 6.34l1.28-1.29a2 2 0 0 1 2.11-.45c.85.33 1.74.56 2.65.68A2 2 0 0 1 22 16.92z"></path></svg>
-              </span>
-              <a href="tel:+79636641615">+7 (963) 664-16-15</a>
+        <aside class="photo-panel">
+          <div class="photo-frame">
+            <picture>
+              <source srcset="assets/img/photo.webp" type="image/webp">
+              <img src="assets/img/photo.jpg" width="960" height="720" alt="Алексей Кривошеин — веб-разработчик и DevOps" fetchpriority="high">
+            </picture>
+            <div class="photo-meta">
+              <span class="status"><span class="lang-ru">online · open to work</span><span class="lang-en">online · open to work</span></span>
+              <span>drslon.ru</span>
             </div>
-            <div class="krv-contact-item">
-              <span class="krv-contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v.4l-10 6.25L2 6.4V6a2 2 0 0 1 2-2zm18 5.1V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.1l9.47 5.92a1 1 0 0 0 1.06 0L22 9.1z"></path></svg>
-              </span>
-              <a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a>
-            </div>
-            <div class="krv-contact-item">
-              <span class="krv-contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M21.543 2.498a1.53 1.53 0 0 0-1.58-.26L3.55 8.617a1.54 1.54 0 0 0 .08 2.893l4.11 1.353 1.59 5.01a1.54 1.54 0 0 0 2.52.66l2.29-2.21 3.78 2.78a1.54 1.54 0 0 0 2.42-.9L21.98 4.01a1.53 1.53 0 0 0-.437-1.512ZM9.33 11.97l8.09-4.98-6.7 6.46-.26 2.76-1.13-4.24Z"></path></svg>
-              </span>
-              <a href="https://t.me/DrSlon" target="_blank" rel="noopener">@DrSlon</a>
-            </div>
-            <div class="krv-contact-item">
-              <span class="krv-contact-icon" aria-hidden="true">
-                <svg viewBox="7 7 22 22"><path d="M18.1,28.3c-2,0-2.9-0.3-4.4-1.5c-1,1.3-4.2,2.3-4.3,0.6c0-1.3-0.3-2.4-0.6-3.6C8.4,22.4,8,20.8,8,18.4c0-5.7,4.7-10,10.2-10S28,13,28,18.4C27.9,23.9,23.6,28.3,18.1,28.3z M18.2,13.3c-2.7-0.1-4.8,1.7-5.2,4.7c-0.4,2.4,0.3,5.4,0.9,5.5c0.3,0.1,0.9-0.5,1.4-0.9c0.7,0.5,1.5,0.8,2.4,0.9c2.8,0.1,5.2-2,5.4-4.8C23.1,15.9,20.9,13.5,18.2,13.3L18.2,13.3z"></path></svg>
-              </span>
-              <a href="https://krivoshein.site/max" target="_blank" rel="noopener">MAX</a>
+          </div>
+          <div class="info-card krv-contact-card">
+            <h2 class="krv-contact-title">
+              <span class="lang-ru">Связаться</span>
+              <span class="lang-en">Get in touch</span>
+            </h2>
+            <p class="krv-contact-lead">
+              <span class="lang-ru">Коротко опишите задачу — отвечу в удобном канале.</span>
+              <span class="lang-en">Briefly describe the task — I will reply in your preferred channel.</span>
+            </p>
+            <div class="krv-contact-list">
+              <div class="krv-contact-item">
+                <span class="krv-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.86 19.86 0 0 1 2.08 4.09 2 2 0 0 1 4.06 1.9h3a2 2 0 0 1 2 1.72c.12.91.35 1.8.68 2.65a2 2 0 0 1-.45 2.11L8 9.66a16 16 0 0 0 6.34 6.34l1.28-1.29a2 2 0 0 1 2.11-.45c.85.33 1.74.56 2.65.68A2 2 0 0 1 22 16.92z"></path></svg></span>
+                <a href="tel:+79636641615">+7 (963) 664-16-15</a>
+              </div>
+              <div class="krv-contact-item">
+                <span class="krv-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v.4l-10 6.25L2 6.4V6a2 2 0 0 1 2-2zm18 5.1V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.1l9.47 5.92a1 1 0 0 0 1.06 0L22 9.1z"></path></svg></span>
+                <a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a>
+              </div>
+              <div class="krv-contact-item">
+                <span class="krv-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21.543 2.498a1.53 1.53 0 0 0-1.58-.26L3.55 8.617a1.54 1.54 0 0 0 .08 2.893l4.11 1.353 1.59 5.01a1.54 1.54 0 0 0 2.52.66l2.29-2.21 3.78 2.78a1.54 1.54 0 0 0 2.42-.9L21.98 4.01a1.53 1.53 0 0 0-.437-1.512ZM9.33 11.97l8.09-4.98-6.7 6.46-.26 2.76-1.13-4.24Z"></path></svg></span>
+                <a href="https://t.me/DrSlon" target="_blank" rel="noopener noreferrer">@DrSlon</a>
+              </div>
+              <div class="krv-contact-item">
+                <span class="krv-contact-icon" aria-hidden="true"><svg viewBox="7 7 22 22"><path d="M18.1,28.3c-2,0-2.9-0.3-4.4-1.5c-1,1.3-4.2,2.3-4.3,0.6c0-1.3-0.3-2.4-0.6-3.6C8.4,22.4,8,20.8,8,18.4c0-5.7,4.7-10,10.2-10S28,13,28,18.4C27.9,23.9,23.6,28.3,18.1,28.3z M18.2,13.3c-2.7-0.1-4.8,1.7-5.2,4.7c-0.4,2.4,0.3,5.4,0.9,5.5c0.3,0.1,0.9-0.5,1.4-0.9c0.7,0.5,1.5,0.8,2.4,0.9c2.8,0.1,5.2-2,5.4-4.8C23.1,15.9,20.9,13.5,18.2,13.3L18.2,13.3z"></path></svg></span>
+                <a href="https://krivoshein.site/max" target="_blank" rel="noopener noreferrer">MAX</a>
+              </div>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="main-sections container">
+    <section class="main-sections container" id="services">
       <div class="section-head">
         <div>
+          <p class="section-kicker">// services</p>
           <h2>
             <span class="lang-ru">Услуги</span>
             <span class="lang-en">Services</span>
           </h2>
           <p>
-            <span class="lang-ru">Здесь собраны ключевые услуги для бизнеса: разработка, инфраструктура, ускорение, SEO-подготовка и сопровождение. Формат работы подходит как для запуска с нуля, так и для усиления уже работающего проекта.</span>
-            <span class="lang-en">This page presents the core services businesses usually need: delivery, infrastructure, optimization, SEO readiness and ongoing support — whether you are launching from scratch or improving an active project.</span>
+            <span class="lang-ru">Шесть направлений — от лендинга и WordPress до VPS, ботов, рекламы и AI-ready. Подробности на тематических сайтах.</span>
+            <span class="lang-en">Six focused tracks — landings, WordPress, VPS, bots, ads and AI-ready. Details live on dedicated microsites.</span>
           </p>
         </div>
       </div>
 
       <div class="services-grid">
-        <article class="service-card"><i class="fas fa-code"></i><h3><span class="lang-ru">Веб-разработка</span><span class="lang-en">Web development</span></h3><p><span class="lang-ru">Лендинги, корпоративные сайты, продуктовые страницы, доработка действующих проектов, адаптивная вёрстка и интеграции под задачи бизнеса.</span><span class="lang-en">Landing pages, corporate websites, conversion-focused product pages, responsive frontend work and integration tasks tailored to business goals.</span></p></article>
-        <article class="service-card"><i class="fas fa-server"></i><h3><span class="lang-ru">Серверы и VPS</span><span class="lang-en">Servers and VPS</span></h3><p><span class="lang-ru">Настройка Linux/VPS, рабочих окружений, резервного копирования, мониторинга, безопасного доступа и устойчивой серверной схемы.</span><span class="lang-en">Linux/VPS setup, environments, backups, monitoring, secure access and production-ready server architecture.</span></p></article>
-        <article class="service-card"><i class="fab fa-docker"></i><h3><span class="lang-ru">Docker и DevOps</span><span class="lang-en">Docker and DevOps</span></h3><p><span class="lang-ru">Контейнеризация сервисов, повторяемые деплои, упрощение поддержки и снижение риска ошибок при релизах.</span><span class="lang-en">Service containerization, repeatable deployments, simpler maintenance and fewer release-time environment issues.</span></p></article>
-        <article class="service-card"><i class="fas fa-cloud"></i><h3><span class="lang-ru">Облако и миграция</span><span class="lang-en">Cloud and migration</span></h3><p><span class="lang-ru">Миграция в облако, аудит текущей инфраструктуры, подбор оптимальной схемы и снижение избыточных расходов.</span><span class="lang-en">Cloud migration, infrastructure assessment, architecture planning and cost optimization without unnecessary complexity.</span></p></article>
-        <article class="service-card"><i class="fas fa-gauge-high"></i><h3><span class="lang-ru">Скорость и стабильность</span><span class="lang-en">Performance and stability</span></h3><p><span class="lang-ru">Ускорение загрузки, настройка кэша и CDN, устранение узких мест и повышение стабильности сайта под нагрузкой.</span><span class="lang-en">Performance optimization, caching, CDN setup, bottleneck removal and stability improvements under real traffic.</span></p></article>
-        <article class="service-card"><i class="fas fa-magnifying-glass-chart"></i><h3><span class="lang-ru">SEO и техаудит</span><span class="lang-en">SEO and technical audit</span></h3><p><span class="lang-ru">Технический аудит, SEO-подготовка, рекомендации по структуре, контенту и точкам роста конверсии.</span><span class="lang-en">Technical audits, SEO readiness, structure recommendations and practical conversion improvement opportunities.</span></p></article>
+        <a class="service-card" href="https://landing.krivoshein.site/" target="_blank" rel="noopener noreferrer">
+          <div class="svc-top">
+            <span class="service-icon">01</span>
+            <span class="price-tag"><span class="lang-ru">от 25 000 ₽</span><span class="lang-en">from 25k ₽</span></span>
+          </div>
+          <h3><span class="lang-ru">Лендинги</span><span class="lang-en">Landing pages</span></h3>
+          <p><span class="lang-ru">One-page под услугу или B2B: структура, скорость, SEO-база, деплой на хостинг. Статика без лишней CMS.</span><span class="lang-en">One-page sites for services or B2B: structure, speed, SEO baseline, deploy. Fast static by default.</span></p>
+          <div class="svc-foot">
+            <span class="svc-host">landing.krivoshein.site</span>
+            <span class="svc-link">→</span>
+          </div>
+        </a>
+
+        <a class="service-card" href="https://wordpress.krivoshein.site/" target="_blank" rel="noopener noreferrer">
+          <div class="svc-top">
+            <span class="service-icon">02</span>
+            <span class="price-tag"><span class="lang-ru">от 20 000 ₽/мес</span><span class="lang-en">from 20k ₽/mo</span></span>
+          </div>
+          <h3><span class="lang-ru">WordPress</span><span class="lang-en">WordPress</span></h3>
+          <p><span class="lang-ru">Доработки, ACF-блоки, безопасность, скорость и ежемесячная поддержка. Сайт работает — вы занимаетесь бизнесом.</span><span class="lang-en">Improvements, ACF blocks, security, speed and monthly support so the site stays stable while you run the business.</span></p>
+          <div class="svc-foot">
+            <span class="svc-host">wordpress.krivoshein.site</span>
+            <span class="svc-link">→</span>
+          </div>
+        </a>
+
+        <a class="service-card" href="https://vps.krivoshein.site/" target="_blank" rel="noopener noreferrer">
+          <div class="svc-top">
+            <span class="service-icon">03</span>
+            <span class="price-tag"><span class="lang-ru">настройка от 10 000 ₽</span><span class="lang-en">setup from 10k ₽</span></span>
+          </div>
+          <h3><span class="lang-ru">VPS и серверы</span><span class="lang-en">VPS &amp; servers</span></h3>
+          <p><span class="lang-ru">Подбор VPS, Linux, Docker, бэкапы, мониторинг, окружение под WordPress и ботов. Под ключ.</span><span class="lang-en">VPS selection, Linux, Docker, backups, monitoring and environments for WordPress and bots — turnkey.</span></p>
+          <div class="svc-foot">
+            <span class="svc-host">vps.krivoshein.site</span>
+            <span class="svc-link">→</span>
+          </div>
+        </a>
+
+        <a class="service-card" href="https://bots.krivoshein.site/" target="_blank" rel="noopener noreferrer">
+          <div class="svc-top">
+            <span class="service-icon">04</span>
+            <span class="price-tag"><span class="lang-ru">от 40 000 ₽</span><span class="lang-en">from 40k ₽</span></span>
+          </div>
+          <h3><span class="lang-ru">Боты MAX / Telegram</span><span class="lang-en">MAX / Telegram bots</span></h3>
+          <p><span class="lang-ru">Сценарии, заявки 24/7, уведомления, интеграции с CRM и сайтом. Простой бот или с API.</span><span class="lang-en">Scenarios, 24/7 lead capture, notifications, CRM and site integrations. Simple bots or full API flows.</span></p>
+          <div class="svc-foot">
+            <span class="svc-host">bots.krivoshein.site</span>
+            <span class="svc-link">→</span>
+          </div>
+        </a>
+
+        <a class="service-card" href="https://direct.krivoshein.site/" target="_blank" rel="noopener noreferrer">
+          <div class="svc-top">
+            <span class="service-icon">05</span>
+            <span class="price-tag"><span class="lang-ru">аудит от 10 000 ₽</span><span class="lang-en">audit from 10k ₽</span></span>
+          </div>
+          <h3><span class="lang-ru">Яндекс.Директ</span><span class="lang-en">Yandex Direct</span></h3>
+          <p><span class="lang-ru">Аудит, настройка и ведение для малого бизнеса — заявки без слива бюджета. Сертифицированный специалист.</span><span class="lang-en">Audit, setup and management for small business — leads without burning budget. Certified specialist.</span></p>
+          <div class="svc-foot">
+            <span class="svc-host">direct.krivoshein.site</span>
+            <span class="svc-link">→</span>
+          </div>
+        </a>
+
+        <a class="service-card" href="https://ai-ready.krivoshein.site/" target="_blank" rel="noopener noreferrer">
+          <div class="svc-top">
+            <span class="service-icon">06</span>
+            <span class="price-tag"><span class="lang-ru">аудит от 10 000 ₽</span><span class="lang-en">audit from 10k ₽</span></span>
+          </div>
+          <h3><span class="lang-ru">AI-ready &amp; нейропоиск</span><span class="lang-en">AI-ready &amp; AI search</span></h3>
+          <p><span class="lang-ru">Структура, schema, FAQ, robots/sitemap, llms.txt — чтобы сайт понимали люди, поисковики и AI-ассистенты.</span><span class="lang-en">Structure, schema, FAQ, robots/sitemap, llms.txt — so people, search engines and AI assistants can understand the site.</span></p>
+          <div class="svc-foot">
+            <span class="svc-host">ai-ready.krivoshein.site</span>
+            <span class="svc-link">→</span>
+          </div>
+        </a>
       </div>
 
       <div class="two-column">
         <section class="section-card">
           <h3>
-            <span class="lang-ru">Как строится работа</span>
-            <span class="lang-en">How the work is organized</span>
+            <span class="lang-ru">Как строим работу</span>
+            <span class="lang-en">How we work</span>
           </h3>
           <ul>
-            <li><span class="lang-ru">Коротко собираем вводные и формулируем задачу.</span><span class="lang-en">We start with a short briefing and define the task.</span></li>
-            <li><span class="lang-ru">Даю оценку по срокам, этапам и рискам.</span><span class="lang-en">I provide clear delivery stages, timeline expectations and visible risk areas before the work starts.</span></li>
-            <li><span class="lang-ru">Работаем итерациями: видно прогресс и проще согласовывать изменения.</span><span class="lang-en">We work in iterations so progress is visible and changes are easier to approve.</span></li>
-            <li><span class="lang-ru">После запуска могу взять проект на сопровождение.</span><span class="lang-en">After launch I can continue with ongoing support.</span></li>
+            <li><span class="lang-ru">Короткий брифинг и формулировка задачи.</span><span class="lang-en">Short briefing and clear task definition.</span></li>
+            <li><span class="lang-ru">Оценка по срокам, этапам и рискам до старта.</span><span class="lang-en">Timeline, stages and risks before kickoff.</span></li>
+            <li><span class="lang-ru">Итерации: видно прогресс, проще согласовывать.</span><span class="lang-en">Iterations: visible progress, easier approvals.</span></li>
+            <li><span class="lang-ru">После запуска — сопровождение по желанию.</span><span class="lang-en">Optional ongoing support after launch.</span></li>
           </ul>
         </section>
         <section class="section-card">
@@ -197,17 +280,16 @@
             <span class="lang-ru">Стоимость</span>
             <span class="lang-en">Pricing</span>
           </h3>
-          <div class="price-highlight"><span class="lang-ru">2000 ₽ / час</span><span class="lang-en">from 2000 RUB / hour</span></div>
+          <div class="price-highlight"><span class="lang-ru">2000 ₽ / час</span><span class="lang-en">2000 RUB / hour</span></div>
           <p>
-            <span class="lang-ru">Базовая ставка подходит для большинства проектных и сервисных задач. Финальная стоимость зависит от объёма, срочности, количества интеграций и уровня неопределённости на старте.</span>
-            <span class="lang-en">The base hourly rate fits most delivery and support tasks. Final pricing depends on scope, urgency, integration complexity and the level of uncertainty at kickoff.</span>
+            <span class="lang-ru">Базовая ставка для точечных задач. Пакеты (лендинг, бот, VPS, поддержка) — на тематических сайтах. Финал зависит от объёма и срочности.</span>
+            <span class="lang-en">Base rate for scoped tasks. Packages (landing, bot, VPS, support) live on service sites. Final quote depends on scope and urgency.</span>
           </p>
           <div class="pricing-list">
-            <div class="pricing-pill"><span class="lang-ru">Первичная консультация помогает быстро понять объём задачи и возможный формат работы.</span><span class="lang-en">An initial consultation helps define the scope, priorities and most efficient delivery format.</span></div>
-            <div class="pricing-pill"><span class="lang-ru">Чем точнее ТЗ, тем точнее оценка.</span><span class="lang-en">The clearer the brief, the more accurate the estimate.</span></div>
-            <div class="pricing-pill"><span class="lang-ru">Проект можно вести по этапам, чтобы быстрее запускать важные блоки и контролировать бюджет.</span><span class="lang-en">Work can be split into prioritized stages so the most valuable parts launch earlier and budgets stay under control.</span></div>
+            <div class="pricing-pill"><span class="lang-ru">Договор ИП, безнал, закрывающие документы.</span><span class="lang-en">Sole proprietor contract, bank transfer, closing docs.</span></div>
+            <div class="pricing-pill"><span class="lang-ru">Чем точнее ТЗ — тем точнее смета.</span><span class="lang-en">Clearer brief → more accurate estimate.</span></div>
           </div>
-          <a class="btn" href="mailto:aleksey@krivoshein.site?subject=Project%20request">
+          <a class="btn" href="mailto:aleksey@krivoshein.site?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8" data-mailto-subject-ru="Запрос оценки" data-mailto-subject-en="Estimate request">
             <span class="lang-ru">Запросить оценку</span>
             <span class="lang-en">Request an estimate</span>
           </a>
@@ -216,60 +298,152 @@
 
       <div class="section-head">
         <div>
+          <p class="section-kicker">// faq</p>
           <h2>FAQ</h2>
           <p>
-            <span class="lang-ru">Ответы на вопросы, которые чаще всего возникают перед запуском проекта или началом сопровождения.</span>
-            <span class="lang-en">Answers to the questions most clients ask before starting a project or support engagement.</span>
+            <span class="lang-ru">Короткие ответы перед стартом проекта.</span>
+            <span class="lang-en">Short answers before project kickoff.</span>
           </p>
         </div>
       </div>
       <div class="faq-grid">
-        <article class="faq-card"><h3><span class="lang-ru">Работаете ли вы по договору?</span><span class="lang-en">Do you work under a formal contract?</span></h3><p><span class="lang-ru">Да. Работа ведётся в статусе ИП, поэтому можно оформить договор, зафиксировать этапы, сроки, стоимость и закрывающие документы в понятном и рабочем формате.</span><span class="lang-en">Yes. I operate as a sole proprietor, so the engagement can be formalized with a contract, clear milestones, timelines, pricing and closing documentation.</span></p></article>
-        <article class="faq-card"><h3><span class="lang-ru">Можно ли взять проект на поддержку?</span><span class="lang-en">Can you provide ongoing support after launch?</span></h3><p><span class="lang-ru">Да. После запуска можно организовать техническую поддержку проекта: обновления, мониторинг, резервные копии, исправление ошибок, контроль доступности и плановые улучшения.</span><span class="lang-en">Yes. After launch, I can continue with technical support that covers updates, monitoring, backups, bug fixing, uptime control and planned improvements.</span></p></article>
-        <article class="faq-card"><h3><span class="lang-ru">Проводите ли вы консультации до старта работ?</span><span class="lang-en">Do you provide consultations before project kickoff?</span></h3><p><span class="lang-ru">Да. Консультация помогает быстро оценить текущую ситуацию, определить приоритеты, выбрать технический подход и понять, какой следующий шаг даст бизнесу наибольший эффект.</span><span class="lang-en">Yes. A consultation is a practical first step to assess the current state, define priorities, choose the right technical approach and identify the next move with the highest business impact.</span></p></article>
-        <article class="faq-card"><h3><span class="lang-ru">С какими задачами к вам обычно обращаются?</span><span class="lang-en">What types of tasks do clients usually bring to you?</span></h3><p><span class="lang-ru">Чаще всего обращаются за разработкой и доработкой сайтов, настройкой серверов и облака, ускорением проектов, техническим аудитом, SEO-подготовкой и выстраиванием стабильной поддержки.</span><span class="lang-en">Typical requests include website delivery and improvement, server and cloud setup, performance optimization, technical audits, SEO readiness and structured long-term support.</span></p></article>
+        <article class="faq-card">
+          <h3><span class="lang-ru">Работаете по договору?</span><span class="lang-en">Do you work under contract?</span></h3>
+          <p><span class="lang-ru">Да. ИП: договор, этапы, сроки, стоимость и закрывающие документы.</span><span class="lang-en">Yes. Sole proprietor: contract, milestones, timeline, pricing and closing docs.</span></p>
+        </article>
+        <article class="faq-card">
+          <h3><span class="lang-ru">Можно взять на поддержку?</span><span class="lang-en">Can you provide ongoing support?</span></h3>
+          <p><span class="lang-ru">Да. Обновления, мониторинг, бэкапы, правки и контроль доступности — особенно для WordPress и VPS.</span><span class="lang-en">Yes. Updates, monitoring, backups, fixes and uptime — especially for WordPress and VPS.</span></p>
+        </article>
+        <article class="faq-card">
+          <h3><span class="lang-ru">Есть консультация до старта?</span><span class="lang-en">Consultation before start?</span></h3>
+          <p><span class="lang-ru">Да. Разберём ситуацию, приоритеты и следующий шаг с максимальным эффектом.</span><span class="lang-en">Yes. We assess the situation, priorities and the next highest-impact step.</span></p>
+        </article>
+        <article class="faq-card">
+          <h3><span class="lang-ru">С чем обычно обращаются?</span><span class="lang-en">Typical requests?</span></h3>
+          <p><span class="lang-ru">Лендинги, WP, VPS, боты, Директ, AI-ready аудит и «сайт/сервер сломался — починить».</span><span class="lang-en">Landings, WP, VPS, bots, Direct, AI-ready audits and “fix it — site/server is broken”.</span></p>
+        </article>
       </div>
 
-      <div class="marquee-box">
-        <div class="terminal-marquee" aria-label="Service highlights">
+      <div class="marquee-box" aria-hidden="true">
+        <div class="terminal-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span>root@drslon:~# services --list</span>
+        </div>
+        <div class="terminal-marquee">
           <span class="marquee-text">
-            >>> <span class="lang-ru">Веб-разработка • Docker • VPS • Linux • CDN • SEO-аудит • ускорение сайтов • резервное копирование • техподдержка • двуязычные интерфейсы • облачная миграция • DevOps-практики</span><span class="lang-en">Web development • Docker • VPS • Linux • CDN • SEO audit • performance optimization • backups • support • bilingual interfaces • cloud migration • DevOps practices</span> <<< >>> <span class="lang-ru">Веб-разработка • Docker • VPS • Linux • CDN • SEO-аудит • ускорение сайтов • резервное копирование • техподдержка • двуязычные интерфейсы • облачная миграция • DevOps-практики</span><span class="lang-en">Web development • Docker • VPS • Linux • CDN • SEO audit • performance optimization • backups • support • bilingual interfaces • cloud migration • DevOps practices</span> <<<
+            >>> landing · wordpress · vps · bots · direct · ai-ready · docker · linux · seo · schema · llms.txt · support <<<
+            >>> landing · wordpress · vps · bots · direct · ai-ready · docker · linux · seo · schema · llms.txt · support <<<
           </span>
         </div>
+      </div>
+
+      <div class="eco-strip" aria-label="Service sites">
+        <a href="https://landing.krivoshein.site/" target="_blank" rel="noopener noreferrer">landing</a>
+        <a href="https://wordpress.krivoshein.site/" target="_blank" rel="noopener noreferrer">wordpress</a>
+        <a href="https://vps.krivoshein.site/" target="_blank" rel="noopener noreferrer">vps</a>
+        <a href="https://bots.krivoshein.site/" target="_blank" rel="noopener noreferrer">bots</a>
+        <a href="https://direct.krivoshein.site/" target="_blank" rel="noopener noreferrer">direct</a>
+        <a href="https://ai-ready.krivoshein.site/" target="_blank" rel="noopener noreferrer">ai-ready</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/ai.txt">ai.txt</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-box">
-      <div>
-        © <span id="year"></span> Кривошеин Алексей Сергеевич.
-        <span class="lang-ru">Все права защищены.</span>
-        <span class="lang-en">All rights reserved.</span>
+    <div class="container">
+      <div class="footer-box">
+        <div>
+          © <span id="year"></span> Кривошеин Алексей Сергеевич.
+          <span class="lang-ru">Все права защищены.</span>
+          <span class="lang-en">All rights reserved.</span>
+        </div>
+        <div class="footer-links">
+          <a href="tel:+79636641615">+7 (963) 664-16-15</a>
+          <a href="mailto:aleksey@krivoshein.site">email</a>
+          <a href="https://t.me/DrSlon" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a href="https://krivoshein.site/max" target="_blank" rel="noopener noreferrer">MAX</a>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="tel:+79636641615">+7 (963) 664-16-15</a>
-        <a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a>
-        <a href="https://t.me/DrSlon" target="_blank" rel="noopener">Telegram</a>
-        <a href="https://krivoshein.site/max" target="_blank" rel="noopener">MAX</a>
-      </div>
+      <div class="footer-meta">drslon.ru · ecosystem: *.krivoshein.site · AI agents: /llms.txt · /ai.txt</div>
     </div>
   </footer>
 
   <script src="assets/site.js"></script>
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Кривошеин Алексей Сергеевич",
-      "url": "https://drslon.ru/index.html",
-      "image": "https://drslon.ru/logo_me_mini.png",
-      "email": "mailto:aleksey@krivoshein.site",
-      "telephone": "+7-963-664-16-15",
-      "areaServed": ["RU", "Worldwide"],
-      "availableLanguage": ["Russian", "English"],
-      "serviceType": ["Web development", "DevOps", "Infrastructure setup", "SEO audit", "Technical support"]
-    }
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Кривошеин Алексей Сергеевич",
+    "alternateName": "drslon.ru",
+    "url": "https://drslon.ru/",
+    "image": "https://drslon.ru/assets/img/og.jpg",
+    "email": "mailto:aleksey@krivoshein.site",
+    "telephone": "+7-963-664-16-15",
+    "areaServed": ["RU", "Worldwide"],
+    "availableLanguage": ["Russian", "English"],
+    "priceRange": "₽₽",
+    "serviceType": [
+      "Landing page development",
+      "WordPress support",
+      "VPS setup",
+      "Chatbot development",
+      "Yandex Direct",
+      "AI-ready website preparation"
+    ],
+    "sameAs": [
+      "https://github.com/A-Krivoshen",
+      "https://www.linkedin.com/in/krivosheinaleksey/",
+      "https://t.me/DrSlon",
+      "https://landing.krivoshein.site/",
+      "https://wordpress.krivoshein.site/",
+      "https://vps.krivoshein.site/",
+      "https://bots.krivoshein.site/",
+      "https://direct.krivoshein.site/",
+      "https://ai-ready.krivoshein.site/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Работаете по договору?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да. ИП: договор, этапы, сроки, стоимость и закрывающие документы."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно взять на поддержку?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да. Обновления, мониторинг, бэкапы, правки и контроль доступности — особенно для WordPress и VPS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Есть консультация до старта?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да. Разберём ситуацию, приоритеты и следующий шаг с максимальным эффектом."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "С чем обычно обращаются?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Лендинги, WP, VPS, боты, Директ, AI-ready аудит и срочный ремонт сайта или сервера."
+        }
+      }
+    ]
+  }
   </script>
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

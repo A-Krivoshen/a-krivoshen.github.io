@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="night">
 <head>
   <meta charset="UTF-8">
-  <title>Резюме веб-разработчика и DevOps / Resume — Алексей Кривошеин</title>
+  <title>Резюме — Алексей Кривошеин | web, DevOps, AI-ready</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101522">
-  <meta name="description" content="Резюме: веб-разработка, Linux/DevOps, инфраструктура, SEO-подготовка и техническая поддержка проектов. RU / EN версия.">
+  <meta name="theme-color" content="#050a08" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#eef5f1" media="(prefers-color-scheme: light)">
+  <meta name="description" content="Резюме: веб-разработка, WordPress, Linux/VPS, боты, SEO/AI-ready, Яндекс.Директ. RU / EN.">
   <link rel="canonical" href="https://drslon.ru/resume.html">
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Резюме веб-разработчика и DevOps — Алексей Кривошеин">
-  <meta property="og:description" content="Resume: web development, infrastructure, Linux/DevOps, SEO readiness and technical support.">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Резюме — Алексей Кривошеин">
+  <meta property="og:description" content="Web, WordPress, VPS, bots, Direct, AI-ready. Resume RU/EN.">
   <meta property="og:url" content="https://drslon.ru/resume.html">
-  <meta property="og:image" content="https://drslon.ru/logo_me_mini.png">
+  <meta property="og:image" content="https://drslon.ru/assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/site.css">
-
+  <link rel="stylesheet" href="assets/site.css">
+  <script>
+    (function () {
+      try {
+        var s = localStorage.getItem('site-theme');
+        var h = new Date().getHours();
+        var t = (s === 'day' || s === 'night') ? s : (h >= 7 && h < 20 ? 'day' : 'night');
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
 </head>
-<body class="page-resume" data-current-lang="ru">
+<body class="page-resume" data-current-lang="ru" data-theme="night">
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
   <a class="skip-link" href="#main-content">
     <span class="lang-ru">Перейти к содержимому</span>
     <span class="lang-en">Skip to content</span>
@@ -25,42 +37,33 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <img src="logo_me_mini.png" alt="Фото Алексея Кривошеина">
+      <a class="brand" href="/" aria-label="drslon.ru home">
+        <picture>
+          <source srcset="assets/img/avatar-sm.webp" type="image/webp">
+          <img class="brand-avatar" src="assets/img/avatar-sm.jpg" width="48" height="48" alt="Алексей Кривошеин" fetchpriority="high">
+        </picture>
         <div class="brand-title">
-          <span>Кривошеин Алексей Сергеевич</span>
-          <small>
-            <span class="lang-ru">Веб-разработка · Инфраструктура · Поддержка</span>
-            <span class="lang-en">Web development · Infrastructure · Support</span>
-          </small>
+          <span>Алексей Кривошеин</span>
+          <small>web · infra · AI-ready</small>
         </div>
       </a>
-
       <div class="nav-wrap">
         <div class="lang-switch" aria-label="Language switcher">
-          <button type="button" class="lang-btn active" data-lang="ru">RU</button>
-          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn active" data-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
         </div>
+        <button type="button" class="icon-btn" id="themeToggle" aria-pressed="true" title="Night mode" aria-label="Toggle day/night theme">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
         <button class="print-btn" type="button" onclick="window.print()">
           <span class="lang-ru">Печать</span>
           <span class="lang-en">Print</span>
         </button>
-        <button class="burger" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-        </button>
-        <nav class="site-nav" id="mainNav">
-          <a href="index.html">
-            <span class="lang-ru">Услуги</span>
-            <span class="lang-en">Services</span>
-          </a>
-          <a href="resume.html" aria-current="page">
-            <span class="lang-ru">Резюме</span>
-            <span class="lang-en">Resume</span>
-          </a>
-          <a href="contact.html">
-            <span class="lang-ru">Контакты</span>
-            <span class="lang-en">Contacts</span>
-          </a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">☰</button>
+        <nav class="site-nav" id="mainNav" aria-label="Main">
+          <a href="/"><span class="lang-ru">Услуги</span><span class="lang-en">Services</span></a>
+          <a href="resume.html" aria-current="page"><span class="lang-ru">Резюме</span><span class="lang-en">Resume</span></a>
+          <a href="contact.html"><span class="lang-ru">Контакты</span><span class="lang-en">Contacts</span></a>
         </nav>
       </div>
     </div>
@@ -70,53 +73,58 @@
     <section class="resume-hero">
       <div class="container resume-hero-grid">
         <article class="card profile-card">
-          <img src="logo_me_mini.png" alt="Фото Алексея Кривошеина" loading="lazy">
+          <picture>
+            <source srcset="assets/img/avatar.webp" type="image/webp">
+            <img src="assets/img/avatar.jpg" width="112" height="112" alt="Алексей Кривошеин" loading="eager">
+          </picture>
           <h1>Алексей Кривошеин / Alexey Krivoshein</h1>
           <p>
-            <span class="lang-ru">Веб-разработчик, системный администратор и специалист по техническому развитию проектов. Работаю на стыке сайтов, серверов, SEO и поддержки бизнеса.</span>
-            <span class="lang-en">Web developer and infrastructure specialist focused on websites, Linux environments, SEO readiness and reliable long-term support.</span>
+            <span class="lang-ru">Веб-разработчик и специалист по инфраструктуре: сайты, WordPress, VPS, боты, SEO/AI-ready и реклама. Смотрю на проект целиком — от интерфейса до продакшена.</span>
+            <span class="lang-en">Web developer and infrastructure specialist: sites, WordPress, VPS, bots, SEO/AI-ready and ads. Full-stack view from UI to production.</span>
           </p>
           <div class="krv-contact-list">
             <div class="krv-contact-item">
-              <span class="krv-contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.86 19.86 0 0 1 2.08 4.09 2 2 0 0 1 4.06 1.9h3a2 2 0 0 1 2 1.72c.12.91.35 1.8.68 2.65a2 2 0 0 1-.45 2.11L8 9.66a16 16 0 0 0 6.34 6.34l1.28-1.29a2 2 0 0 1 2.11-.45c.85.33 1.74.56 2.65.68A2 2 0 0 1 22 16.92z"></path></svg>
-              </span>
+              <span class="krv-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.86 19.86 0 0 1 2.08 4.09 2 2 0 0 1 4.06 1.9h3a2 2 0 0 1 2 1.72c.12.91.35 1.8.68 2.65a2 2 0 0 1-.45 2.11L8 9.66a16 16 0 0 0 6.34 6.34l1.28-1.29a2 2 0 0 1 2.11-.45c.85.33 1.74.56 2.65.68A2 2 0 0 1 22 16.92z"></path></svg></span>
               <a href="tel:+79636641615">+7 (963) 664-16-15</a>
             </div>
             <div class="krv-contact-item">
-              <span class="krv-contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v.4l-10 6.25L2 6.4V6a2 2 0 0 1 2-2zm18 5.1V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.1l9.47 5.92a1 1 0 0 0 1.06 0L22 9.1z"></path></svg>
-              </span>
+              <span class="krv-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v.4l-10 6.25L2 6.4V6a2 2 0 0 1 2-2zm18 5.1V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.1l9.47 5.92a1 1 0 0 0 1.06 0L22 9.1z"></path></svg></span>
               <a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a>
             </div>
             <div class="krv-contact-item">
-              <span class="krv-contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M21.543 2.498a1.53 1.53 0 0 0-1.58-.26L3.55 8.617a1.54 1.54 0 0 0 .08 2.893l4.11 1.353 1.59 5.01a1.54 1.54 0 0 0 2.52.66l2.29-2.21 3.78 2.78a1.54 1.54 0 0 0 2.42-.9L21.98 4.01a1.53 1.53 0 0 0-.437-1.512ZM9.33 11.97l8.09-4.98-6.7 6.46-.26 2.76-1.13-4.24Z"></path></svg>
-              </span>
-              <a href="https://t.me/DrSlon" target="_blank" rel="noopener">@DrSlon</a>
+              <span class="krv-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21.543 2.498a1.53 1.53 0 0 0-1.58-.26L3.55 8.617a1.54 1.54 0 0 0 .08 2.893l4.11 1.353 1.59 5.01a1.54 1.54 0 0 0 2.52.66l2.29-2.21 3.78 2.78a1.54 1.54 0 0 0 2.42-.9L21.98 4.01a1.53 1.53 0 0 0-.437-1.512ZM9.33 11.97l8.09-4.98-6.7 6.46-.26 2.76-1.13-4.24Z"></path></svg></span>
+              <a href="https://t.me/DrSlon" target="_blank" rel="noopener noreferrer">@DrSlon</a>
             </div>
             <div class="krv-contact-item">
-              <span class="krv-contact-icon" aria-hidden="true">
-                <svg viewBox="7 7 22 22"><path d="M18.1,28.3c-2,0-2.9-0.3-4.4-1.5c-1,1.3-4.2,2.3-4.3,0.6c0-1.3-0.3-2.4-0.6-3.6C8.4,22.4,8,20.8,8,18.4c0-5.7,4.7-10,10.2-10S28,13,28,18.4C27.9,23.9,23.6,28.3,18.1,28.3z M18.2,13.3c-2.7-0.1-4.8,1.7-5.2,4.7c-0.4,2.4,0.3,5.4,0.9,5.5c0.3,0.1,0.9-0.5,1.4-0.9c0.7,0.5,1.5,0.8,2.4,0.9c2.8,0.1,5.2-2,5.4-4.8C23.1,15.9,20.9,13.5,18.2,13.3L18.2,13.3z"></path></svg>
-              </span>
-              <a href="https://krivoshein.site/max" target="_blank" rel="noopener">MAX</a>
+              <span class="krv-contact-icon" aria-hidden="true"><svg viewBox="7 7 22 22"><path d="M18.1,28.3c-2,0-2.9-0.3-4.4-1.5c-1,1.3-4.2,2.3-4.3,0.6c0-1.3-0.3-2.4-0.6-3.6C8.4,22.4,8,20.8,8,18.4c0-5.7,4.7-10,10.2-10S28,13,28,18.4C27.9,23.9,23.6,28.3,18.1,28.3z M18.2,13.3c-2.7-0.1-4.8,1.7-5.2,4.7c-0.4,2.4,0.3,5.4,0.9,5.5c0.3,0.1,0.9-0.5,1.4-0.9c0.7,0.5,1.5,0.8,2.4,0.9c2.8,0.1,5.2-2,5.4-4.8C23.1,15.9,20.9,13.5,18.2,13.3L18.2,13.3z"></path></svg></span>
+              <a href="https://krivoshein.site/max" target="_blank" rel="noopener noreferrer">MAX</a>
             </div>
           </div>
-          <a class="print-btn" href="contact.html">
+          <a class="btn-secondary" href="contact.html" style="margin-top:16px">
             <span class="lang-ru">Открыть контакты</span>
             <span class="lang-en">View contacts</span>
           </a>
         </article>
 
         <article class="card summary-card">
+          <p class="section-kicker">// profile</p>
           <h2>
             <span class="lang-ru">Профиль</span>
             <span class="lang-en">Profile</span>
           </h2>
           <div class="summary-list">
-            <div class="summary-item"><strong><span class="lang-ru">Основная специализация</span><span class="lang-en">Primary specialization</span></strong><span><span class="lang-ru">Разработка и развитие сайтов, Linux/VPS, Docker, SEO-аудит и техническая поддержка.</span><span class="lang-en">Website delivery and improvement, Linux/VPS administration, Docker-based environments, SEO audits and technical support.</span></span></div>
-            <div class="summary-item"><strong><span class="lang-ru">Сильная сторона</span><span class="lang-en">Key strength</span></strong><span><span class="lang-ru">Могу смотреть на проект целиком: интерфейс, инфраструктура, производительность, поддержка и итог для бизнеса.</span><span class="lang-en">I approach projects holistically: interface, infrastructure, performance, maintainability and measurable business value.</span></span></div>
-            <div class="summary-item"><strong><span class="lang-ru">Формат работы</span><span class="lang-en">Work format</span></strong><span><span class="lang-ru">Проектная занятость, частичная загрузка, сопровождение и точечные улучшения существующих решений.</span><span class="lang-en">Project-based work, part-time engagement, retained support and focused improvements for existing solutions.</span></span></div>
+            <div class="summary-item">
+              <strong><span class="lang-ru">Специализация</span><span class="lang-en">Focus</span></strong>
+              <span><span class="lang-ru">Лендинги, WordPress, VPS/Docker, боты MAX/Telegram, Яндекс.Директ, AI-ready SEO.</span><span class="lang-en">Landings, WordPress, VPS/Docker, MAX/Telegram bots, Yandex Direct, AI-ready SEO.</span></span>
+            </div>
+            <div class="summary-item">
+              <strong><span class="lang-ru">Сильная сторона</span><span class="lang-en">Strength</span></strong>
+              <span><span class="lang-ru">Целостный взгляд: интерфейс, сервер, скорость, поддержка и результат для бизнеса.</span><span class="lang-en">Holistic delivery: UI, server, performance, maintainability and business outcome.</span></span>
+            </div>
+            <div class="summary-item">
+              <strong><span class="lang-ru">Формат</span><span class="lang-en">Format</span></strong>
+              <span><span class="lang-ru">ИП, проекты, частичная загрузка, сопровождение. Ставка 2000 ₽/час.</span><span class="lang-en">Sole proprietor, projects, part-time, retainers. Rate 2000 RUB/hour.</span></span>
+            </div>
           </div>
         </article>
       </div>
@@ -124,25 +132,26 @@
 
     <section class="container content-grid">
       <article class="card content-card">
+        <p class="section-kicker">// experience</p>
         <h2>
-          <span class="lang-ru">Опыт работы</span>
-          <span class="lang-en">Work experience</span>
+          <span class="lang-ru">Опыт</span>
+          <span class="lang-en">Experience</span>
         </h2>
         <div class="timeline">
           <div class="timeline-item">
             <time>2021 — <span class="lang-ru">н.в.</span><span class="lang-en">present</span></time>
             <h3><span class="lang-ru">Индивидуальный предприниматель</span><span class="lang-en">Independent contractor / sole proprietor</span></h3>
-            <p><span class="lang-ru">Разработка сайтов, Linux/VPS, сопровождение проектов, SEO-аудит, ускорение загрузки, резервное копирование и технические улучшения.</span><span class="lang-en">Website development, Linux/VPS setup, project support, SEO audits, performance optimization, backup strategy and technical improvements.</span></p>
+            <p><span class="lang-ru">Разработка и поддержка сайтов, VPS, боты, SEO/AI-ready, Директ, ускорение и инфраструктура.</span><span class="lang-en">Website delivery and support, VPS, bots, SEO/AI-ready, Direct, performance and infrastructure.</span></p>
             <ul>
-              <li><span class="lang-ru">Запуск и доработка сайтов разных типов.</span><span class="lang-en">Launch and improvement of different website types.</span></li>
-              <li><span class="lang-ru">Поддержка серверной инфраструктуры и окружений.</span><span class="lang-en">Support for server infrastructure and environments.</span></li>
-              <li><span class="lang-ru">Техническая часть интернет-маркетинга и SEO.</span><span class="lang-en">Technical side of internet marketing and SEO.</span></li>
+              <li><span class="lang-ru">Лендинги и WordPress-проекты под ключ и на поддержке.</span><span class="lang-en">Landings and WordPress projects turnkey and on support.</span></li>
+              <li><span class="lang-ru">Серверы, Docker, бэкапы, мониторинг.</span><span class="lang-en">Servers, Docker, backups, monitoring.</span></li>
+              <li><span class="lang-ru">Боты MAX/Telegram, AI-ready подготовка, реклама.</span><span class="lang-en">MAX/Telegram bots, AI-ready prep, paid ads.</span></li>
             </ul>
           </div>
           <div class="timeline-item">
             <time>2017 — 2021</time>
             <h3><span class="lang-ru">Самозанятый специалист</span><span class="lang-en">Freelance specialist</span></h3>
-            <p><span class="lang-ru">Продвижение и развитие сайтов на WordPress, запуск и поддержка клиентских проектов.</span><span class="lang-en">Promotion and development of WordPress websites, project launches and ongoing client support.</span></p>
+            <p><span class="lang-ru">WordPress: развитие, продвижение и поддержка клиентских проектов.</span><span class="lang-en">WordPress development, promotion and ongoing client support.</span></p>
           </div>
           <div class="timeline-item">
             <time>2010 — 2012</time>
@@ -152,32 +161,33 @@
           <div class="timeline-item">
             <time>2009 — 2010</time>
             <h3><span class="lang-ru">Инженер технической дирекции</span><span class="lang-en">Technical directorate engineer</span></h3>
-            <p>INLINE Technologies. <span class="lang-ru">Развитие системного каталога и мониторинга.</span><span class="lang-en">Development of system catalog and monitoring solutions.</span></p>
+            <p>INLINE Technologies. <span class="lang-ru">Системный каталог и мониторинг.</span><span class="lang-en">System catalog and monitoring.</span></p>
           </div>
           <div class="timeline-item">
             <time>2001 — 2009</time>
-            <h3><span class="lang-ru">Системное администрирование и инженерные роли</span><span class="lang-en">System administration and engineering roles</span></h3>
-            <p><span class="lang-ru">Работа в корпоративной инфраструктуре, сетях, системах учёта и централизованном администрировании.</span><span class="lang-en">Experience in corporate infrastructure, networks, metering systems and centralized administration.</span></p>
+            <h3><span class="lang-ru">Сисадмин и инженерные роли</span><span class="lang-en">Sysadmin and engineering roles</span></h3>
+            <p><span class="lang-ru">Корпоративная инфраструктура, сети, учёт, централизованное администрирование.</span><span class="lang-en">Corporate infrastructure, networks, metering, centralized administration.</span></p>
           </div>
         </div>
       </article>
 
-      <div style="display:grid; gap:24px;">
+      <div class="side-stack">
         <article class="card content-card">
           <h2><span class="lang-ru">Навыки</span><span class="lang-en">Skills</span></h2>
           <div class="skills-list">
-            <div class="skill-item"><strong>Web</strong><span><span class="lang-ru">HTML, CSS, адаптивная вёрстка, структура сайтов, базовые PHP/CMS-задачи.</span><span class="lang-en">HTML, CSS, responsive layouts, website structure, baseline PHP/CMS tasks.</span></span></div>
-            <div class="skill-item"><strong>Infra / DevOps</strong><span><span class="lang-ru">Linux, VPS, Docker, деплой, резервное копирование, мониторинг, безопасность.</span><span class="lang-en">Linux, VPS, Docker, deployment, backups, monitoring and security.</span></span></div>
-            <div class="skill-item"><strong>SEO / Growth</strong><span><span class="lang-ru">Технический SEO-аудит, скорость сайта, аналитика, подготовка к продвижению.</span><span class="lang-en">Technical SEO audits, site speed, analytics and promotion readiness.</span></span></div>
+            <div class="skill-item"><strong>Web</strong><span><span class="lang-ru">HTML/CSS, лендинги, WordPress, ACF, адаптив, базовая PHP.</span><span class="lang-en">HTML/CSS, landings, WordPress, ACF, responsive, baseline PHP.</span></span></div>
+            <div class="skill-item"><strong>Infra</strong><span><span class="lang-ru">Linux, VPS, Docker, деплой, бэкапы, мониторинг, безопасность.</span><span class="lang-en">Linux, VPS, Docker, deploy, backups, monitoring, security.</span></span></div>
+            <div class="skill-item"><strong>Growth</strong><span><span class="lang-ru">Тех SEO, AI-ready, schema, Директ, скорость, аналитика.</span><span class="lang-en">Tech SEO, AI-ready, schema, Direct, speed, analytics.</span></span></div>
+            <div class="skill-item"><strong>Bots</strong><span><span class="lang-ru">MAX Bot API, Telegram, сценарии заявок, интеграции.</span><span class="lang-en">MAX Bot API, Telegram, lead flows, integrations.</span></span></div>
           </div>
           <div class="stack">
-            <span>HTML/CSS</span><span>WordPress</span><span>Linux</span><span>Docker</span><span>VPS</span><span>SEO</span><span>CDN</span><span>Backups</span>
+            <span>HTML/CSS</span><span>WordPress</span><span>Linux</span><span>Docker</span><span>VPS</span><span>SEO</span><span>AI-ready</span><span>Direct</span><span>Bots</span>
           </div>
         </article>
 
         <article class="card content-card">
-          <h2><span class="lang-ru">Образование и сертификаты</span><span class="lang-en">Education and certificates</span></h2>
-          <div style="display:grid; gap:14px;">
+          <h2><span class="lang-ru">Образование</span><span class="lang-en">Education</span></h2>
+          <div class="side-stack" style="gap:10px">
             <div class="edu-item">
               <time>2004</time>
               <h3>КГПУ</h3>
@@ -185,7 +195,7 @@
             </div>
             <div class="cert-item">
               <time>2017 — 2025</time>
-              <h3><span class="lang-ru">Профильные курсы и сертификаты</span><span class="lang-en">Relevant courses and certificates</span></h3>
+              <h3><span class="lang-ru">Курсы и сертификаты</span><span class="lang-en">Courses &amp; certificates</span></h3>
               <p><span class="lang-ru">Нетология, GeekBrains, Яндекс Директ, Google, Microsoft, Cloud.ru.</span><span class="lang-en">Netology, GeekBrains, Yandex Direct, Google, Microsoft, Cloud.ru.</span></p>
             </div>
           </div>
@@ -195,7 +205,7 @@
           <h2><span class="lang-ru">Языки</span><span class="lang-en">Languages</span></h2>
           <div class="language-list">
             <div class="language-item"><strong><span class="lang-ru">Русский</span><span class="lang-en">Russian</span></strong><span><span class="lang-ru">Родной</span><span class="lang-en">Native</span></span></div>
-            <div class="language-item"><strong><span class="lang-ru">Английский</span><span class="lang-en">English</span></strong><span><span class="lang-ru">Рабочий уровень, достаточный для документации и коммуникации по проектам.</span><span class="lang-en">Working proficiency sufficient for documentation and project communication.</span></span></div>
+            <div class="language-item"><strong><span class="lang-ru">Английский</span><span class="lang-en">English</span></strong><span><span class="lang-ru">Рабочий — документация и проектная коммуникация.</span><span class="lang-en">Working proficiency for docs and project communication.</span></span></div>
           </div>
         </article>
       </div>
@@ -203,39 +213,43 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-box">
-      <div>
-        © <span id="year"></span> Кривошеин Алексей Сергеевич.
-        <span class="lang-ru">Все права защищены.</span>
-        <span class="lang-en">All rights reserved.</span>
+    <div class="container">
+      <div class="footer-box">
+        <div>
+          © <span id="year"></span> Кривошеин Алексей Сергеевич.
+          <span class="lang-ru">Все права защищены.</span>
+          <span class="lang-en">All rights reserved.</span>
+        </div>
+        <div class="footer-links">
+          <a href="tel:+79636641615">+7 (963) 664-16-15</a>
+          <a href="mailto:aleksey@krivoshein.site">email</a>
+          <a href="https://t.me/DrSlon" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a href="https://krivoshein.site/max" target="_blank" rel="noopener noreferrer">MAX</a>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="tel:+79636641615">+7 (963) 664-16-15</a>
-        <a href="mailto:aleksey@krivoshein.site">aleksey@krivoshein.site</a>
-        <a href="https://t.me/DrSlon" target="_blank" rel="noopener">Telegram</a>
-        <a href="https://krivoshein.site/max" target="_blank" rel="noopener">MAX</a>
-      </div>
+      <div class="footer-meta">theme: <span id="themeStatus">auto</span> · drslon.ru</div>
     </div>
   </footer>
 
   <script src="assets/site.js"></script>
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Кривошеин Алексей Сергеевич",
-      "url": "https://drslon.ru/resume.html",
-      "image": "https://drslon.ru/logo_me_mini.png",
-      "jobTitle": "Web developer / System administrator",
-      "email": "mailto:aleksey@krivoshein.site",
-      "telephone": "+7-963-664-16-15",
-      "availableLanguage": ["Russian", "English"],
-      "sameAs": [
-        "https://github.com/A-Krivoshen",
-        "https://www.linkedin.com/in/krivosheinaleksey/",
-        "https://t.me/DrSlon"
-      ]
-    }
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Кривошеин Алексей Сергеевич",
+    "alternateName": "Alexey Krivoshein",
+    "url": "https://drslon.ru/resume.html",
+    "image": "https://drslon.ru/assets/img/avatar.jpg",
+    "jobTitle": "Web developer / Infrastructure specialist",
+    "email": "mailto:aleksey@krivoshein.site",
+    "telephone": "+7-963-664-16-15",
+    "availableLanguage": ["Russian", "English"],
+    "sameAs": [
+      "https://github.com/A-Krivoshen",
+      "https://www.linkedin.com/in/krivosheinaleksey/",
+      "https://t.me/DrSlon"
+    ]
+  }
   </script>
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

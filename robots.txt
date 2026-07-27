@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://drslon.ru/sitemap.xml
+
+# AI / LLM discovery
+# https://drslon.ru/llms.txt
+# https://drslon.ru/ai.txt
