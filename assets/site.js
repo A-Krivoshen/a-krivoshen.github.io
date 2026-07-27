@@ -9,6 +9,8 @@
   const themeStatus = document.getElementById('themeStatus');
   const localizedMailtoLinks = document.querySelectorAll('[data-mailto-subject-ru][data-mailto-subject-en]');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+  const isNarrow = () => window.innerWidth < 768;
 
   /* —— Language —— */
   function applyLanguage(lang) {
@@ -37,14 +39,26 @@
   /* —— Theme: auto by time of day, manual override —— */
   function themeByHour(date) {
     const hour = (date || new Date()).getHours();
-    // Day: 07:00–19:59, Night: 20:00–06:59
     return hour >= 7 && hour < 20 ? 'day' : 'night';
+  }
+
+  function syncThemeColor(theme) {
+    const color = theme === 'day' ? '#eef5f1' : '#050a08';
+    let meta = document.querySelector('meta[name="theme-color"][data-dynamic="1"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'theme-color');
+      meta.setAttribute('data-dynamic', '1');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', color);
   }
 
   function applyTheme(theme, source) {
     const value = theme === 'day' ? 'day' : 'night';
     root.setAttribute('data-theme', value);
     body.setAttribute('data-theme', value);
+    syncThemeColor(value);
     if (themeToggle) {
       themeToggle.setAttribute('aria-pressed', value === 'night' ? 'true' : 'false');
       themeToggle.setAttribute(
@@ -87,7 +101,6 @@
 
   initTheme();
 
-  // Re-check auto theme on the hour if no manual override
   setInterval(() => {
     if (localStorage.getItem('site-theme')) return;
     applyTheme(themeByHour(), 'auto');
@@ -125,13 +138,16 @@
     year.textContent = new Date().getFullYear();
   }
 
-  /* —— Matrix rain (subtle, night-friendly) —— */
+  /* —— Matrix rain (deferred / reduced on mobile) —— */
   function initMatrix() {
     if (reducedMotion) return;
+    // Skip continuous canvas on narrow phones to protect battery / CWV
+    if (isNarrow() && isCoarsePointer) return;
+
     const canvas = document.getElementById('matrix-canvas');
     if (!canvas || !canvas.getContext) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
     let width = 0;
     let height = 0;
     let columns = 0;
@@ -142,7 +158,12 @@
     const fontSize = 14;
 
     function resize() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      if (isNarrow() && isCoarsePointer) {
+        cancelAnimationFrame(animationId);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+      }
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       width = window.innerWidth;
       height = window.innerHeight;
       canvas.width = Math.floor(width * dpr);
@@ -163,7 +184,8 @@
 
     function draw(ts) {
       animationId = requestAnimationFrame(draw);
-      if (ts - lastDraw < 42) return; // ~24fps
+      if (document.hidden) return;
+      if (ts - lastDraw < 50) return; // ~20fps
       lastDraw = ts;
 
       const colors = themeColors();
@@ -191,11 +213,10 @@
       window.__matrixResizeTimer = setTimeout(resize, 150);
     });
 
-    // Pause when tab hidden
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         cancelAnimationFrame(animationId);
-      } else {
+      } else if (!(isNarrow() && isCoarsePointer)) {
         lastDraw = 0;
         animationId = requestAnimationFrame(draw);
       }
@@ -204,9 +225,18 @@
     animationId = requestAnimationFrame(draw);
   }
 
+  function scheduleMatrix() {
+    const start = () => initMatrix();
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(start, { timeout: 1800 });
+    } else {
+      setTimeout(start, 400);
+    }
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMatrix);
+    document.addEventListener('DOMContentLoaded', scheduleMatrix);
   } else {
-    initMatrix();
+    scheduleMatrix();
   }
 })();

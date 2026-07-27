@@ -1,8 +1,12 @@
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: https://drslon.ru/sitemap.xml
 
 # AI / LLM discovery
 # https://drslon.ru/llms.txt
 # https://drslon.ru/ai.txt
+
+# Host (Yandex)
+Host: https://drslon.ru

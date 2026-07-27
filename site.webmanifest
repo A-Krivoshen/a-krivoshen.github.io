@@ -1,0 +1,31 @@
+{
+  "name": "Алексей Кривошеин — drslon.ru",
+  "short_name": "drslon.ru",
+  "description": "Разработка сайтов, WordPress, VPS, боты, Яндекс.Директ и AI-ready. ИП, договор.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050a08",
+  "theme_color": "#050a08",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

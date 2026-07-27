@@ -2,21 +2,35 @@
 <html lang="ru" data-theme="night">
 <head>
   <meta charset="UTF-8">
-  <title>Контакты — Алексей Кривошеин | drslon.ru</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — заказать сайт, VPS, бота, Директ | Алексей Кривошеин</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#050a08" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#eef5f1" media="(prefers-color-scheme: light)">
-  <meta name="description" content="Контакты: телефон, email, Telegram и MAX. Проекты, поддержка, консультации. RU / EN.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Связаться с Алексеем Кривошеиным: телефон +7 (963) 664-16-15, email, Telegram @DrSlon, MAX. Заказ сайта, WordPress, VPS, бота, Директа, AI-ready.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Кривошеин Алексей Сергеевич">
   <link rel="canonical" href="https://drslon.ru/contact.html">
+  <link rel="alternate" hreflang="ru" href="https://drslon.ru/contact.html">
+  <link rel="alternate" hreflang="en" href="https://drslon.ru/contact.html">
+  <link rel="alternate" hreflang="x-default" href="https://drslon.ru/contact.html">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="drslon.ru">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:title" content="Контакты — Алексей Кривошеин">
-  <meta property="og:description" content="Phone, email, Telegram and MAX for projects and support.">
+  <meta property="og:description" content="Телефон, email, Telegram и MAX для проектов и поддержки.">
   <meta property="og:url" content="https://drslon.ru/contact.html">
   <meta property="og:image" content="https://drslon.ru/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="assets/site.css">
+  <meta name="twitter:title" content="Контакты — Алексей Кривошеин">
+  <meta name="twitter:description" content="Phone, email, Telegram, MAX — project & support.">
+  <meta name="twitter:image" content="https://drslon.ru/assets/img/og.jpg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/site.css">
   <script>
     (function () {
       try {
@@ -39,8 +53,8 @@
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="drslon.ru home">
         <picture>
-          <source srcset="assets/img/avatar-sm.webp" type="image/webp">
-          <img class="brand-avatar" src="assets/img/avatar-sm.jpg" width="48" height="48" alt="Алексей Кривошеин" fetchpriority="high">
+          <source srcset="/assets/img/avatar-sm.webp" type="image/webp">
+          <img class="brand-avatar" src="/assets/img/avatar-sm.jpg" width="48" height="48" alt="Алексей Кривошеин" fetchpriority="high">
         </picture>
         <div class="brand-title">
           <span>Алексей Кривошеин</span>
@@ -70,10 +84,16 @@
     <section class="hero">
       <div class="container contact-hero-grid">
         <article class="card contact-copy">
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumbs">
+              <li><a href="/"><span class="lang-ru">Услуги</span><span class="lang-en">Services</span></a></li>
+              <li aria-current="page"><span class="lang-ru">Контакты</span><span class="lang-en">Contacts</span></li>
+            </ol>
+          </nav>
           <p class="section-kicker">// contact</p>
           <h1>
-            <span class="lang-ru">Связь по проекту, поддержке или консультации.</span>
-            <span class="lang-en">Reach out for a project, support or consulting.</span>
+            <span class="lang-ru">Контакты: проект, поддержка сайта, VPS или консультация</span>
+            <span class="lang-en">Contacts: project, website support, VPS or consulting</span>
           </h1>
           <p class="lead">
             <span class="lang-ru">Лендинг, WordPress, VPS, бот, Директ или AI-ready — напишите в удобный канал. Те же контакты в шапке, подвале и на тематических сайтах.</span>
@@ -150,20 +170,32 @@
     </div>
   </footer>
 
-  <script src="assets/site.js"></script>
+  <script src="/assets/site.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Контакты / Contacts",
-    "url": "https://drslon.ru/contact.html",
-    "about": {
-      "@type": "Person",
-      "name": "Кривошеин Алексей Сергеевич",
-      "email": "mailto:aleksey@krivoshein.site",
-      "telephone": "+7-963-664-16-15",
-      "url": "https://drslon.ru/"
-    }
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "name": "Контакты — Алексей Кривошеин",
+        "url": "https://drslon.ru/contact.html",
+        "isPartOf": { "@type": "WebSite", "url": "https://drslon.ru/", "name": "drslon.ru" },
+        "about": {
+          "@type": "Person",
+          "name": "Кривошеин Алексей Сергеевич",
+          "email": "mailto:aleksey@krivoshein.site",
+          "telephone": "+7-963-664-16-15",
+          "url": "https://drslon.ru/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Услуги", "item": "https://drslon.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Контакты", "item": "https://drslon.ru/contact.html" }
+        ]
+      }
+    ]
   }
   </script>
   <script type="text/javascript">
@@ -174,6 +206,6 @@
     })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
     ym(100254330, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true });
   </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/100254330" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <noscript><div><img src="https://mc.yandex.ru/watch/100254330" style="position:absolute; left:-9999px;" width="1" height="1" alt="Yandex Metrika"></div></noscript>
 </body>
 </html>
