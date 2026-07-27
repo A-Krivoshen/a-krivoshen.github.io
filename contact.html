@@ -34,11 +34,26 @@
   <script>
     (function () {
       try {
-        var s = localStorage.getItem('site-theme');
+        var s = localStorage.getItem("site-theme");
         var h = new Date().getHours();
-        var t = (s === 'day' || s === 'night') ? s : (h >= 7 && h < 20 ? 'day' : 'night');
-        document.documentElement.setAttribute('data-theme', t);
+        var t = (s === "day" || s === "night") ? s : (h >= 7 && h < 20 ? "day" : "night");
+        document.documentElement.setAttribute("data-theme", t);
       } catch (e) {}
+      try {
+        var lang = localStorage.getItem("site-language");
+        if (lang !== "en" && lang !== "ru") {
+          var RU = {"Europe/Kaliningrad":1,"Europe/Moscow":1,"Europe/Simferopol":1,"Europe/Kirov":1,"Europe/Volgograd":1,"Europe/Astrakhan":1,"Europe/Saratov":1,"Europe/Ulyanovsk":1,"Europe/Samara":1,"Asia/Yekaterinburg":1,"Asia/Omsk":1,"Asia/Novosibirsk":1,"Asia/Barnaul":1,"Asia/Tomsk":1,"Asia/Novokuznetsk":1,"Asia/Krasnoyarsk":1,"Asia/Irkutsk":1,"Asia/Chita":1,"Asia/Yakutsk":1,"Asia/Khandyga":1,"Asia/Vladivostok":1,"Asia/Ust-Nera":1,"Asia/Magadan":1,"Asia/Sakhalin":1,"Asia/Srednekolymsk":1,"Asia/Kamchatka":1,"Asia/Anadyr":1};
+          var tz = "";
+          try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e2) {}
+          lang = (tz && RU[tz]) ? "ru" : "en";
+          if (!tz) {
+            var nav = (navigator.language || "").toLowerCase();
+            if (nav.indexOf("ru") === 0) lang = "ru";
+          }
+        }
+        document.documentElement.setAttribute("data-current-lang", lang);
+        document.documentElement.lang = lang;
+      } catch (e3) {}
     })();
   </script>
 </head>

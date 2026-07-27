@@ -155,10 +155,14 @@ main { flex: 1 0 auto; width: 100%; position: relative; z-index: 1; }
 img { max-width: 100%; display: block; height: auto; }
 
 .lang-en { display: none; }
+html[data-current-lang="en"] .lang-ru,
 body[data-current-lang="en"] .lang-ru { display: none; }
+html[data-current-lang="en"] .lang-en,
 body[data-current-lang="en"] .lang-en { display: inline; }
+html[data-current-lang="en"] .lang-en-block,
 body[data-current-lang="en"] .lang-en-block { display: block; }
 .lang-en-block { display: none; }
+html[data-current-lang="en"] .lang-ru-block,
 body[data-current-lang="en"] .lang-ru-block { display: none; }
 
 .skip-link {

@@ -12,29 +12,87 @@
   const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
   const isNarrow = () => window.innerWidth < 768;
 
-  /* —— Language —— */
-  function applyLanguage(lang) {
-    body.setAttribute('data-current-lang', lang);
-    root.lang = lang;
+  /* —— Language: Russia → RU, elsewhere → EN (timezone geo); manual toggle persists —— */
+  const RU_TIMEZONES = {
+    'Europe/Kaliningrad': 1,
+    'Europe/Moscow': 1,
+    'Europe/Simferopol': 1,
+    'Europe/Kirov': 1,
+    'Europe/Volgograd': 1,
+    'Europe/Astrakhan': 1,
+    'Europe/Saratov': 1,
+    'Europe/Ulyanovsk': 1,
+    'Europe/Samara': 1,
+    'Asia/Yekaterinburg': 1,
+    'Asia/Omsk': 1,
+    'Asia/Novosibirsk': 1,
+    'Asia/Barnaul': 1,
+    'Asia/Tomsk': 1,
+    'Asia/Novokuznetsk': 1,
+    'Asia/Krasnoyarsk': 1,
+    'Asia/Irkutsk': 1,
+    'Asia/Chita': 1,
+    'Asia/Yakutsk': 1,
+    'Asia/Khandyga': 1,
+    'Asia/Vladivostok': 1,
+    'Asia/Ust-Nera': 1,
+    'Asia/Magadan': 1,
+    'Asia/Sakhalin': 1,
+    'Asia/Srednekolymsk': 1,
+    'Asia/Kamchatka': 1,
+    'Asia/Anadyr': 1
+  };
+
+  function detectDefaultLang() {
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      if (tz && RU_TIMEZONES[tz]) return 'ru';
+      // No TZ available: weak fallback by browser language only
+      if (!tz) {
+        const nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        if (nav.indexOf('ru') === 0) return 'ru';
+      }
+    } catch (e) {
+      try {
+        const nav = (navigator.language || '').toLowerCase();
+        if (nav.indexOf('ru') === 0) return 'ru';
+      } catch (e2) { /* ignore */ }
+    }
+    return 'en';
+  }
+
+  function applyLanguage(lang, options) {
+    const persist = !options || options.persist !== false;
+    const value = lang === 'en' ? 'en' : 'ru';
+    body.setAttribute('data-current-lang', value);
+    root.setAttribute('data-current-lang', value);
+    root.lang = value;
     langButtons.forEach((button) => {
-      const active = button.dataset.lang === lang;
+      const active = button.dataset.lang === value;
       button.classList.toggle('active', active);
       button.setAttribute('aria-pressed', String(active));
     });
     localizedMailtoLinks.forEach((link) => {
-      const subject = lang === 'en' ? link.dataset.mailtoSubjectEn : link.dataset.mailtoSubjectRu;
+      const subject = value === 'en' ? link.dataset.mailtoSubjectEn : link.dataset.mailtoSubjectRu;
       const email = link.href.split('?')[0];
       link.href = `${email}?subject=${encodeURIComponent(subject)}`;
     });
-    localStorage.setItem('site-language', lang);
+    // Persist only explicit user choice (or when requested)
+    if (persist) {
+      localStorage.setItem('site-language', value);
+    }
   }
 
   langButtons.forEach((button) => {
-    button.addEventListener('click', () => applyLanguage(button.dataset.lang));
+    button.addEventListener('click', () => applyLanguage(button.dataset.lang, { persist: true }));
   });
 
   const savedLang = localStorage.getItem('site-language');
-  applyLanguage(savedLang === 'en' || savedLang === 'ru' ? savedLang : 'ru');
+  if (savedLang === 'en' || savedLang === 'ru') {
+    applyLanguage(savedLang, { persist: false });
+  } else {
+    applyLanguage(detectDefaultLang(), { persist: false });
+  }
 
   /* —— Theme: auto by time of day, manual override —— */
   function themeByHour(date) {
