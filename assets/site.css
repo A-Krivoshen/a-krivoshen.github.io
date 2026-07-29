@@ -1115,10 +1115,6 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
   color: rgba(81, 129, 254, 0.7);
 }
 
-[data-theme="day"] .terminal-marquee {
-  color: #60a5fa;
-}
-
 .marquee-text {
   display: inline-block;
   white-space: nowrap;
