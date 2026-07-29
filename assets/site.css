@@ -57,29 +57,29 @@
 /* —— Day —— */
 [data-theme="day"] {
   color-scheme: light;
-  --bg: #eef5f1;
-  --bg-2: #e2ebe6;
-  --bg-elevated: rgba(255, 255, 255, 0.9);
-  --card: rgba(255, 255, 255, 0.86);
+  --bg: #f8fafc;
+  --bg-2: #f1f5f9;
+  --bg-elevated: rgba(255, 255, 255, 0.92);
+  --card: rgba(255, 255, 255, 0.9);
   --card-solid: #ffffff;
-  --line: rgba(8, 90, 62, 0.12);
-  --line-strong: rgba(8, 90, 62, 0.22);
-  --text: #0b1f18;
-  --muted: #4a655a;
-  --accent: #0c8a58;
-  --accent-2: #0a6b45;
-  --accent-dim: rgba(12, 138, 88, 0.1);
-  --accent-glow: rgba(12, 138, 88, 0.22);
+  --line: rgba(15, 23, 42, 0.08);
+  --line-strong: rgba(15, 23, 42, 0.15);
+  --text: #111827;
+  --muted: #5b6472;
+  --accent: #5181fe;
+  --accent-2: #315fe8;
+  --accent-dim: rgba(81, 129, 254, 0.1);
+  --accent-glow: rgba(81, 129, 254, 0.22);
   --danger: #c23b55;
   --warn: #b8860b;
-  --shadow-card: 0 16px 40px rgba(12, 40, 28, 0.1);
-  --header-bg: linear-gradient(180deg, rgba(238, 245, 241, 0.96), rgba(238, 245, 241, 0.88));
-  --hero-glow-a: rgba(12, 138, 88, 0.12);
-  --hero-glow-b: rgba(20, 100, 180, 0.06);
-  --matrix-opacity: 0.08;
-  --scanline: rgba(12, 138, 88, 0.025);
-  --terminal: #0d241a;
-  --btn-text: #f4fff9;
+  --shadow-card: 0 12px 34px rgba(15, 23, 42, 0.07);
+  --header-bg: linear-gradient(180deg, rgba(248, 250, 252, 0.97), rgba(248, 250, 252, 0.9));
+  --hero-glow-a: rgba(81, 129, 254, 0.12);
+  --hero-glow-b: rgba(49, 95, 232, 0.06);
+  --matrix-opacity: 0.05;
+  --scanline: rgba(81, 129, 254, 0.025);
+  --terminal: #0f172a;
+  --btn-text: #ffffff;
   --theme-toggle-icon: "☀";
 }
 
@@ -628,7 +628,7 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
 
 [data-theme="day"] .photo-frame::after {
   background:
-    linear-gradient(180deg, transparent 60%, rgba(0, 30, 20, 0.2) 100%),
+    linear-gradient(180deg, transparent 60%, rgba(15, 23, 42, 0.15) 100%),
     repeating-linear-gradient(0deg, transparent, transparent 2px, var(--scanline) 3px);
 }
 
@@ -649,7 +649,7 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
 }
 
 [data-theme="day"] .photo-meta {
-  color: #e8fff2;
+  color: #e8f0ff;
 }
 
 .photo-meta .status {
@@ -1108,6 +1108,15 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
   font-family: var(--font-mono);
   padding: 14px 0;
   font-size: 13px;
+}
+
+[data-theme="day"] .terminal-bar {
+  border-bottom-color: rgba(81, 129, 254, 0.15);
+  color: rgba(81, 129, 254, 0.7);
+}
+
+[data-theme="day"] .terminal-marquee {
+  color: #60a5fa;
 }
 
 .marquee-text {

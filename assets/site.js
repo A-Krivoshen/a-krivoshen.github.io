@@ -101,7 +101,7 @@
   }
 
   function syncThemeColor(theme) {
-    const color = theme === 'day' ? '#eef5f1' : '#050a08';
+    const color = theme === 'day' ? '#f8fafc' : '#050a08';
     let meta = document.querySelector('meta[name="theme-color"][data-dynamic="1"]');
     if (!meta) {
       meta = document.createElement('meta');
@@ -237,7 +237,7 @@
       const night = root.getAttribute('data-theme') !== 'day';
       return night
         ? { fill: 'rgba(5, 10, 8, 0.08)', text: 'rgba(0, 255, 156, 0.55)', head: 'rgba(200, 255, 230, 0.85)' }
-        : { fill: 'rgba(238, 245, 241, 0.12)', text: 'rgba(12, 138, 88, 0.28)', head: 'rgba(8, 90, 62, 0.45)' };
+        : { fill: 'rgba(248, 250, 252, 0.12)', text: 'rgba(81, 129, 254, 0.25)', head: 'rgba(49, 95, 232, 0.45)' };
     }
 
     function draw(ts) {
