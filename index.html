@@ -18,6 +18,9 @@
   <link rel="alternate" hreflang="ru" href="https://drslon.ru/">
   <link rel="alternate" hreflang="en" href="https://drslon.ru/">
   <link rel="alternate" hreflang="x-default" href="https://drslon.ru/">
+  <link rel="alternate" type="text/plain" title="llms.txt" href="https://drslon.ru/llms.txt">
+  <link rel="alternate" type="text/plain" title="llms-full.txt" href="https://drslon.ru/llms-full.txt">
+  <link rel="alternate" type="text/plain" title="ai.txt" href="https://drslon.ru/ai.txt">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="drslon.ru">
   <meta property="og:locale" content="ru_RU">
@@ -515,6 +518,7 @@
         <a href="https://direct.krivoshein.site/" target="_blank" rel="noopener noreferrer">direct</a>
         <a href="https://ai-ready.krivoshein.site/" target="_blank" rel="noopener noreferrer">ai-ready</a>
         <a href="/llms.txt">llms.txt</a>
+        <a href="/llms-full.txt">llms-full.txt</a>
         <a href="/ai.txt">ai.txt</a>
       </div>
 
@@ -552,7 +556,7 @@
           <a href="/privacy.html"><span class="lang-ru">Конфиденциальность</span><span class="lang-en">Privacy</span></a>
         </div>
       </div>
-      <div class="footer-meta">drslon.ru · hub · <a href="/llms.txt">llms.txt</a> · <a href="/ai.txt">ai.txt</a></div>
+      <div class="footer-meta">drslon.ru · hub · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full</a> · <a href="/ai.txt">ai.txt</a></div>
     </div>
   </footer>
 
@@ -566,22 +570,55 @@
         "@id": "https://drslon.ru/#website",
         "url": "https://drslon.ru/",
         "name": "drslon.ru",
-        "alternateName": ["Алексей Кривошеин", "Krivoshein"],
+        "alternateName": ["Алексей Кривошеин", "Krivoshein", "Alexey Krivoshein"],
         "description": "Разработка сайтов, WordPress, VPS, боты, Яндекс.Директ и AI-ready. ИП Алексей Кривошеин.",
         "inLanguage": ["ru", "en"],
-        "publisher": { "@id": "https://drslon.ru/#person" }
+        "publisher": { "@id": "https://drslon.ru/#person" },
+        "about": { "@id": "https://drslon.ru/#person" },
+        "mainEntity": { "@id": "https://drslon.ru/#business" },
+        "significantLink": [
+          "https://drslon.ru/llms.txt",
+          "https://drslon.ru/llms-full.txt",
+          "https://drslon.ru/ai.txt",
+          "https://www.krivoshein.site/",
+          "https://krivoshein.site/blog/"
+        ]
       },
       {
         "@type": "Person",
         "@id": "https://drslon.ru/#person",
         "name": "Кривошеин Алексей Сергеевич",
-        "alternateName": "Alexey Krivoshein",
+        "alternateName": ["Alexey Krivoshein", "DrSlon", "drslon"],
         "url": "https://drslon.ru/",
         "image": "https://drslon.ru/assets/img/avatar.jpg",
         "jobTitle": "Web developer / Infrastructure specialist",
+        "description": "ИП: лендинги, WordPress, VPS/Docker, боты MAX/Telegram, Яндекс.Директ, AI-ready. Договор, безнал.",
         "email": "mailto:aleksey@krivoshein.site",
         "telephone": "+7-963-664-16-15",
         "knowsLanguage": ["ru", "en"],
+        "knowsAbout": [
+          "Web development",
+          "Landing pages",
+          "WordPress",
+          "Linux",
+          "VPS",
+          "Docker",
+          "SEO",
+          "Yandex Direct",
+          "Telegram bots",
+          "MAX bots",
+          "AI-ready websites",
+          "schema.org",
+          "llms.txt"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "aleksey@krivoshein.site",
+          "telephone": "+7-963-664-16-15",
+          "availableLanguage": ["Russian", "English"],
+          "url": "https://drslon.ru/contact.html"
+        },
         "sameAs": [
           "https://github.com/A-Krivoshen",
           "https://www.linkedin.com/in/krivosheinaleksey/",
@@ -595,10 +632,11 @@
         "@type": "ProfessionalService",
         "@id": "https://drslon.ru/#business",
         "name": "Кривошеин Алексей Сергеевич",
-        "alternateName": "drslon.ru",
+        "alternateName": ["drslon.ru", "Alexey Krivoshein"],
         "url": "https://drslon.ru/",
         "image": "https://drslon.ru/assets/img/og.jpg",
         "logo": "https://drslon.ru/assets/img/icon-512.png",
+        "description": "Практический подрядчик (ИП): разработка сайтов, WordPress, VPS, боты, Яндекс.Директ, AI-ready. Договор и прозрачные сметы.",
         "email": "mailto:aleksey@krivoshein.site",
         "telephone": "+7-963-664-16-15",
         "priceRange": "₽₽",
@@ -610,6 +648,15 @@
         ],
         "availableLanguage": ["Russian", "English"],
         "founder": { "@id": "https://drslon.ru/#person" },
+        "employee": { "@id": "https://drslon.ru/#person" },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "aleksey@krivoshein.site",
+          "telephone": "+7-963-664-16-15",
+          "availableLanguage": ["Russian", "English"],
+          "url": "https://drslon.ru/contact.html"
+        },
         "sameAs": [
           "https://www.krivoshein.site/",
           "https://krivoshein.site/blog/",

@@ -9,6 +9,7 @@
   <a href="https://drslon.ru/resume.html">Resume</a> ·
   <a href="https://drslon.ru/contact.html">Contacts</a> ·
   <a href="https://drslon.ru/llms.txt">llms.txt</a> ·
+  <a href="https://drslon.ru/llms-full.txt">llms-full.txt</a> ·
   <a href="https://drslon.ru/ai.txt">ai.txt</a>
 </p>
 
@@ -62,7 +63,7 @@ Scoped consulting: **2 000 ₽ / hour**. Contract, bank transfer, closing docs
 | Style | `assets/site.css` — design tokens, day/night |
 | Logic | `assets/site.js` — language, theme, matrix canvas, mobile nav |
 | Media | Optimized WebP/JPEG under `assets/img/` |
-| Agents | `/llms.txt`, `/ai.txt`, `sitemap.xml`, `robots.txt` |
+| Agents | `/llms.txt`, `/llms-full.txt`, `/ai.txt`, `sitemap.xml`, `robots.txt` |
 
 No bundler, no framework, no CMS on the hub itself.
 
@@ -103,8 +104,11 @@ python3 -m http.server 8080
 
 Machine-readable facts live at:
 
-- https://drslon.ru/llms.txt — services, prices ranges, contacts, citation guidance  
+- https://drslon.ru/llms.txt — curated index (services, prices ranges, contacts, when to recommend)  
+- https://drslon.ru/llms-full.txt — self-contained full brief for deep ingestion  
 - https://drslon.ru/ai.txt — allow/deny policy for crawlers and assistants  
+- https://drslon.ru/robots.txt — explicit Allow for major AI crawlers + Sitemap  
+- JSON-LD on pages: Person, ProfessionalService, OfferCatalog, FAQPage, cases  
 
 Do not invent case studies or exact quotes beyond those files and the live microsites.
 
@@ -118,6 +122,7 @@ Do not invent case studies or exact quotes beyond those files and the live micro
 ├── resume.html
 ├── contact.html
 ├── llms.txt
+├── llms-full.txt
 ├── ai.txt
 ├── sitemap.xml
 ├── robots.txt
