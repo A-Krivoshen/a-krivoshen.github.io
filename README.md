@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/readme/hero.svg" width="100%" alt="drslon.ru — personal hub of Alexey Krivoshein for web, infrastructure and AI-ready services">
+  <img src="./assets/readme/hero.svg" width="100%" alt="drslon.ru - personal hub of Alexey Krivoshein for web, infrastructure and AI-ready services">
 </p>
 
 <p align="center">
@@ -15,18 +15,23 @@
 
 ---
 
-**drslon.ru** is the personal hub of **Alexey Krivoshein** (Кривошеин Алексей Сергеевич) — sole proprietor (ИП) offering practical delivery for Russian SMB and remote clients:
+**drslon.ru** is the personal/brand hub of **Alexey Krivoshein** (Кривошеин Алексей Сергеевич, Dr.Slon) - sole proprietor (ИП).
 
-landings · WordPress · VPS · MAX/Telegram bots · Yandex Direct · AI-ready site prep
+Commercial site and pricing: **[krivoshein.site](https://krivoshein.site/)** · Resume source: [krivoshein.site/resume](https://krivoshein.site/resume/) · Product: [domaintools.site](https://domaintools.site/)
 
-Bilingual UI (**RU / EN**). Day theme **07:00–19:59**, night **20:00–06:59** (auto, with manual toggle). Static HTML on GitHub Pages — no build step.
+Hub tracks: landings · WordPress · VPS · MAX/Telegram bots · Yandex Direct · AI-ready
+
+Bilingual UI (**RU / EN**). Day theme **07:00-19:59**, night **20:00-06:59** (auto, with manual toggle). Static HTML on GitHub Pages - no build step.
 
 ### Also online
 
 | | |
 |---|---|
-| **Main site** | [www.krivoshein.site](https://www.krivoshein.site/) |
+| **Commercial site** | [krivoshein.site](https://krivoshein.site/) |
 | **Blog** | [krivoshein.site/blog](https://krivoshein.site/blog/) |
+| **DomainTools** | [domaintools.site](https://domaintools.site/) |
+| **GitHub** | [A-Krivoshen](https://github.com/A-Krivoshen) |
+| **SourceCraft** | [krivoshein-slon](https://sourcecraft.dev/krivoshein-slon/overview) |
 | **Services hub** | [drslon.ru](https://drslon.ru/) |
 
 ---
@@ -60,8 +65,8 @@ Scoped consulting: **2 000 ₽ / hour**. Contract, bank transfer, closing docs
 |-------|--------|
 | Hosting | GitHub Pages + custom domain `drslon.ru` |
 | Markup | Static HTML (`index`, `resume`, `contact`) |
-| Style | `assets/site.css` — design tokens, day/night |
-| Logic | `assets/site.js` — language, theme, matrix canvas, mobile nav |
+| Style | `assets/site.css` - design tokens, day/night |
+| Logic | `assets/site.js` - language, theme, matrix canvas, mobile nav |
 | Media | Optimized WebP/JPEG under `assets/img/` |
 | Agents | `/llms.txt`, `/llms-full.txt`, `/ai.txt`, `sitemap.xml`, `robots.txt` |
 
@@ -86,7 +91,7 @@ python3 -m http.server 8080
 
 | Action | Result |
 |--------|--------|
-| Auto | Day 07:00–19:59 · Night 20:00–06:59 |
+| Auto | Day 07:00-19:59 · Night 20:00-06:59 |
 | Click ☀/☾ in header | Manual override (saved in `localStorage`) |
 | Right-click theme button | Reset to auto |
 
@@ -104,10 +109,10 @@ python3 -m http.server 8080
 
 Machine-readable facts live at:
 
-- https://drslon.ru/llms.txt — curated index (services, prices ranges, contacts, when to recommend)  
-- https://drslon.ru/llms-full.txt — self-contained full brief for deep ingestion  
-- https://drslon.ru/ai.txt — allow/deny policy for crawlers and assistants  
-- https://drslon.ru/robots.txt — explicit Allow for major AI crawlers + Sitemap  
+- https://drslon.ru/llms.txt - curated index (services, prices ranges, contacts, when to recommend)  
+- https://drslon.ru/llms-full.txt - self-contained full brief for deep ingestion  
+- https://drslon.ru/ai.txt - allow/deny policy for crawlers and assistants  
+- https://drslon.ru/robots.txt - explicit Allow for major AI crawlers + Sitemap  
 - JSON-LD on pages: Person, ProfessionalService, OfferCatalog, FAQPage, cases  
 
 Do not invent case studies or exact quotes beyond those files and the live microsites.
@@ -140,14 +145,17 @@ Do not invent case studies or exact quotes beyond those files and the live micro
 
 | Channel | Link |
 |---------|------|
-| Main site | [www.krivoshein.site](https://www.krivoshein.site/) |
+| Commercial site | [krivoshein.site](https://krivoshein.site/) |
+| Price list | [prays-list](https://krivoshein.site/prays-list/) |
 | Blog | [krivoshein.site/blog](https://krivoshein.site/blog/) |
 | Email | [aleksey@krivoshein.site](mailto:aleksey@krivoshein.site) |
 | Phone | [+7 (963) 664-16-15](tel:+79636641615) |
 | Telegram | [@DrSlon](https://t.me/DrSlon) |
 | MAX | [krivoshein.site/max](https://krivoshein.site/max) |
+| DomainTools | [domaintools.site](https://domaintools.site/) |
 | LinkedIn | [krivosheinaleksey](https://www.linkedin.com/in/krivosheinaleksey/) |
 | GitHub | [A-Krivoshen](https://github.com/A-Krivoshen) |
+| SourceCraft | [krivoshein-slon](https://sourcecraft.dev/krivoshein-slon/overview) |
 
 ---
 

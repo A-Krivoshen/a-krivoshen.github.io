@@ -1,0 +1,35 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# Secrets / env (never commit)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+credentials.json
+secrets/
+
+# Local / backup junk
+*.bak
+*.tmp
+*.orig
+*~
+.cache/
+node_modules/
+vendor/
+__pycache__/
+*.pyc
+.python-version
+
+# Logs
+*.log
+npm-debug.log*

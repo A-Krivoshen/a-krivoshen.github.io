@@ -1,4 +1,4 @@
-/* drslon.ru — techno / matrix premium, day & night */
+/* drslon.ru - techno / matrix premium, day & night */
 :root {
   --font-ui: "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", "SF Mono", "Cascadia Code", "Consolas", ui-monospace, monospace;
@@ -25,7 +25,7 @@
   --gap-section-lg: 64px;
 }
 
-/* —— Night (default / after sunset) —— */
+/* -- Night (default / after sunset) -- */
 [data-theme="night"] {
   color-scheme: dark;
   --bg: #050a08;
@@ -54,7 +54,7 @@
   --theme-toggle-icon: "☾";
 }
 
-/* —— Day —— */
+/* -- Day -- */
 [data-theme="day"] {
   color-scheme: light;
   --bg: #f8fafc;
@@ -251,7 +251,7 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
 
 .nowrap { white-space: nowrap; }
 
-/* —— Header —— */
+/* -- Header -- */
 .site-header {
   position: sticky;
   top: 0;
@@ -409,7 +409,7 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
 
 .burger { display: none; }
 
-/* —— Buttons —— */
+/* -- Buttons -- */
 .btn,
 .btn-secondary,
 .btn-ghost {
@@ -444,7 +444,7 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
 }
 .btn-ghost:hover { color: var(--text); border-color: var(--line-strong); }
 
-/* —— Cards —— */
+/* -- Cards -- */
 .card,
 .hero-card,
 .info-card,
@@ -465,7 +465,7 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
   transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
-/* —— Terminal badge —— */
+/* -- Terminal badge -- */
 .badge,
 .hero-badge {
   display: inline-flex;
@@ -496,7 +496,7 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
   font-weight: 700;
 }
 
-/* —— Hero —— */
+/* -- Hero -- */
 .hero {
   padding: 56px 0 var(--gap-section);
   position: relative;
@@ -736,7 +736,7 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
 }
 .krv-contact-item a:hover { color: var(--accent); }
 
-/* —— Sections —— */
+/* -- Sections -- */
 .main-sections {
   display: flex;
   flex-direction: column;
@@ -820,7 +820,7 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
   margin-bottom: 0;
 }
 
-/* Cases — 2×2 on desktop for balanced cards */
+/* Cases - 2×2 on desktop for balanced cards */
 .cases-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1128,7 +1128,7 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
   to { transform: translateX(-100%); }
 }
 
-/* —— Resume —— */
+/* -- Resume -- */
 .resume-hero { padding: 40px 0 var(--gap-section); }
 .resume-hero-grid {
   display: grid;
@@ -1383,6 +1383,61 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
   justify-content: flex-end;
 }
 
+.page-resume .resume-badge {
+  margin: 0 0 14px;
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.45;
+  font-size: 12px;
+}
+
+.page-resume .resume-tags {
+  margin-top: 18px;
+}
+
+.page-resume .resume-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.page-resume .resume-cta-row .btn-secondary,
+.page-resume .resume-cta-row .btn-ghost {
+  margin-top: 0;
+}
+
+.page-resume .resume-main-stack {
+  display: grid;
+  gap: 20px;
+}
+
+.page-resume .timeline-item h3 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.page-resume .timeline-item h3 a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.page-resume .resume-footnote {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.page-resume .case-metrics {
+  margin: 0;
+}
+
+.page-resume .case-metrics ul {
+  margin-top: 12px;
+}
+
 /* Contact page */
 .page-contact .hero { padding: 48px 0 var(--gap-section-lg); }
 .contact-hero-grid {
@@ -1500,9 +1555,9 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
   border-color: var(--line-strong);
 }
 
-/* —— Responsive: desktop → tablet → phone → SE —— */
+/* -- Responsive: desktop → tablet → phone → SE -- */
 
-/* Focus visible — keyboard a11y */
+/* Focus visible - keyboard a11y */
 :focus { outline: none; }
 :focus-visible {
   outline: 2px solid var(--accent);

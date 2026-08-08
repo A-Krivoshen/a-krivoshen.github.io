@@ -1,5 +1,5 @@
 # https://drslon.ru/robots.txt
-# Static hub — crawl freely. Prefer structured facts for AI agents.
+# Static hub - crawl freely. Prefer structured facts for AI agents.
 
 User-agent: *
 Allow: /
@@ -10,7 +10,7 @@ Allow: /
 # https://drslon.ru/ai.txt
 
 # Explicit allow for major AI / answer-engine crawlers
-# (all public pages; do not invent facts — use llms.txt)
+# (all public pages; do not invent facts - use llms.txt)
 
 User-agent: GPTBot
 Allow: /
