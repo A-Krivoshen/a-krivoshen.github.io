@@ -72,6 +72,7 @@
   - Direct case numbers (9 Jan - 7 Feb 2025): 192 leads · ~299 RUB/lead · budget 57 386 RUB · CTR 1.93% · >73 000 impressions · CPC ~40.6 RUB
   - Write-up: https://krivoshein.site/kak-nastroyka-reklamy-v-yandeks-direkt-pomogla-ooo-atstsniitmash-privlech-bolshe-klientov/
   - Landing case block: https://direct.krivoshein.site/#case
+- [LUMISTEK](https://lumistek.ru/): WordPress site for official LUMISTEK representative in Russia - polyurethane PPF film for detailing (Korea)
 - [DomainTools](https://domaintools.site/): own product (see above)
 
 ## Experience snapshot (from resume)

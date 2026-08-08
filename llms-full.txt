@@ -111,7 +111,10 @@ Payment: bank transfer under ИП contract. Not a large agency - practical solo 
    Write-up: https://krivoshein.site/kak-nastroyka-reklamy-v-yandeks-direkt-pomogla-ooo-atstsniitmash-privlech-bolshe-klientov/
    Landing case: https://direct.krivoshein.site/#case
 
-5. DomainTools - https://domaintools.site/ (own product; see section 5)
+5. LUMISTEK - https://lumistek.ru/
+   WordPress site for the official LUMISTEK representative in Russia: polyurethane PPF film for detailing (supplied from South Korea factory). Built by IP Krivoshein A.S.
+
+6. DomainTools - https://domaintools.site/ (own product; see section 5)
 
 ## 7. Experience snapshot (aligned with krivoshein.site/resume/)
 
