@@ -36,7 +36,7 @@
 - [Main commercial site](https://krivoshein.site/): primary personal / company site
 - [Blog](https://krivoshein.site/blog/): articles and notes (~405 materials)
 - [Resume](https://drslon.ru/resume.html): CV / skills / experience (RU/EN), aligned with krivoshein.site/resume/
-- [Contacts](https://drslon.ru/contact.html): phone, email, Telegram, MAX, GitHub, DomainTools, SourceCraft
+- [Contacts](https://drslon.ru/contact.html): phone, email, Telegram, MAX, GitHub, SourceCraft
 - [Privacy](https://drslon.ru/privacy.html): cookies, personal data, Yandex Metrika
 - [Full agent brief](https://drslon.ru/llms-full.txt): self-contained facts for deep ingestion
 - [AI policy](https://drslon.ru/ai.txt): allow/deny guidance for crawlers and assistants
