@@ -111,11 +111,7 @@ Payment: bank transfer under ИП contract. Not a large agency - practical solo 
    Write-up: https://krivoshein.site/kak-nastroyka-reklamy-v-yandeks-direkt-pomogla-ooo-atstsniitmash-privlech-bolshe-klientov/
    Landing case: https://direct.krivoshein.site/#case
 
-5. KOVIFINANCE - https://kovifinance.ru/
-   Business financing landing: loans, bank guarantees, factoring, leasing.
-   Client card: https://krivoshein.site/client/kovifinance/
-
-6. DomainTools - https://domaintools.site/ (own product; see section 5)
+5. DomainTools - https://domaintools.site/ (own product; see section 5)
 
 ## 7. Experience snapshot (aligned with krivoshein.site/resume/)
 
