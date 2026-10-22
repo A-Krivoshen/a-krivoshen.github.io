@@ -68,11 +68,11 @@
 - [Cambobiz](https://cambobiz.co/): WordPress private real-estate desk (Cambodia) - offers, trust, lead forms, Telegram/WhatsApp/MAX, RU UI
 - [AGNKS](https://agnks.ru/): B2B static one-page for CNG (methane) stations - services, equipment, spare parts, subsidies, SEO baseline
 - [Fornovo Gas KZ](https://fornovogas.kz/): WordPress multi-language corporate (RU/EN/IT/ES/DE) for CNG/LNG/biogas/H2 compressors; credit on site: IP Krivoshein A.S.
-- [ACC NIITMASH registry + Direct](https://accniitmash.ru/reestr/personal/): WordPress public certificate registry + Yandex Direct for attestation services
+- [ASP LLC registry + Direct](https://accniitmash.ru/reestr/personal/): WordPress public certificate registry + Yandex Direct for attestation services
   - Direct case numbers (9 Jan - 7 Feb 2025): 192 leads · ~299 RUB/lead · budget 57 386 RUB · CTR 1.93% · >73 000 impressions · CPC ~40.6 RUB
   - Write-up: https://krivoshein.site/kak-nastroyka-reklamy-v-yandeks-direkt-pomogla-ooo-atstsniitmash-privlech-bolshe-klientov/
   - Landing case block: https://direct.krivoshein.site/#case
-- [LUMISTEK](https://lumistek.ru/): WordPress site for official LUMISTEK representative in Russia - polyurethane PPF film for detailing (Korea)
+- [ASP LLC](https://acasp.ru/): WordPress site for the ASP LLC attestation center (Moscow) - attestation of welders and specialists, technologies, equipment and consumables; records entered into the registry
 - [DomainTools](https://domaintools.site/): own product (see above)
 
 ## Experience snapshot (from resume)
