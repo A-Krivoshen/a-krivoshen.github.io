@@ -105,16 +105,14 @@ Payment: bank transfer under ИП contract. Not a large agency - practical solo 
 3. Fornovo Gas KZ - https://fornovogas.kz/
    WordPress corporate multi-language site (RU/EN/IT/ES/DE) for compressors (CNG/LNG/biogas/H2). Credit on site: developed by IP Krivoshein A.S.
 
-4. ASP LLC registry + Direct - https://accniitmash.ru/reestr/personal/
+4. ASP LLC (ООО «АСП») - https://acasp.ru/ ; registry: https://accniitmash.ru/reestr/personal/
+   WordPress site for the ASP LLC attestation center in Moscow: attestation of welders and specialists, technologies, equipment and consumables under Rostekhnadzor rules.
    WordPress public registry for welder/specialist certificates (filters, certificate no., scope, validity). Yandex Direct setup/management for attestation services. Site credit: IP Krivoshein A.S.
    Direct numbers (9 Jan - 7 Feb 2025): 192 leads · ~299 RUB/lead · budget 57 386 RUB · CTR 1.93% · >73 000 impressions · CPC ~40.6 RUB.
    Write-up: https://krivoshein.site/kak-nastroyka-reklamy-v-yandeks-direkt-pomogla-ooo-atstsniitmash-privlech-bolshe-klientov/
    Landing case: https://direct.krivoshein.site/#case
 
-5. ASP LLC (ООО «АСП») - https://acasp.ru/
-   WordPress site for the ASP LLC attestation center in Moscow: attestation of welders and specialists, welding technologies, equipment and consumables under Rostekhnadzor rules; attestation records are entered into the registry; welder training. Built by IP Krivoshein A.S.
-
-6. DomainTools - https://domaintools.site/ (own product; see section 5)
+5. DomainTools - https://domaintools.site/ (own product; see section 5)
 
 ## 7. Experience snapshot (aligned with krivoshein.site/resume/)
 
