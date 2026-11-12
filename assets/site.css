@@ -920,6 +920,22 @@ body[data-current-lang="en"] .lang-ru-block { display: none; }
   color: var(--accent);
 }
 
+
+.case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.case-actions .btn,
+.case-actions .btn-secondary {
+  padding: 10px 14px;
+  font-size: 13.5px;
+}
+
 .service-card {
   padding: 22px;
   display: flex;

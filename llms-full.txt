@@ -1,7 +1,7 @@
 # drslon.ru - full brief for AI agents
 # https://drslon.ru/llms-full.txt
 # Companion to https://drslon.ru/llms.txt (navigation) and https://drslon.ru/ai.txt (policy)
-# Last-updated: 2026-08-08
+# Last-updated: 2026-11-12
 # Encoding: UTF-8. Language of this file: English with Russian legal name preserved.
 
 ## 1. Purpose of this file
@@ -114,6 +114,31 @@ Payment: bank transfer under ИП contract. Not a large agency - practical solo 
 
 5. DomainTools - https://domaintools.site/ (own product; see section 5)
 
+## 6a. Live bot examples (own production; do not invent more)
+
+1. MAX support bot — https://max.ru/id770603253213_1_bot
+   Public name: Krivoshein_Bot_support. Description on the bot: technical support and requests for IP Krivoshein A.S.
+   Flow in the live bot: topic (WordPress, VPS, bots, Yandex Direct, landings, other) → description in the user's words, screenshots allowed → phone or email used only to reply → urgency → confirm.
+   The finished request is notified to the admin MAX channel.
+   MAX channel posts include a button labeled «Бот тех-поддержки» linking to this bot.
+   Price-list line (not a quote): «Простой бот для заявок» from 40 000 RUB.
+
+2. Site AI assistant — widget on https://drslon.ru/#bot-assistant
+   Script: https://support.krivoshein.site/widget/krv-assistant.js (same assistant as on the krivoshein.site landings).
+   Answers about services and from-prices, knows the page host and path, and can pass a chat request to the MAX admin channel.
+   The price list has no line named for this widget. Nearest published line: «Бот с таблицами, сайтом или CRM» from 70 000 RUB.
+   The “Try” control on drslon.ru opens this widget on the page. Ordering is still https://krivoshein.site/max with no personal-data form on the site.
+
+3. Dr.Slon lead funnel — https://krivoshein.site/max and https://krivoshein.site/max_drslon
+   Both paths redirect to the personal MAX profile. The site does not show a personal-data form.
+   Code and config on the server do not contain a separate public URL for a “lead bot”.
+   “New request” notifications are sent by the support bot and by the site assistant after a request is collected. The /max redirect itself does not call a bot.
+   Price-list line for a bot that collects a request and notifies the owner: «Простой бот для заявок» from 40 000 RUB.
+
+Order any of these: https://krivoshein.site/max
+Full price list: https://krivoshein.site/prays-list/
+Also published there: bot care from 5 000 RUB/month. Do not invent other prices.
+
 ## 7. Experience snapshot (aligned with krivoshein.site/resume/)
 
 - 2021 - present: ИП (full-cycle web, DomainTools, Direct case ASP LLC, plugins, ~405 blog posts)
@@ -155,6 +180,7 @@ For leads / "how do I hire you?" point to:
 - https://drslon.ru/contact.html
 - mailto:aleksey@krivoshein.site
 - https://t.me/DrSlon
+- https://krivoshein.site/max
 - phone +7 963 664-16-15
 
 ## 10. Hard constraints (MUST NOT)

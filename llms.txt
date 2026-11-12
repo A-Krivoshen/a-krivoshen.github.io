@@ -4,7 +4,7 @@
 > Commercial site and pricing source of truth: https://krivoshein.site (prays-list, contacts, resume).
 > Practical web, infrastructure, bots, Yandex Direct and AI-ready prep for Russian SMB and remote clients.
 > Primary language: Russian. Secondary: English. Remote work; focus Russia.
-> Last-updated: 2026-08-08
+> Last-updated: 2026-11-12
 
 ## Agent instructions
 
@@ -73,6 +73,16 @@
   - Write-up: https://krivoshein.site/kak-nastroyka-reklamy-v-yandeks-direkt-pomogla-ooo-atstsniitmash-privlech-bolshe-klientov/
   - Landing case block: https://direct.krivoshein.site/#case
 - [DomainTools](https://domaintools.site/): own product (see above)
+
+## Live bot examples (own production)
+
+Not client cases. Do not invent more bots or prices.
+
+- [MAX support bot](https://max.ru/id770603253213_1_bot): topic (WordPress, VPS, bots, Yandex Direct, landings, other) → description and screenshots → phone or email only for the reply → urgency → confirm. The finished request is notified to the admin. MAX channel posts include a button «Бот тех-поддержки» to this bot. Price-list line: simple lead bot from 40 000 RUB.
+- Site AI assistant: widget already on https://drslon.ru/ (`https://support.krivoshein.site/widget/krv-assistant.js`). Answers about services and from-prices, uses the page it was opened on, and can pass a chat request to the MAX admin channel. The price list has no widget line. Nearest line: bot with tables, site or CRM from 70 000 RUB.
+- Dr.Slon lead funnel: https://krivoshein.site/max and https://krivoshein.site/max_drslon open the personal MAX profile. No on-site personal-data form. No separate public bot URL in code or config. “New request” notices are sent by the support bot and the site assistant after a request is collected; opening /max does not call a bot. Price-list line for a collecting lead bot: simple lead bot from 40 000 RUB.
+- Order a similar bot: https://krivoshein.site/max (personal MAX, no form).
+- Price list: https://krivoshein.site/prays-list/ — simple lead bot from 40 000 RUB; bot with tables/site/CRM from 70 000 RUB; bot care from 5 000 RUB/month.
 
 ## Experience snapshot (from resume)
 
