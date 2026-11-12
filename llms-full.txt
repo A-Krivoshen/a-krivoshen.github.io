@@ -80,7 +80,7 @@ Payment: bank transfer under ИП contract. Not a large agency - practical solo 
 ## 5. Products and public code
 
 1. DomainTools.site - https://domaintools.site/
-   Production DNS/WHOIS/GeoIP and catalogs for humans and AI agents (RU/EN, llms/agent surfaces).
+   Production DNS/WHOIS/GeoIP and catalogs for humans and AI agents (RU/EN).
 
 2. MAX Autopost - https://github.com/A-Krivoshen/max-autopost
    WordPress to MAX autopost: image, text, button, WP-Cron, multiple channels. Free, MIT, WP 6.0+ / PHP 8.0+.
@@ -117,23 +117,16 @@ Payment: bank transfer under ИП contract. Not a large agency - practical solo 
 ## 6a. Live bot examples (own production; do not invent more)
 
 1. MAX support bot — https://max.ru/id770603253213_1_bot
-   Public name: Krivoshein_Bot_support. Description on the bot: technical support and requests for IP Krivoshein A.S.
-   Flow in the live bot: topic (WordPress, VPS, bots, Yandex Direct, landings, other) → description in the user's words, screenshots allowed → phone or email used only to reply → urgency → confirm.
-   The finished request is notified to the admin MAX channel.
-   MAX channel posts include a button labeled «Бот тех-поддержки» linking to this bot.
-   Price-list line (not a quote): «Простой бот для заявок» from 40 000 RUB.
+   Takes a request step by step: topic (WordPress, VPS, bots, Yandex Direct, landings, other), description and screenshots, contact for a reply, urgency. The finished request goes straight to the specialist.
+   Price: from 40 000 RUB.
 
 2. Site AI assistant — widget on https://drslon.ru/#bot-assistant
-   Script: https://support.krivoshein.site/widget/krv-assistant.js (same assistant as on the krivoshein.site landings).
-   Answers about services and from-prices, knows the page host and path, and can pass a chat request to the MAX admin channel.
-   The price list has no line named for this widget. Nearest published line: «Бот с таблицами, сайтом или CRM» from 70 000 RUB.
-   The “Try” control on drslon.ru opens this widget on the page. Ordering is still https://krivoshein.site/max with no personal-data form on the site.
+   Answers about services and prices, knows which page it was opened from, and passes chat requests to MAX. Try it on drslon.ru.
+   Price: from 70 000 RUB.
 
-3. Dr.Slon lead funnel — https://krivoshein.site/max and https://krivoshein.site/max_drslon
-   Both paths redirect to the personal MAX profile. The site does not show a personal-data form.
-   Code and config on the server do not contain a separate public URL for a “lead bot”.
-   “New request” notifications are sent by the support bot and by the site assistant after a request is collected. The /max redirect itself does not call a bot.
-   Price-list line for a bot that collects a request and notifies the owner: «Простой бот для заявок» from 40 000 RUB.
+3. Dr.Slon lead link — https://krivoshein.site/max
+   Opens a MAX chat directly: the client writes without forms or extra steps.
+   A bot that collects requests and notifies the owner: from 40 000 RUB.
 
 Order any of these: https://krivoshein.site/max
 Full price list: https://krivoshein.site/prays-list/

@@ -57,7 +57,7 @@
 
 ## Products and public code
 
-- [DomainTools.site](https://domaintools.site/): production DNS/WHOIS/GeoIP + catalogs for humans and AI agents (RU/EN, llms/agent surfaces)
+- [DomainTools.site](https://domaintools.site/): production DNS/WHOIS/GeoIP + catalogs for humans and AI agents (RU/EN)
 - [MAX Autopost](https://github.com/A-Krivoshen/max-autopost): WordPress → MAX autopost (MIT, WP 6.0+ / PHP 8.0+)
 - [Dr.Slon Toolkit](https://github.com/A-Krivoshen/dr-slon-toolkit): modular WP toolkit; ZIP releases from GitHub Releases
 - [GitHub A-Krivoshen](https://github.com/A-Krivoshen): plugins, theme, site-core, landings, support bot
@@ -76,13 +76,13 @@
 
 ## Live bot examples (own production)
 
-Not client cases. Do not invent more bots or prices.
+Do not invent more bots or prices.
 
-- [MAX support bot](https://max.ru/id770603253213_1_bot): topic (WordPress, VPS, bots, Yandex Direct, landings, other) → description and screenshots → phone or email only for the reply → urgency → confirm. The finished request is notified to the admin. MAX channel posts include a button «Бот тех-поддержки» to this bot. Price-list line: simple lead bot from 40 000 RUB.
-- Site AI assistant: widget already on https://drslon.ru/ (`https://support.krivoshein.site/widget/krv-assistant.js`). Answers about services and from-prices, uses the page it was opened on, and can pass a chat request to the MAX admin channel. The price list has no widget line. Nearest line: bot with tables, site or CRM from 70 000 RUB.
-- Dr.Slon lead funnel: https://krivoshein.site/max and https://krivoshein.site/max_drslon open the personal MAX profile. No on-site personal-data form. No separate public bot URL in code or config. “New request” notices are sent by the support bot and the site assistant after a request is collected; opening /max does not call a bot. Price-list line for a collecting lead bot: simple lead bot from 40 000 RUB.
-- Order a similar bot: https://krivoshein.site/max (personal MAX, no form).
-- Price list: https://krivoshein.site/prays-list/ — simple lead bot from 40 000 RUB; bot with tables/site/CRM from 70 000 RUB; bot care from 5 000 RUB/month.
+- [MAX support bot](https://max.ru/id770603253213_1_bot): takes a request step by step — topic, description and screenshots, contact for a reply, urgency — and sends the finished request to the specialist. From 40 000 RUB.
+- Site AI assistant (widget on https://drslon.ru/): answers about services and prices, knows which page it was opened from, passes chat requests to MAX. From 70 000 RUB.
+- Dr.Slon lead link: https://krivoshein.site/max opens a MAX chat directly, no forms. A bot that collects requests and notifies you — from 40 000 RUB.
+- Order a similar bot: https://krivoshein.site/max
+- Price list: https://krivoshein.site/prays-list/ — bot care from 5 000 RUB/month.
 
 ## Experience snapshot (from resume)
 
